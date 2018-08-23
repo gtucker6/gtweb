@@ -1,0 +1,23 @@
+uuid: a4ef6ca6-53cc-4e49-b531-9f6471e0ad8f
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: web_skills
+label: 'Web Skills'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/skills/[term:name]'
+selection_criteria:
+  258fbb01-d7ae-453f-8d14-ca147c9440c5:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      web_skills: web_skills
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 258fbb01-d7ae-453f-8d14-ca147c9440c5
+selection_logic: and
+weight: -5
+relationships: {  }

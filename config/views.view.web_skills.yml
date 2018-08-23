@@ -58,7 +58,7 @@ display:
       style:
         type: default
         options:
-          row_class: 'col-12 col-xs-6 col-md-4 col-md-2 bg-trio '
+          row_class: 'col-12 col-sm-6 col-md-4 bg-duo'
           default_row_class: false
           uses_fields: false
       row:

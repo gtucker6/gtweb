@@ -22,6 +22,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: '/work*'
+    pages: '/portfolio/*'
     negate: false
     context_mapping: {  }

@@ -7,16 +7,16 @@ dependencies:
 id: my_work
 label: 'My Work'
 type: 'canonical_entities:node'
-pattern: 'work/[node:nid]'
+pattern: '/portfolio/[node:title]'
 selection_criteria:
-  728152db-2a86-41c8-a0c1-be89be2778c2:
+  ce6b616e-c25d-4709-b352-02b029575e50:
     id: node_type
     bundles:
       web_project: web_project
     negate: false
     context_mapping:
       node: node
-    uuid: 728152db-2a86-41c8-a0c1-be89be2778c2
+    uuid: ce6b616e-c25d-4709-b352-02b029575e50
 selection_logic: and
 weight: -5
 relationships: {  }

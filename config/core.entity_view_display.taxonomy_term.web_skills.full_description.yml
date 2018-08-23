@@ -36,6 +36,11 @@ third_party_settings:
         weight: 2
         label: hidden
         formatter: default
+        settings:
+          'link text': 'View Projects'
+          'link class': 'btn btn-secondary'
+          wrapper: ''
+          class: ''
       taxonomy_term_title:
         plugin_id: taxonomy_term_title
         weight: 3
