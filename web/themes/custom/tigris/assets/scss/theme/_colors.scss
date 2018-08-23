@@ -75,7 +75,7 @@
 .badge a, .badge:not(.badge-light):not(.badge-white) {
     color: $light-white !important;
 }
-.bg-trio {
+.bg-duo {
     color: $light-white;
     a {
         color: $light-white;
@@ -85,6 +85,14 @@
     }
     &:nth-child(2n+0) {
         background: $main-hover-color
+    }
+    @media (min-width: $breakpoint-min-sm) and (max-width: $breakpoint-max-sm) {
+        &:nth-child(4), &:nth-child(5) {
+            background: $accent-color !important;
+        }
+        &:nth-child(2), &:nth-child(3), &:nth-child(6) {
+            background: $main-hover-color !important;
+        }
     }
 }
 /** End Custom Colors. */

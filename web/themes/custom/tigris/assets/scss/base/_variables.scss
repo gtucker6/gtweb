@@ -18,12 +18,11 @@ $spacing: 15px;
 
 
 
-$breakpoint-min-mobile: 576px;
+$breakpoint-min-sm: 576px;
 $breakpoint-min-md: 768px;
 $breakpoint-min-lg: 992px;
 $breakpoint-min-xl: 1200px;
 
-$breakpoint-max-mobile: 575px;
-$breakpoint-max-md: 767px;
-$breakpoint-max-lg: 991px;
-$breakpoint-max-xl: 1199px;
+$breakpoint-max-sm: 767px;
+$breakpoint-max-md: 991px;
+$breakpoint-max-lg: 1199px;
