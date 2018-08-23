@@ -1,0 +1,40 @@
+.layout {
+    margin: $spacing 0;
+    &.layout--onecol {
+        padding: $spacing;
+       &.layout--taxonomy_term.full-description {
+           min-height: 300px;
+           margin-top: $spacing;
+       }
+    }
+    &.layout--twocol {
+        &.right-images-preview {
+            @media screen and (max-width: $breakpoint-max-md) {
+                .layout__region--first {
+                    order: 2;
+                }
+                .layout__region--second {
+                    order: 1;
+                }
+            }
+            .layout__region {
+                &.layout__region--first {
+                    padding: $spacing;
+                    .field {
+                        margin: 10px 0;
+                    }
+                }
+            }
+        }
+        &.left-images-preview, &.featured {
+            .layout__region {
+                &.layout__region--second {
+                    padding: $spacing;
+                    .field {
+                        margin: 10px 0;
+                    }
+                }
+            }
+        }
+    }
+}

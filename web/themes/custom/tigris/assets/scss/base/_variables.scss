@@ -1,0 +1,29 @@
+// Main and accent colors for theme
+$main-color: #58C9FF;
+$main-hover-color: #8D9AFF;
+$accent-color: #4056FF;
+
+$accent-hover-color: #FFAF4F;
+// Greys
+$grey: rgb(66, 66, 73);
+$light-grey: lighten($grey, 25%);
+$dark-grey: darken($grey, 25%);
+// Whites
+$dark-white: #e9ecef;
+$white: #fff;
+$light-white: lighten($white, 25%);
+
+// Positioning
+$spacing: 15px;
+
+
+
+$breakpoint-min-mobile: 576px;
+$breakpoint-min-md: 768px;
+$breakpoint-min-lg: 992px;
+$breakpoint-min-xl: 1200px;
+
+$breakpoint-max-mobile: 575px;
+$breakpoint-max-md: 767px;
+$breakpoint-max-lg: 991px;
+$breakpoint-max-xl: 1199px;

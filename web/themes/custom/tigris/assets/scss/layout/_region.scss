@@ -1,0 +1,22 @@
+.region {
+  &.region-footer {
+    display: flex;
+    flex-wrap: wrap;
+    .block:first-child {
+      margin-top: $spacing;
+    }
+    .block:last-child {
+      flex: 100%;
+      width: 100%;
+    }
+    @media(min-width: $breakpoint-min-md) {
+      .block:first-child {
+        margin-left: $spacing;
+      }
+      .block:first-child, .block:nth-child(2) {
+        flex: 1;
+      }
+
+    }
+  }
+}

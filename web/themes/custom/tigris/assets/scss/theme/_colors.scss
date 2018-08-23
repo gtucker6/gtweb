@@ -1,0 +1,101 @@
+/** Main Colors */
+.bg-main, .btn-main:not(:hover) {
+    background-color: $main-color;
+}
+.link-color--main a:not(:hover):not(.btn):not(.badge), .text-color--main {
+    color: $main-color;
+}
+
+.link-color--main a:hover:not(.btn) {
+    color: $main-hover-color;
+}
+.btn-main:hover {
+    background: $main-hover-color;
+}
+.text-color--main {
+    color: $main-hover-color;
+}
+/** End Main Colors. */
+
+/** Accent Colors. */
+.bg-accent, .btn-accent:not(:hover) {
+    background-color: $accent-color;
+}
+.link-color--accent a:hover:not(.btn):not(.badge), .text-color--accent {
+    color: $accent-color;
+}
+.link-color--accent a:hover:not(.btn):not(.badge), .link-color--accent a.navbar-brand:hover, a.link-color--accent:hover:not(.btn):not(.badge) {
+    color: $accent-hover-color;
+}
+.btn-accent:hover {
+    background: $accent-hover-color;
+}
+/** End Accent Colors. */
+
+/** Dark Colors. */
+.bg-dark, .btn-dark:not(:hover) {
+    background-color: $grey !important;
+}
+.overlay--dark {
+    background-color: rgba($grey, .75%);
+}
+.link-color--grey a:not(:hover):not(.btn):not(.badge), .text-color--grey {
+    color: $grey;
+}
+.link-color--grey a:hover:not(.btn):not(.badge), .link-color--grey a.navbar-brand:hover, a.link-color--grey:hover {
+    color: $light-grey;
+}
+.link-color--dark-grey a:hover:not(.btn):not(.badge), .text-color--dark-grey {
+    color: $dark-grey;
+}
+.link-color--light-grey a:not(:hover):not(.btn):not(.badge), .text-color--light-grey {
+    color: $light-grey;
+}
+.link-color--dark-grey a:hover:not(.btn):not(.badge), .link-color--dark-grey  a.navbar-brand:hover, a.link-color--dark-grey:hover {
+    color: $light-grey;
+}
+.link-color--light-grey a:hover:not(.btn):not(.badge), .link-color--light-grey a.navbar-brand:hover, a.link-color--light-grey:hover {
+    color: $dark-grey
+}
+/** End Dark Colors. */
+
+/** Light Colors. */
+.overlay--light {
+    background-color: rgba($dark-white, .75%);
+}
+.text-color--light {
+    color: $dark-white;
+}
+.bg-light, .btn-light:not(:hover) {
+    background-color: $dark-white !important;
+}
+/** End Light Colors. */
+
+/** Custom Colors. */
+.badge a, .badge:not(.badge-light):not(.badge-white) {
+    color: $light-white !important;
+}
+.bg-trio {
+    color: $light-white;
+    a {
+        color: $light-white;
+    }
+    &:nth-child(1n+0) {
+        background: $accent-color;
+    }
+    &:nth-child(2n+0) {
+        background: $main-hover-color
+    }
+}
+/** End Custom Colors. */
+
+/** Misc Colors. */
+.btn-main:not(:hover), .btn-accent:not(:hover), .btn-dark:not(:hover), .text-color--white, .badge {
+    color: $light-white;
+}
+.btn-accent:hover, .btn-main:hover {
+    color: white;
+}
+/** End Misc Colors. */
+
+

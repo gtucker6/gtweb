@@ -1,0 +1,31 @@
+.navbar {
+  &.navbar-custom {
+    border-bottom: 2px solid $dark-grey;
+    background-color: $grey;
+  }
+  &.logo-dark {
+    background-color: $light-white;
+  }
+  &.logo-light {
+    background-color: $dark-grey;
+  }
+
+  &.navbar-expand-lg {
+    @media screen and (max-width: $breakpoint-max-lg) {
+
+    }
+    @media screen and (min-width: $breakpoint-min-lg) {
+      height: 70px;
+    }
+  }
+}
+#toolbar-bar {
+  z-index: 1050;
+}
+.nav-link {
+  display: inline-block;
+}
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}

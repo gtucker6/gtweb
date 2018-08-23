@@ -1,0 +1,42 @@
+.page-header {
+  padding-bottom: $spacing;
+}
+.visually-hidden {
+    display: none !important;
+}
+
+.p--default {
+  &.pt {
+    padding-top: $spacing;
+  }
+  &.pb {
+    padding-bottom: $spacing;
+  }
+  &.pl {
+    padding-left: $spacing;
+  }
+  &.pr {
+    padding-right: $spacing;
+  }
+  &.padding {
+    padding: $spacing;
+  }
+
+}
+.m--default {
+  &.mt {
+    margin-top: $spacing;
+  }
+  &.mb {
+    margin-bottom: $spacing
+  }
+  &.ml {
+    margin-left: $spacing;
+  }
+  &.mr {
+    margin-right: $spacing;
+  }
+  &.margin {
+    margin: $spacing;
+  }
+}

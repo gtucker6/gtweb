@@ -1,0 +1,26 @@
+name: Tigris
+type: theme
+base theme: classy
+description: 'A flexible, recolorable theme with many regions and a responsive, mobile-first layout.'
+package: Core
+version: VERSION
+core: 8.x
+
+libraries:
+  - tigris/global-styling
+
+regions:
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  header: Header
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  breadcrumb: Breadcrumb
+  highlighted: Highlighted
+  help: 'Help'
+  content: Content
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  footer: 'Footer'
+
+

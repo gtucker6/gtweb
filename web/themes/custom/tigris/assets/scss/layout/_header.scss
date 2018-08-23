@@ -1,0 +1,32 @@
+.hero {
+  min-height: 65vh;
+  &.hero--intro {
+
+  }
+}
+.overlay {
+  &.overlay--dark {
+    background-color: rgba($dark-grey, .55);
+    min-height: inherit;
+    height: 100%;
+    width: 100%;
+  }
+  &.overlay--cover {
+    height: 80%;
+    width: 100%;
+    background-image: linear-gradient(-180deg,rgba(45,174,240,.5) 0,rgba(45,174,240,0) 95%);
+    position: absolute;
+    bottom: 0;
+    transform: skewY(-6deg);
+  }
+}
+header {
+  &.header--nav-fixed-top {
+    > .overlay {
+      padding-top: 65px;
+    }
+  }
+  > .overlay > .container-fluid, > .overlay > .container-fluid > .row {
+    min-height: inherit;
+  }
+}

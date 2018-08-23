@@ -1,0 +1,46 @@
+.menu {
+  &.menu--professional-profiles {
+    margin: 35px 0;
+    background-color: $grey;
+    ul.nav.nav-pills {
+      border: 3px solid $accent-color;
+      height: 30px;
+      position: relative;
+      align-items: center;
+      a {
+        display: inline-block;
+        .svg-inline--fa  {
+          border-radius: 50%;
+          border: 2px solid $main-hover-color;
+          background-color: $dark-white;
+          padding: 15px;
+          height: 55px;
+          width: 55px;
+          &.fa-drupal {
+            color: #0074b8;
+          }
+          &.fa-github-square {
+            color: black;
+          }
+          &.fa-gitlab {
+            color: #f75620;
+          }
+          &.fa-linkedin {
+            color: #4d99bd;
+          }
+        }
+      }
+    }
+  }
+  .nav {
+    &.nav-pills {
+      display: -webkit-flex;
+      display: flex;
+      .nav-item {
+        text-align: center;
+        -webkit-flex: 1;
+        flex: 1;
+      }
+    }
+  }
+}
