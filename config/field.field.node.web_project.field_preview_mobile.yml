@@ -1,0 +1,38 @@
+uuid: 3b4b5263-b125-41de-b9b3-d5a7fdb35904
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_preview_mobile
+    - node.type.web_project
+  module:
+    - image
+id: node.web_project.field_preview_mobile
+field_name: field_preview_mobile
+entity_type: node
+bundle: web_project
+label: 'Preview Mobile'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_extensions: 'png gif jpg jpeg'
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  max_resolution: ''
+  min_resolution: ''
+  default_image:
+    uuid: null
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  max_filesize: ''
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

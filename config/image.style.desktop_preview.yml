@@ -1,0 +1,15 @@
+uuid: 1a550f7a-b9a2-4e00-84ce-fec82e287580
+langcode: en
+status: true
+dependencies: {  }
+name: desktop_preview
+label: 'Desktop Preview'
+effects:
+  cdf0b788-3654-4d46-8230-01d6f3bcb1b0:
+    uuid: cdf0b788-3654-4d46-8230-01d6f3bcb1b0
+    id: image_scale
+    weight: 2
+    data:
+      width: 1000
+      height: null
+      upscale: true

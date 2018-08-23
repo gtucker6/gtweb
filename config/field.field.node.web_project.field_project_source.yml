@@ -1,0 +1,23 @@
+uuid: f9643f5a-9f23-4298-827b-1e132826218d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_project_source
+    - node.type.web_project
+  module:
+    - link
+id: node.web_project.field_project_source
+field_name: field_project_source
+entity_type: node
+bundle: web_project
+label: 'Project Source'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

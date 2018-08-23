@@ -1,0 +1,61 @@
+uuid: ab9972e4-f76b-412a-9702-bb15dcc9632d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.slide
+    - field.field.paragraph.text_image.field_description
+    - field.field.paragraph.text_image.field_image
+    - field.field.paragraph.text_image.field_view_mode_selector
+    - image.style.slideshow
+    - paragraphs.paragraphs_type.text_image
+  module:
+    - ds
+    - image
+    - text
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col_wrapper
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class:
+            layout: layout
+            layout--slide: layout--slide
+          ds_content: {  }
+    regions:
+      ds_content:
+        - field_image
+        - field_description
+id: paragraph.text_image.slide
+targetEntityType: paragraph
+bundle: text_image
+mode: slide
+content:
+  field_description:
+    weight: 1
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: ds_content
+  field_image:
+    weight: 0
+    label: visually_hidden
+    settings:
+      image_style: slideshow
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: ds_content
+hidden:
+  field_view_mode_selector: true

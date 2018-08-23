@@ -1,0 +1,10 @@
+uuid: 557efa1c-70d8-4bab-b0be-ad724dc9eb3e
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.slide
+label: Slide
+targetEntityType: paragraph
+cache: true

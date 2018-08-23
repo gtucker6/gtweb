@@ -1,0 +1,191 @@
+uuid: 5a058f34-a835-49fe-a5d8-9570689d7c91
+langcode: en
+status: open
+dependencies: {  }
+open: null
+close: null
+uid: 1
+template: false
+archive: false
+id: needs_website_work
+title: 'Website Work Contact Form'
+description: ''
+category: ''
+elements: "contact_page:\n  '#type': webform_wizard_page\n  '#title': Contact\n  '#next_button_label': Next\n  subject:\n    '#type': textfield\n    '#title': Subject\n    '#required': true\n  message:\n    '#type': textarea\n    '#title': Message\n    '#required': true\n  flexbox_02:\n    '#type': webform_flexbox\n    company_name:\n      '#type': textfield\n      '#title': 'Company Name'\n      '#description': 'Enter the name of the company you work for and/or own.'\n      '#required': true\n    company_email:\n      '#type': email\n      '#title': 'Company Email'\n      '#description': 'The company or work email that I can contact you with.'\n      '#required': true\ncontact_number:\n  '#type': tel\n  '#title': 'Contact Number'\nwebsite_work_requirements:\n  '#type': webform_wizard_page\n  '#title': 'Website Work Requirements'\n  '#next_button_label': Next\n  flexbox_03:\n    '#type': webform_flexbox\n    websites:\n      '#type': url\n      '#title': Websites\n      '#multiple': true\n      '#description': 'Websites that you need me to work on and/or look at.'\n      '#title_display': before\n      '#multiple__add_more_input_label': 'more websites'\n      '#multiple__no_items_message': 'No websites entered. Please add project and/or company websites.'\n      '#attributes':\n        class:\n          - 'mb m--default'\n      '#format_items': custom\n    budget:\n      '#type': webform_select_other\n      '#title': Budget\n      '#options':\n        2000: $2000\n        2000-4000: $2000-$4000\n        4000-10000: $4000-$10000\n        10000+: $10000+\n      '#other__type': number\n      '#other__min': '1000'\n      '#other__max': '100000'\n  flexbox_04:\n    '#type': webform_flexbox\n    work_timeline:\n      '#type': radios\n      '#title': 'Work Timeline'\n      '#options':\n        1: '1 -- month'\n        2-3: '2-3 -- months'\n        3-6: '3-6 -- months'\n        6+: '6+ -- months'\n    work_skills_needed:\n      '#type': webform_term_checkboxes\n      '#title': 'Work Skills Needed'\n      '#required': true\n      '#vocabulary': web_skills\n      '#breadcrumb_delimiter': ''\n      '#scroll': false\n    work_designs:\n      '#type': managed_file\n      '#title': 'Work Designs'\n      '#description': 'Website work designs and mockups that you want to share with me.'\n"
+css: ''
+javascript: ''
+settings:
+  ajax: true
+  ajax_scroll_top: form
+  page: true
+  page_submit_path: /contact/website-work
+  page_confirm_path: ''
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_login: false
+  form_login_message: ''
+  submission_label: ''
+  submission_log: false
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_login: false
+  submission_login_message: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_start_label: ''
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: page
+  confirmation_title: ''
+  confirmation_message: 'Your message has been sent. Thank you and your company for your interest in my work. I usually respond within 24-48 hrs.'
+  confirmation_url: ''
+  confirmation_attributes:
+    class:
+      - 'messages messages--status'
+  confirmation_back: true
+  confirmation_back_label: 'Back to Form'
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_user: 10
+  limit_user_interval: 1800
+  limit_user_message: ''
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: completed
+  purge_days: 25
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles:
+      - administrator
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles:
+      - administrator
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles:
+      - administrator
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles:
+      - administrator
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles:
+      - administrator
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  email:
+    id: email
+    label: Email
+    handler_id: email
+    status: true
+    conditions:
+      disabled:
+        '':
+          filled: ''
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: _default
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: '[webform_submission:values:company_email:raw]'
+      from_options: {  }
+      from_name: '[webform_submission:values:company_name:raw]'
+      subject: '[webform_submission:values:message:raw]'
+      body: '[webform_submission:values:message:value]'
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: true
+      html: true
+      attachments: false
+      twig: false
+      debug: true
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''

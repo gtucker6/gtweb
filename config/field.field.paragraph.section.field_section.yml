@@ -1,0 +1,48 @@
+uuid: 755addfa-5738-4502-b5b7-fb2d1a6314ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section
+    - paragraphs.paragraphs_type.section
+    - paragraphs.paragraphs_type.subsection
+    - paragraphs.paragraphs_type.text
+  module:
+    - entity_reference_revisions
+id: paragraph.section.field_section
+field_name: field_section
+entity_type: paragraph
+bundle: section
+label: Section
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      subsection: subsection
+      text: text
+    target_bundles_drag_drop:
+      preview:
+        weight: 4
+        enabled: false
+      section:
+        weight: 5
+        enabled: false
+      text_images:
+        weight: 6
+        enabled: false
+      subsection:
+        enabled: true
+        weight: 7
+      text:
+        enabled: true
+        weight: 10
+      text_image:
+        weight: 11
+        enabled: false
+field_type: entity_reference_revisions

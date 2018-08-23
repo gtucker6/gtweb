@@ -1,0 +1,56 @@
+uuid: 25947278-048b-4e30-946f-056eb5e7b2c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.web_skills.field_font_awesome_icon
+    - field.field.taxonomy_term.web_skills.field_logo_image
+    - image.style.thumbnail
+    - taxonomy.vocabulary.web_skills
+  module:
+    - fontawesome
+    - image
+    - path
+    - text
+id: taxonomy_term.web_skills.default
+targetEntityType: taxonomy_term
+bundle: web_skills
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_font_awesome_icon:
+    weight: 31
+    settings: {  }
+    third_party_settings: {  }
+    type: fontawesome_icon_widget
+    region: content
+  field_logo_image:
+    weight: 32
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  name:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,131 @@
+uuid: 9e5d9a38-abfd-47f0-895a-9e213a0a9fcf
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.work.field_company_address
+    - field.field.node.work.field_company_email
+    - field.field.node.work.field_company_number_s
+    - field.field.node.work.field_company_websites
+    - field.field.node.work.field_finish_date
+    - field.field.node.work.field_start_date
+    - field.field.node.work.field_work_description
+    - field.field.node.work.field_work_title
+    - node.type.work
+  module:
+    - address
+    - datetime
+    - ds
+    - field_group
+    - telephone
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: layout__onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings: {  }
+    regions:
+      content:
+        - group_work_header
+        - node_title
+        - field_work_title
+        - field_company_address
+        - field_company_number_s
+        - field_company_email
+        - field_finish_date
+        - field_start_date
+        - field_work_description
+        - links
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+  field_group:
+    group_work_header:
+      children:
+        - node_title
+        - field_work_title
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: 'work-header header'
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Work Header'
+id: node.work.teaser
+targetEntityType: node
+bundle: work
+mode: teaser
+content:
+  field_company_address:
+    type: address_default
+    weight: 1
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_company_email:
+    type: basic_string
+    weight: 3
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_company_number_s:
+    type: telephone_link
+    weight: 2
+    region: content
+    label: above
+    settings:
+      title: ''
+    third_party_settings: {  }
+  field_finish_date:
+    type: datetime_plain
+    weight: 4
+    region: content
+    label: above
+    settings:
+      timezone_override: ''
+    third_party_settings: {  }
+  field_start_date:
+    type: datetime_plain
+    weight: 5
+    region: content
+    label: above
+    settings:
+      timezone_override: ''
+    third_party_settings: {  }
+  field_work_description:
+    type: text_default
+    weight: 6
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_work_title:
+    type: text_default
+    weight: 1
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_company_websites: true

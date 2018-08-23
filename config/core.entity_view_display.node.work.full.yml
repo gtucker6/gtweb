@@ -1,0 +1,101 @@
+uuid: 59058edf-4ddb-4c66-93a9-dc584f7238d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.work.field_company_address
+    - field.field.node.work.field_company_email
+    - field.field.node.work.field_company_number_s
+    - field.field.node.work.field_company_websites
+    - field.field.node.work.field_finish_date
+    - field.field.node.work.field_start_date
+    - field.field.node.work.field_work_description
+    - field.field.node.work.field_work_title
+    - node.type.work
+  module:
+    - address
+    - datetime
+    - ds
+    - telephone
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: layout__onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings: {  }
+    regions:
+      content:
+        - field_work_title
+        - field_company_number_s
+        - field_company_email
+        - field_company_address
+        - field_work_description
+        - field_start_date
+        - field_finish_date
+id: node.work.full
+targetEntityType: node
+bundle: work
+mode: full
+content:
+  field_company_address:
+    type: address_default
+    weight: 3
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_company_email:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_company_number_s:
+    weight: 1
+    label: above
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  field_finish_date:
+    weight: 6
+    label: above
+    settings:
+      timezone_override: ''
+      date_format: 'F Y'
+    third_party_settings: {  }
+    type: datetime_custom
+    region: content
+  field_start_date:
+    weight: 5
+    label: above
+    settings:
+      timezone_override: ''
+      date_format: 'F  Y'
+    third_party_settings: {  }
+    type: datetime_custom
+    region: content
+  field_work_description:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_work_title:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  field_company_websites: true
+  links: true

@@ -1,0 +1,93 @@
+uuid: 5d3acf52-c762-47a3-abf1-97132fe03544
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_basic_page_content
+    - node.type.paragraphs_basic_page
+    - paragraphs.paragraphs_type.bp_carousel
+    - paragraphs.paragraphs_type.media
+    - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.text_image
+    - paragraphs.paragraphs_type.text_images
+  module:
+    - entity_reference_revisions
+id: node.paragraphs_basic_page.field_basic_page_content
+field_name: field_basic_page_content
+entity_type: node
+bundle: paragraphs_basic_page
+label: 'Basic Page Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      media: media
+      text: text
+      text_image: text_image
+      text_images: text_images
+      bp_carousel: bp_carousel
+    target_bundles_drag_drop:
+      preview:
+        weight: 7
+        enabled: false
+      media:
+        enabled: true
+        weight: 8
+      section:
+        weight: 8
+        enabled: false
+      subsection:
+        weight: 9
+        enabled: false
+      text:
+        enabled: true
+        weight: 10
+      text_image:
+        enabled: true
+        weight: 11
+      text_images:
+        enabled: true
+        weight: 12
+      bp_blank:
+        weight: 20
+        enabled: false
+      bp_block:
+        weight: 21
+        enabled: false
+      bp_carousel:
+        enabled: true
+        weight: 22
+      bp_columns:
+        weight: 23
+        enabled: false
+      bp_columns_three_uneven:
+        weight: 24
+        enabled: false
+      bp_columns_two_uneven:
+        weight: 25
+        enabled: false
+      bp_column_wrapper:
+        weight: 26
+        enabled: false
+      bp_image:
+        weight: 27
+        enabled: false
+      bp_simple:
+        weight: 28
+        enabled: false
+      bp_tabs:
+        weight: 29
+        enabled: false
+      bp_tab_section:
+        weight: 30
+        enabled: false
+      bp_view:
+        weight: 31
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,14 @@
+uuid: d557ae51-493e-4d8d-a295-3e75b688a695
+langcode: en
+status: true
+dependencies: {  }
+name: icon
+label: Icon
+effects:
+  c18a12e4-6885-409d-b449-a18d7f4a08e9:
+    uuid: c18a12e4-6885-409d-b449-a18d7f4a08e9
+    id: image_resize
+    weight: 1
+    data:
+      width: 25
+      height: 25

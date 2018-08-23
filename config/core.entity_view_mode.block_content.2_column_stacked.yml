@@ -1,0 +1,10 @@
+uuid: 9e2051bd-86bf-40dc-b806-0b7d480fa3b3
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.2_column_stacked
+label: '2 Column stacked'
+targetEntityType: block_content
+cache: true

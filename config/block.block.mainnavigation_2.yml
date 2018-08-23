@@ -1,0 +1,24 @@
+uuid: 1e046485-303e-4dd4-87a3-82afc1b4e945
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - tigris
+id: mainnavigation_2
+theme: tigris
+region: footer
+weight: -6
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+visibility: {  }

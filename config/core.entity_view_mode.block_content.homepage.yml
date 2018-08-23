@@ -1,0 +1,10 @@
+uuid: 7cfbfb2b-93d9-416e-903b-2e134391362f
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.homepage
+label: Homepage
+targetEntityType: block_content
+cache: true

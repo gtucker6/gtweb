@@ -1,0 +1,42 @@
+uuid: eb60cbfc-f379-4de9-ac60-9630d22799a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.introduction_cta
+    - field.field.block_content.introduction_cta.body
+    - field.field.block_content.introduction_cta.field_cta_button
+  module:
+    - link
+    - text
+id: block_content.introduction_cta.default
+targetEntityType: block_content
+bundle: introduction_cta
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 26
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_cta_button:
+    weight: 27
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,10 @@
+uuid: 28d50cd9-11bd-4155-a521-6a207ca6a1f9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.left_images_preview
+label: 'Left Images Preview'
+targetEntityType: node
+cache: true

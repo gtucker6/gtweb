@@ -1,0 +1,29 @@
+uuid: ad57618e-371d-422b-bf5c-26e99e462021
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.icon.field_icon
+    - field.field.media.icon.field_media_image_1
+    - media.type.icon
+  module:
+    - fontawesome
+id: media.icon.default
+targetEntityType: media
+bundle: icon
+mode: default
+content:
+  field_icon:
+    weight: 0
+    label: visually_hidden
+    settings:
+      layers: false
+    third_party_settings: {  }
+    type: fontawesome_icon_formatter
+    region: content
+hidden:
+  created: true
+  field_media_image_1: true
+  name: true
+  thumbnail: true
+  uid: true

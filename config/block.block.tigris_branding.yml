@@ -1,0 +1,25 @@
+uuid: 96700543-a3a2-473e-a327-ad22405c1403
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - tigris
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: tigris_branding
+theme: tigris
+region: primary_menu
+weight: -6
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

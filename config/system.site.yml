@@ -1,4 +1,4 @@
-uuid: a6ecf55a-c371-433a-a707-6ea2180d8233
+uuid: 7a205820-c9c9-4c80-982f-ffd651e115b7
 name: 'G.T. Web'
 mail: lovinglikecrazy95@gmail.com
 slogan: ''
@@ -12,3 +12,4 @@ langcode: en
 default_langcode: en
 _core:
   default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
+mail_notification: ''

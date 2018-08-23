@@ -1,0 +1,19 @@
+uuid: b79ffc27-aece-4ab3-b9da-8672bcedb1e2
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+id: paragraph.field_font_awesome_item_link
+field_name: field_font_awesome_item_link
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

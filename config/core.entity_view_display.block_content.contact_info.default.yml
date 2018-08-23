@@ -1,0 +1,31 @@
+uuid: 0e315e7c-115c-462a-b52b-4faaf18afc21
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contact_info
+    - field.field.block_content.contact_info.field_contact_email
+    - field.field.block_content.contact_info.field_contact_number
+  module:
+    - telephone
+id: block_content.contact_info.default
+targetEntityType: block_content
+bundle: contact_info
+mode: default
+content:
+  field_contact_email:
+    weight: 2
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: email_mailto
+    region: content
+  field_contact_number:
+    weight: 3
+    label: visually_hidden
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+hidden: {  }

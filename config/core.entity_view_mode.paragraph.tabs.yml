@@ -1,0 +1,10 @@
+uuid: f86fd6cd-2cb3-4ce2-b766-2a6e039e7625
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.tabs
+label: Tabs
+targetEntityType: paragraph
+cache: true

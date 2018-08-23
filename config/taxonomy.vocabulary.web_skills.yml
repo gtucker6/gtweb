@@ -1,0 +1,9 @@
+uuid: 6584ac0f-0704-4316-9a75-c665d82aeabf
+langcode: en
+status: true
+dependencies: {  }
+name: 'Web Skills'
+vid: web_skills
+description: ''
+hierarchy: 0
+weight: 0

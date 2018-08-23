@@ -1,0 +1,22 @@
+uuid: f008bf79-33dd-4090-967f-f50e6df163ba
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: my_work
+label: 'My Work'
+type: 'canonical_entities:node'
+pattern: 'work/[node:nid]'
+selection_criteria:
+  728152db-2a86-41c8-a0c1-be89be2778c2:
+    id: node_type
+    bundles:
+      web_project: web_project
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 728152db-2a86-41c8-a0c1-be89be2778c2
+selection_logic: and
+weight: -5
+relationships: {  }

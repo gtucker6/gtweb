@@ -1,0 +1,73 @@
+uuid: d8c3f261-764e-47db-992d-0c129bacd9a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.font_awesome_item.field_font_awesome_icon
+    - field.field.paragraph.font_awesome_item.field_font_awesome_item_link
+    - field.field.paragraph.font_awesome_item.field_font_awesome_item_text
+    - paragraphs.paragraphs_type.font_awesome_item
+  module:
+    - field_group
+    - fontawesome
+    - link
+    - text
+third_party_settings:
+  field_group:
+    group_icon:
+      children:
+        - field_font_awesome_logo
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: 'icon fontawesome-icons'
+        description: ''
+        required_fields: true
+      label: Icon
+    group_icon_settings:
+      children:
+        - field_font_awesome_item_text
+        - field_font_awesome_item_link
+      parent_name: ''
+      weight: 1
+      format_type: fieldset
+      format_settings:
+        label: 'Icon Settings'
+        description: ''
+        required_fields: true
+        id: ''
+        classes: 'icon-settings fontawesome-icons'
+      label: 'Icon Settings'
+id: paragraph.font_awesome_item.default
+targetEntityType: paragraph
+bundle: font_awesome_item
+mode: default
+content:
+  field_font_awesome_icon:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: fontawesome_icon_widget
+    region: content
+  field_font_awesome_item_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_font_awesome_item_text:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -1,0 +1,20 @@
+uuid: 529cd04b-a08c-43dd-921d-e89b1e66f547
+langcode: en
+status: true
+dependencies:
+  theme:
+    - tigris
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: tigris_local_actions
+theme: tigris
+region: content
+weight: -3
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

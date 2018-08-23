@@ -1,0 +1,10 @@
+uuid: c5a1d462-ec54-4f17-9e31-a2d6f9d9bc89
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.right_images_preview
+label: 'Right Images Preview'
+targetEntityType: node
+cache: true

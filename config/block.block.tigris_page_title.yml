@@ -1,0 +1,27 @@
+uuid: 7be6f340-b2a5-43c0-82f8-3398bad2314c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - tigris
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: tigris_page_title
+theme: tigris
+region: content
+weight: -6
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '/taxonomy/term*'
+    negate: true
+    context_mapping: {  }

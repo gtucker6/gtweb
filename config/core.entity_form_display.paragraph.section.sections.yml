@@ -1,0 +1,37 @@
+uuid: fea66705-5e1f-495c-940d-762049b2eb55
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_form_mode.paragraph.sections
+    - field.field.paragraph.section.field_section
+    - field.field.paragraph.section.field_section_title
+    - paragraphs.paragraphs_type.section
+  module:
+    - entity_reference_revisions
+id: paragraph.section.sections
+targetEntityType: paragraph
+bundle: section
+mode: sections
+content:
+  field_section:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_autocomplete
+    region: content
+  field_section_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

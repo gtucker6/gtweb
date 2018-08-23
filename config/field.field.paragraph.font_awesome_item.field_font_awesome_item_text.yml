@@ -1,0 +1,21 @@
+uuid: 6d36d9ac-2ea7-4a18-aeb4-7923e57bc9ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_font_awesome_item_text
+    - paragraphs.paragraphs_type.font_awesome_item
+  module:
+    - text
+id: paragraph.font_awesome_item.field_font_awesome_item_text
+field_name: field_font_awesome_item_text
+entity_type: paragraph
+bundle: font_awesome_item
+label: 'Font Awesome Item Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

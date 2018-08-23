@@ -1,0 +1,21 @@
+uuid: 3b9d8c04-1245-49b5-908e-c142152c6172
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_font_awesome_icon
+    - taxonomy.vocabulary.web_skills
+  module:
+    - fontawesome
+id: taxonomy_term.web_skills.field_font_awesome_icon
+field_name: field_font_awesome_icon
+entity_type: taxonomy_term
+bundle: web_skills
+label: 'Font Awesome Icon'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: fontawesome_icon

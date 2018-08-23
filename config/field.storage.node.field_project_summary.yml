@@ -1,0 +1,19 @@
+uuid: 8d846f47-cbba-4546-a89f-cffe04b938e2
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_project_summary
+field_name: field_project_summary
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

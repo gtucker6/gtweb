@@ -1,0 +1,33 @@
+uuid: f40dbc62-9239-4483-8bbb-ae70f33a64de
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.subsection.field_subsection
+    - field.field.paragraph.subsection.field_subsection_title
+    - paragraphs.paragraphs_type.subsection
+  module:
+    - entity_reference_revisions
+id: paragraph.subsection.default
+targetEntityType: paragraph
+bundle: subsection
+mode: default
+content:
+  field_subsection:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: visually_hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_subsection_title:
+    weight: 0
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

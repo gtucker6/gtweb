@@ -1,0 +1,119 @@
+uuid: 004ca73f-7937-4663-bbde-f471cbb329b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.web_project.field_company
+    - field.field.node.web_project.field_preview_desktop
+    - field.field.node.web_project.field_preview_mobile
+    - field.field.node.web_project.field_preview_tablet
+    - field.field.node.web_project.field_project_description
+    - field.field.node.web_project.field_project_source
+    - field.field.node.web_project.field_project_summary
+    - field.field.node.web_project.field_web_skills
+    - image.style.tablet_preview
+    - node.type.web_project
+  module:
+    - ds
+    - entity_reference_revisions
+    - field_group
+    - image
+    - link
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: layout__onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings: {  }
+    regions:
+      content:
+        - group_preview
+        - field_project_description
+        - field_project_source
+        - field_preview_desktop
+        - field_preview_tablet
+        - field_preview_mobile
+  field_group:
+    group_preview:
+      children:
+        - field_preview_desktop
+        - field_preview_tablet
+        - field_preview_mobile
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        label: Preview
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'previews row'
+      label: Preview
+id: node.web_project.full
+targetEntityType: node
+bundle: web_project
+mode: full
+content:
+  field_preview_desktop:
+    type: image
+    weight: 21
+    region: content
+    label: visually_hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+  field_preview_mobile:
+    type: image
+    weight: 23
+    region: content
+    label: visually_hidden
+    settings:
+      image_style: mobile_preview
+      image_link: ''
+    third_party_settings: {  }
+  field_preview_tablet:
+    type: image
+    weight: 22
+    region: content
+    label: visually_hidden
+    settings:
+      image_style: tablet_preview
+      image_link: ''
+    third_party_settings: {  }
+  field_project_description:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    region: content
+    label: visually_hidden
+    settings:
+      view_mode: sections
+      link: ''
+    third_party_settings:
+      ds:
+        ds_limit: ''
+  field_project_source:
+    weight: 2
+    label: visually_hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  field_company: true
+  field_project_summary: true
+  field_web_skills: true
+  links: true

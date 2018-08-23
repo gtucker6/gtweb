@@ -1,0 +1,52 @@
+uuid: a7514aca-fe14-4d6b-8f7c-d3f252188d02
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_subsection
+    - paragraphs.paragraphs_type.preview
+    - paragraphs.paragraphs_type.subsection
+    - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.text_image
+    - paragraphs.paragraphs_type.text_images
+  module:
+    - entity_reference_revisions
+id: paragraph.subsection.field_subsection
+field_name: field_subsection
+entity_type: paragraph
+bundle: subsection
+label: Subsection
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      preview: preview
+      text_images: text_images
+      text: text
+      text_image: text_image
+    target_bundles_drag_drop:
+      preview:
+        enabled: true
+        weight: 5
+      section:
+        weight: 6
+        enabled: false
+      subsection:
+        weight: 7
+        enabled: false
+      text_images:
+        enabled: true
+        weight: 8
+      text:
+        enabled: true
+        weight: 10
+      text_image:
+        enabled: true
+        weight: 11
+field_type: entity_reference_revisions

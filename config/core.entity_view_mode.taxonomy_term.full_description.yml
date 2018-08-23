@@ -1,0 +1,10 @@
+uuid: 2b4c6326-8dca-4cd8-96f4-aa65038e40d5
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.full_description
+label: 'Full Description'
+targetEntityType: taxonomy_term
+cache: true

@@ -1,0 +1,36 @@
+uuid: 52569bf0-1996-4e25-bdc7-bd1ba74512fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.introduction_cta
+    - field.field.block_content.introduction_cta.body
+    - field.field.block_content.introduction_cta.field_cta_button
+  module:
+    - link
+    - text
+id: block_content.introduction_cta.default
+targetEntityType: block_content
+bundle: introduction_cta
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_cta_button:
+    weight: 1
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden: {  }

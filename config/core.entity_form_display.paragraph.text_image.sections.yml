@@ -1,0 +1,46 @@
+uuid: b52cba06-b274-4aa1-bedf-bee878daf42b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.paragraph.sections
+    - field.field.paragraph.text_image.field_description
+    - field.field.paragraph.text_image.field_image
+    - field.field.paragraph.text_image.field_view_mode_selector
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.text_image
+  module:
+    - image
+    - text
+    - vmode_selector
+id: paragraph.text_image.sections
+targetEntityType: paragraph
+bundle: text_image
+mode: sections
+content:
+  field_description:
+    weight: 0
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_image:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_view_mode_selector:
+    type: vmode_selector_widget
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

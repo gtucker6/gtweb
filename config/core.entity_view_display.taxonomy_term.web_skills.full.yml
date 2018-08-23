@@ -1,0 +1,108 @@
+uuid: 7c3be3e2-5125-4f1c-a06e-b9560478299d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.full
+    - field.field.taxonomy_term.web_skills.field_font_awesome_icon
+    - field.field.taxonomy_term.web_skills.field_logo_image
+    - image.style.icon
+    - taxonomy.vocabulary.web_skills
+  module:
+    - ds
+    - field_group
+    - fontawesome
+    - image
+    - text
+third_party_settings:
+  ds:
+    layout:
+      id: layout__onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings: {  }
+    regions:
+      content:
+        - group_flex
+        - field_logo_image
+        - group_description
+        - field_font_awesome_icon
+        - description
+        - taxonomy_term_title
+    fields:
+      taxonomy_term_title:
+        plugin_id: taxonomy_term_title
+        weight: 3
+        label: hidden
+        formatter: default
+        settings:
+          wrapper: h1
+          class: ''
+          link: false
+  field_group:
+    group_flex:
+      children:
+        - field_logo_image
+        - field_font_awesome_icon
+        - taxonomy_term_title
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        label: Flex
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'd-flex justify-content-center align-items-center align-content-center page-header'
+      label: Flex
+    group_description:
+      children:
+        - description
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: text-center
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Description
+id: taxonomy_term.web_skills.full
+targetEntityType: taxonomy_term
+bundle: web_skills
+mode: full
+content:
+  description:
+    label: visually_hidden
+    type: text_default
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_font_awesome_icon:
+    weight: 2
+    label: visually_hidden
+    settings:
+      layers: false
+    third_party_settings: {  }
+    type: fontawesome_icon_formatter
+    region: content
+  field_logo_image:
+    weight: 1
+    label: visually_hidden
+    settings:
+      image_style: icon
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden: {  }

@@ -1,0 +1,25 @@
+uuid: 3b830076-ce5c-49ee-9b3f-f221aebc1fd2
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:contact_info:10a9978e-1e69-4a65-811d-884b68cad630'
+  module:
+    - block_content
+  theme:
+    - tigris
+id: emailandphone
+theme: tigris
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:10a9978e-1e69-4a65-811d-884b68cad630'
+settings:
+  id: 'block_content:10a9978e-1e69-4a65-811d-884b68cad630'
+  label: 'Contact Me'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

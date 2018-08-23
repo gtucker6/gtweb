@@ -1,0 +1,18 @@
+uuid: 26e87ab6-7012-4cc8-88f2-7e302fd6d17f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.work
+id: node.work.title
+field_name: title
+entity_type: node
+bundle: work
+label: 'Company Name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

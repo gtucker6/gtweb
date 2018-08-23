@@ -1,0 +1,31 @@
+uuid: 97861567-01d2-44c2-840e-833545f9f2c0
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:introduction_cta:ccee461f-f5f8-4da5-a60c-c06cd7a3f211'
+  module:
+    - block_content
+    - system
+  theme:
+    - tigris
+id: homepageintro
+theme: tigris
+region: header
+weight: 0
+provider: null
+plugin: 'block_content:ccee461f-f5f8-4da5-a60c-c06cd7a3f211'
+settings:
+  id: 'block_content:ccee461f-f5f8-4da5-a60c-c06cd7a3f211'
+  label: 'Home Page Intro'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: homepage
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,24 @@
+uuid: b8a74e0c-f101-40b7-96ef-9f32bad8471f
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.professional-profiles
+  module:
+    - system
+  theme:
+    - tigris
+id: professionalprofiles_2
+theme: tigris
+region: footer
+weight: 0
+provider: null
+plugin: 'system_menu_block:professional-profiles'
+settings:
+  id: 'system_menu_block:professional-profiles'
+  label: 'Professional Profiles'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

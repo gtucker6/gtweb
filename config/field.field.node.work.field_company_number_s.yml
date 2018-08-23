@@ -1,0 +1,21 @@
+uuid: d0baa9a9-a6d0-4ef3-848e-a26ce79d62a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_company_number_s
+    - node.type.work
+  module:
+    - telephone
+id: node.work.field_company_number_s
+field_name: field_company_number_s
+entity_type: node
+bundle: work
+label: 'Company Number (s)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

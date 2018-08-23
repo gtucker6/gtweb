@@ -1,0 +1,71 @@
+uuid: caf15875-c0da-414e-b7c7-6f7e46eda775
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.web_project.field_preview_desktop
+    - field.field.node.web_project.field_preview_mobile
+    - field.field.node.web_project.field_preview_tablet
+    - field.field.node.web_project.field_project_description
+    - field.field.node.web_project.field_project_source
+    - field.field.node.web_project.field_project_summary
+    - field.field.node.web_project.field_web_skills
+    - node.type.web_project
+  module:
+    - ds
+    - link
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_2col
+      library: ds/ds_2col
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      left:
+        - node_title
+        - body
+        - field_project_source
+        - field_technologies_used
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+id: node.web_project.teaser
+targetEntityType: node
+bundle: web_project
+mode: teaser
+content:
+  field_project_source:
+    type: link_separate
+    weight: 2
+    region: ds_content
+    label: visually_hidden
+    settings:
+      trim_length: 80
+      rel: ''
+      target: ''
+      url_only: false
+      url_plain: false
+    third_party_settings: {  }
+hidden:
+  field_preview_desktop: true
+  field_preview_mobile: true
+  field_preview_tablet: true
+  field_project_description: true
+  field_project_summary: true
+  field_web_skills: true
+  links: true

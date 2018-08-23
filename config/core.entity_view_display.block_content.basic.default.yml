@@ -1,12 +1,14 @@
-uuid: 8152e609-3f81-4e1e-9c60-db5c1fd2ad91
+uuid: d47a7ba5-1174-4761-85ba-7cc5eecf0f2a
 langcode: en
 status: true
 dependencies:
   config:
     - block_content.type.basic
     - field.field.block_content.basic.body
+    - field.field.block_content.basic.field_view_mode_selection
   module:
     - text
+    - vmode_selector
 _core:
   default_config_hash: orJpHUlAc_wiQLMUjIgEJXGeiqylGHMPcmNRjGtct-M
 id: block_content.basic.default
@@ -21,4 +23,11 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_view_mode_selection:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: vmode_selector_format
+    region: content
 hidden: {  }

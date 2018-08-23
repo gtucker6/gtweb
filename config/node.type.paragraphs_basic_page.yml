@@ -1,0 +1,18 @@
+uuid: 5bffafc9-f69f-4cd2-ba86-00a57f15d99b
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Paragraphs Basic Page'
+type: paragraphs_basic_page
+description: 'A basic page with formatted paragraphs'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

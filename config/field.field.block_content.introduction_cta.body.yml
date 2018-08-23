@@ -1,0 +1,22 @@
+uuid: 608191d6-1fb7-459c-b80b-30ccaa3ad80b
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.introduction_cta
+    - field.storage.block_content.body
+  module:
+    - text
+id: block_content.introduction_cta.body
+field_name: body
+entity_type: block_content
+bundle: introduction_cta
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

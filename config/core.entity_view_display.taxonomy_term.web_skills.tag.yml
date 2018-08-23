@@ -1,0 +1,18 @@
+uuid: 754f7913-b866-4d38-ac51-3c4bbdb679d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.tag
+    - field.field.taxonomy_term.web_skills.field_font_awesome_icon
+    - field.field.taxonomy_term.web_skills.field_logo_image
+    - taxonomy.vocabulary.web_skills
+id: taxonomy_term.web_skills.tag
+targetEntityType: taxonomy_term
+bundle: web_skills
+mode: tag
+content: {  }
+hidden:
+  description: true
+  field_font_awesome_icon: true
+  field_logo_image: true

@@ -1,0 +1,10 @@
+uuid: a485fd5e-9fd5-4d34-8676-15c6ad0823d1
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.split_view
+label: 'Split View'
+targetEntityType: block_content
+cache: true

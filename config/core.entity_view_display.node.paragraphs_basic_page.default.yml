@@ -1,0 +1,33 @@
+uuid: 195c271c-4550-4d67-8135-3689938dbfb2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.paragraphs_basic_page.field_basic_page_content
+    - node.type.paragraphs_basic_page
+  module:
+    - ds
+    - entity_reference_revisions
+    - user
+id: node.paragraphs_basic_page.default
+targetEntityType: node
+bundle: paragraphs_basic_page
+mode: default
+content:
+  field_basic_page_content:
+    type: entity_reference_revisions_entity_view
+    weight: 101
+    label: visually_hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings:
+      ds:
+        ds_limit: ''
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

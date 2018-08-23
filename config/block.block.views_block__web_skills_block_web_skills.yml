@@ -1,0 +1,30 @@
+uuid: 2affc900-0e84-469f-996b-f0db6131c746
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.web_skills
+  module:
+    - system
+    - views
+  theme:
+    - tigris
+id: views_block__web_skills_block_web_skills
+theme: tigris
+region: content
+weight: -1
+provider: null
+plugin: 'views_block:web_skills-block_web_skills'
+settings:
+  id: 'views_block:web_skills-block_web_skills'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

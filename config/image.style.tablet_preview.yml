@@ -1,0 +1,23 @@
+uuid: ac6f9ba8-009a-42d2-8b95-d9b12c246fef
+langcode: en
+status: true
+dependencies: {  }
+name: tablet_preview
+label: 'Tablet Preview'
+effects:
+  d45b191b-eb87-4d1f-a0d8-a4b832b7cb75:
+    uuid: d45b191b-eb87-4d1f-a0d8-a4b832b7cb75
+    id: image_crop
+    weight: -9
+    data:
+      width: 750
+      height: 400
+      anchor: center-top
+  182d199b-7a75-4fe6-a91d-e88177f419f6:
+    uuid: 182d199b-7a75-4fe6-a91d-e88177f419f6
+    id: image_scale
+    weight: -10
+    data:
+      width: 750
+      height: null
+      upscale: true

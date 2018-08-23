@@ -1,0 +1,42 @@
+uuid: e87b0ba1-4e4d-4665-bead-fbcc290e60d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.web_skills.field_font_awesome_icon
+    - field.field.taxonomy_term.web_skills.field_logo_image
+    - taxonomy.vocabulary.web_skills
+  module:
+    - fontawesome
+    - image
+    - text
+id: taxonomy_term.web_skills.default
+targetEntityType: taxonomy_term
+bundle: web_skills
+mode: default
+content:
+  description:
+    label: visually_hidden
+    type: text_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_font_awesome_icon:
+    weight: 0
+    label: visually_hidden
+    settings:
+      layers: false
+    third_party_settings: {  }
+    type: fontawesome_icon_formatter
+    region: content
+  field_logo_image:
+    weight: 2
+    label: visually_hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden: {  }
