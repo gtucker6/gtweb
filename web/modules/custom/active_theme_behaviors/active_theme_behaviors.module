@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains active_theme_behaviors.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function active_theme_behaviors_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the active_theme_behaviors module.
+    case 'help.page.active_theme_behaviors':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Theme Behaviors working on the active theme') . '</p>';
+      return $output;
+
+    default:
+  }
+}

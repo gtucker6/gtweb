@@ -1,0 +1,78 @@
+<?php
+
+/**
+ * @file
+ * View mode Selector Module File.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\block\Entity\Block;
+use Drupal\block_content\Entity\BlockContent;
+use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function vmode_selector_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  if (isset($variables['elements']['content']['#view_mode'])) {
+    $suggestions[] = 'block__' . $variables['elements']['#base_plugin_id'] . '__' . $variables['elements']['content']['#view_mode'];
+  }
+
+}
+
+/**
+ * Implements hook_entity_view_mode_alter().
+ */
+function vmode_selector_entity_view_mode_alter(&$view_mode, EntityInterface $entity, array $context) {
+  $entity_fields = $entity->getFields();
+  foreach ($entity_fields as $item) {
+    $field_type = $item->getFieldDefinition()->getType();
+    if ($field_type === "vmode_selector_list") {
+      $view_mode = $item->getString();
+      $context['view_mode'] = $view_mode;
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function vmode_selector_form_block_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (isset($form['id']['#default_value'])) {
+    $block = Block::load($form['id']['#default_value']);
+    if ($block !== NULL && $block instanceof BlockContent) {
+      $content_properties = explode(':', $block->getPluginId());
+      if (array_key_exists(1, $content_properties)) {
+        $block_content = \Drupal::service('entity.repository')->loadEntityByUuid($content_properties[0], $content_properties[1]);
+        if ($block_content instanceof BlockContent) {
+          $values = $block_content->getFields();
+          $vmode_field_name = '';
+          $has_vmode_field = FALSE;
+          foreach ($values as $key => $item) {
+            $field_type = $values[$key];
+            if (!$field_type instanceof FieldItemListInterface) {
+              continue;
+            }
+            if (!$field_type->getFieldDefinition()->getType() === "vmode_selector_list") {
+              continue;
+            }
+            else {
+              $has_vmode_field = TRUE;
+              $vmode_field_name = $field_type->getName();
+            }
+          }
+          if ($has_vmode_field) {
+            unset($form['settings']['view_mode']);
+            $form['settings']['view_mode'] = [
+              '#type' => 'item',
+              '#title' => 'View Mode Selector Field Value',
+              '#plain_text' => ($vmode_field_name != '') ? $block_content->get($vmode_field_name)->getString() : '',
+            ];
+          }
+        }
+      }
+
+    }
+  }
+}

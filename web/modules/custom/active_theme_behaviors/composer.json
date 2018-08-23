@@ -1,0 +1,14 @@
+{
+  "name": "drupal/active_theme_behaviors",
+  "type": "drupal-module",
+  "description": "Theme Behaviors working on the active theme",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/active_theme_behaviors",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/active_theme_behaviors",
+    "source": "http://cgit.drupalcode.org/active_theme_behaviors"
+  },
+  "require": { }
+}
