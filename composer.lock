@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "01b5ae420e032e069ff0485e71562f26",
+    "content-hash": "9d047800bc226c8ef8aee2ae71e7ee77",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2341,6 +2341,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Views relationship method langcode update": "https://www.drupal.org/files/issues/declaration_parent_compatibility_2.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
