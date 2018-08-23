@@ -116,6 +116,11 @@
                 ".htaccess",
                 "web.config"
             ]
+        },
+        "patches": {
+            "drupal/core": {
+                "Layout Discovery layouts deprecation": "https://www.drupal.org/files/issues/2018-07-04/drupal_layout_discovery-2911996-15.patch"
+            }
         }
     },
     "config": {
