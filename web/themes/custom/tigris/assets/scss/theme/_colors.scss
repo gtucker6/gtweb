@@ -84,7 +84,7 @@
         background: $accent-color;
     }
     &:nth-child(2n+0) {
-        background: $main-hover-color
+        background: $accent-hover-color;
     }
     @media (min-width: $breakpoint-min-sm) and (max-width: $breakpoint-max-sm) {
         &:nth-child(4), &:nth-child(5) {

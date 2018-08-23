@@ -9,7 +9,7 @@
     }
     &.layout--twocol {
         &.right-images-preview {
-            @media screen and (max-width: $breakpoint-max-md) {
+            @media screen and (max-width: $breakpoint-max-sm) {
                 .layout__region--first {
                     order: 2;
                 }
@@ -20,7 +20,7 @@
             .layout__region {
                 &.layout__region--first {
                     padding: $spacing;
-                    .field {
+                    .field:not(.field--name-node-title) {
                         margin: 10px 0;
                     }
                 }
@@ -30,7 +30,7 @@
             .layout__region {
                 &.layout__region--second {
                     padding: $spacing;
-                    .field {
+                    .field:not(.field--name-node-title) {
                         margin: 10px 0;
                     }
                 }

@@ -3,11 +3,6 @@
     padding: $spacing;
     margin: $spacing;
   }
-  &.block-menu {
-    &#block-professionalprofiles {
-
-    }
-  }
   &.block--type-introduction-cta {
     max-width: 800px;
     min-height: 300px;
@@ -24,7 +19,8 @@
           &:first-child {
             margin-right: $spacing;
             a:not(.btn) {
-              color: $dark-white;
+              color: #fff;
+              font-weight: bolder;
               &:not(:hover) {
                 background-color: $main-color;
               }
