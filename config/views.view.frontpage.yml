@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.featured
     - core.entity_view_mode.node.rss
+    - core.entity_view_mode.node.teaser
   module:
     - node
     - user
@@ -196,7 +196,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: featured
+          view_mode: teaser
       sorts:
         sticky:
           admin_label: ''
@@ -295,6 +295,21 @@ display:
       title: ''
       defaults:
         title: false
+        header: false
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: 'Featured Work'
+          empty: false
+          tokenize: false
+          content:
+            value: '<h2 class=''page-header text-center''> Featured Work </h2>'
+            format: full_html
+          plugin_id: text
     display_plugin: page
     display_title: Page
     id: page_1

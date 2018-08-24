@@ -161,7 +161,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      title: 'My Skills'
+      title: 'Some of my Skills'
       defaults:
         title: false
     cache_metadata:

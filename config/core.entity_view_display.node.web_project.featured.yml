@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.featured
+    - field.field.node.web_project.field_company
     - field.field.node.web_project.field_preview_desktop
     - field.field.node.web_project.field_preview_mobile
     - field.field.node.web_project.field_preview_tablet
@@ -25,18 +26,7 @@ third_party_settings:
       library: layout_discovery/twocol
       disable_css: false
       entity_classes: all_classes
-      settings:
-        wrappers:
-          header: div
-          left: div
-          right: div
-          footer: div
-        outer_wrapper: div
-        attributes: ''
-        link_attribute: ''
-        link_custom: ''
-        classes:
-          layout_class: {  }
+      settings: {  }
     regions:
       first:
         - group_preview
@@ -115,6 +105,7 @@ content:
       ds:
         ds_limit: ''
 hidden:
+  field_company: true
   field_preview_mobile: true
   field_preview_tablet: true
   field_project_description: true
