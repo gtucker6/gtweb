@@ -36,6 +36,7 @@ module:
   layout_discovery: 0
   libraries: 0
   link: 0
+  link_class: 0
   media: 0
   menu_ui: 0
   node: 0

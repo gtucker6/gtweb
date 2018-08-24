@@ -7,7 +7,7 @@ dependencies:
     - field.field.block_content.introduction_cta.body
     - field.field.block_content.introduction_cta.field_cta_button
   module:
-    - link
+    - link_class
     - text
 id: block_content.introduction_cta.default
 targetEntityType: block_content
@@ -28,8 +28,11 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
+      link_class_mode: select_class
+      link_class_force: ''
+      link_class_select: "btn btn-main| Main color\nbtn btn-accent| Accent color"
     third_party_settings: {  }
-    type: link_default
+    type: link_class_field_widget
     region: content
   info:
     type: string_textfield
