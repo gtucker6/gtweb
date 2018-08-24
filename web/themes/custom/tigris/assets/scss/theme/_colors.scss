@@ -12,16 +12,13 @@
 .btn-main:hover {
     background: $main-hover-color;
 }
-.text-color--main {
-    color: $main-hover-color;
-}
 /** End Main Colors. */
 
 /** Accent Colors. */
 .bg-accent, .btn-accent:not(:hover) {
     background-color: $accent-color;
 }
-.link-color--accent a:hover:not(.btn):not(.badge), .text-color--accent {
+.link-color--accent a:not(:hover):not(.btn):not(.badge), .text-color--accent {
     color: $accent-color;
 }
 .link-color--accent a:hover:not(.btn):not(.badge), .link-color--accent a.navbar-brand:hover, a.link-color--accent:hover:not(.btn):not(.badge) {
@@ -84,7 +81,7 @@
         background: $accent-color;
     }
     &:nth-child(2n+0) {
-        background: $accent-hover-color;
+        background: $main-color;
     }
     @media (min-width: $breakpoint-min-sm) and (max-width: $breakpoint-max-sm) {
         &:nth-child(4), &:nth-child(5) {
