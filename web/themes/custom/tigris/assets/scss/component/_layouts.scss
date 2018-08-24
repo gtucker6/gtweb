@@ -1,13 +1,21 @@
 .layout {
-    margin: $spacing 0;
     &.layout--onecol {
         padding: $spacing;
        &.layout--taxonomy_term.full-description {
            min-height: 300px;
-           margin-top: $spacing;
+           height: 100%;
+           .layout__region {
+               height: 100%;
+               display: flex;
+               flex-flow: row wrap;
+               .field--name-taxonomy-term-link {
+                   align-self: flex-end;
+               }
+           }
        }
     }
     &.layout--twocol {
+        margin: $spacing 0;
         &.right-images-preview {
             @media screen and (max-width: $breakpoint-max-sm) {
                 .layout__region--first {

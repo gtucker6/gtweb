@@ -11,6 +11,13 @@ and open the template in the editor.
     main {
         background-color: #e9ecef;
     }
+    .webform-progress-tracker {
+        > .is-active {
+            .progress-marker {
+                background-color: $accent-color;
+            }
+        }
+    }
 }
 .webform-submission-form {
     padding: $spacing;
@@ -31,6 +38,9 @@ and open the template in the editor.
     label {
         font-weight: bold;
     }
+    select, input {
+        max-width: 100%;
+    }
     .webform-flexbox {
         margin: $spacing 0;
         padding: $spacing 0;
@@ -43,8 +53,6 @@ and open the template in the editor.
             .required {
                 .form-required {
                 }
-            }
-            select {
             }
         }
     }
