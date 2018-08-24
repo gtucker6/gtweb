@@ -42,47 +42,26 @@
  * @see html.html.twig
  */
 #}
-<div class="layout-container">
-    {% if page.primary_menu %}
-	    {% set nav_classes = ['fixed-top', 'navbar-custom', 'navbar-front'] %}
-  <nav class="navbar navbar-expand-lg navbar-dark link-color--main {{ nav_classes|join(' ') }}">
-       {{ page.primary_menu }}
-  </nav>
-  {% endif %}
-
-  {% if page.header %}
-      {% set header_classes = [] %}
-      {% set overlay_classes = [] %}
-      {% set header_classes = header_classes|merge(['hero', 'hero--intro', 'header--nav-fixed-top']) %}
-      {% set overlay_classes = overlay_classes|merge(['overlay', 'overlay--dark']) %}
-      <header class="text-color--white {{ header_classes|join(' ') }}">
-          <div class="{{ overlay_classes|join(' ') }}">
-              <div class="container-fluid">
-                  <div class="row justify-content-center align-items-center">
-                      {{ page.header }}
-                  </div>
-              </div>
-          </div>
-    </header>
-  {% endif %}
-
-  {% if page.secondary_menu %}
-          <div class="link-color--main">
-    {{ page.secondary_menu }}
-          </div>
-  {% endif %}
-
-  {% if page.breadcrumb or page.highlighted %}
-      <div class="link-color--main">
-          {{ page.breadcrumb }}
-          {{ page.highlighted }}
-      </div>
-  {% endif %}
-  {{ page.help }}
-
-    <main role="main" class="p--default pt pb bg-white">
-      <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-      <div class="container-fluid">
+{% extends 'page.html.twig' %}
+{% block header %}
+    {% if page.header %}
+        {% set header_classes = [] %}
+        {% set overlay_classes = [] %}
+        {% set header_classes = header_classes|merge(['hero', 'hero--intro', 'header--nav-fixed-top']) %}
+        {% set overlay_classes = overlay_classes|merge(['overlay', 'overlay--dark']) %}
+        <header class="text-color--white {{ header_classes|join(' ') }}">
+            <div class="{{ overlay_classes|join(' ') }}">
+                <div class="container-fluid">
+                    <div class="row justify-content-center align-items-center">
+                        {{ page.header }}
+                    </div>
+                </div>
+            </div>
+        </header>
+    {% endif %}
+{% endblock %}
+{% block main %}
+    <div class="container-fluid">
         <div class="layout-content">
             {{ page.content }}
         </div>
@@ -98,15 +77,5 @@
                 {{ page.sidebar_second }}
             </aside>
         {% endif %}
-      </div>
-    </main>
-
-    {% if page.footer %}
-        <footer role="contentinfo" class="bg-dark link-color--main border-bottom border--main p--default pb pt text-color--light">
-            <div class="container">
-                {{ page.footer }}
-            </div>
-        </footer>
-    {% endif %}
-
-</div>
+    </div>
+{% endblock %}

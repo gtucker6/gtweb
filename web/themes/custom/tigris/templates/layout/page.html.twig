@@ -43,13 +43,16 @@
  */
 #}
 <div class="layout-container">
+  {% block nav %}
   {% if page.primary_menu %}
     {% set nav_classes = ['fixed-top', 'navbar', 'navbar-custom'] %}
     <nav class="navbar navbar-expand-lg navbar-dark link-color--main {{ nav_classes|join(' ') }}">
       {{ page.primary_menu }}
     </nav>
   {% endif %}
+  {% endblock %}
 
+  {% block header %}
   {% if page.header %}
       {% set header_classes = [] %}
       {% set overlay_classes = [] %}
@@ -67,6 +70,7 @@
           </div>
     </header>
   {% endif %}
+  {% endblock %}
 
   {% if page.secondary_menu %}
           <div class="link-color--main">
@@ -84,25 +88,28 @@
 
     <main role="main" class="p--default pt pb bg-white">
       <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-      <div class="container">
-        <div class="layout-content">
-            {{ page.content }}
-        </div>
+      {% block main %}
+          <div class="container">
+            <div class="layout-content">
+                {{ page.content }}
+            </div>
 
-        {% if page.sidebar_first %}
-            <aside class="layout-sidebar-first" role="complementary">
-                {{ page.sidebar_first }}
-            </aside>
-        {% endif %}
+            {% if page.sidebar_first %}
+                <aside class="layout-sidebar-first" role="complementary">
+                    {{ page.sidebar_first }}
+                </aside>
+            {% endif %}
 
-        {% if page.sidebar_second %}
-            <aside class="layout-sidebar-second" role="complementary">
-                {{ page.sidebar_second }}
-            </aside>
-        {% endif %}
-      </div>
+            {% if page.sidebar_second %}
+                <aside class="layout-sidebar-second" role="complementary">
+                    {{ page.sidebar_second }}
+                </aside>
+            {% endif %}
+          </div>
+      {% endblock %}
     </main>
 
+    {% block footer %}
     {% if page.footer %}
         <footer role="contentinfo" class="bg-dark link-color--main border-bottom border--main p--default pb pt text-color--light">
             <div class="container">
@@ -110,5 +117,5 @@
             </div>
         </footer>
     {% endif %}
-
+    {% endblock %}
 </div>
