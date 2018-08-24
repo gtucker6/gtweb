@@ -17,6 +17,12 @@
     }
     &.layout--twocol {
         margin: $spacing 0;
+        .d-flex {
+            > .field {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
         &.right-images-preview {
             @media screen and (max-width: $breakpoint-max-sm) {
                 .layout__region--first {
@@ -30,17 +36,19 @@
                 &.layout__region--first {
                     padding: $spacing;
                     .field:not(.field--name-node-title) {
-                        margin: 10px 0;
+                        margin-top: 10px;
+                        margin-bottom: 10px;
                     }
                 }
             }
         }
-        &.left-images-preview, &.featured {
+        &.left-images-preview, &.featured, &.teaser {
             .layout__region {
                 &.layout__region--second {
                     padding: $spacing;
                     .field:not(.field--name-node-title) {
-                        margin: 10px 0;
+                        margin-top: 10px;
+                        margin-bottom: 10px;
                     }
                 }
             }
