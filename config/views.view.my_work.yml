@@ -193,9 +193,9 @@ display:
       style:
         type: default
         options:
-          row_class: ''
+          grouping: {  }
+          row_class: col-12
           default_row_class: false
-          uses_fields: false
       defaults:
         style: false
         row: false
