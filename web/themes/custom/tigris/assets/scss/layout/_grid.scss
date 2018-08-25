@@ -1,9 +1,16 @@
 .container, .container-fluid {
-  .row {
-    margin: 0;
-  }
   .col {
-    margin: 0;
-    padding: 0;
+    //margin: 0;
+    //padding: 0;
+  }
+  .row, .d-flex {
+    > * {
+      max-width: 100%;
+    }
+    @media(max-width: 330px) {
+      &:not(.item-logo) {
+        flex-flow: column !important;
+      }
+    }
   }
 }

@@ -24,7 +24,6 @@
 {% if content %}
 
   <div{{ attributes.addClass(classes) }}>
-    <div class="row">
 	    {% block col_top %}
 		    {% if content.top %}
           <div {{ region_attributes.top.addClass('layout__region', 'layout__region--top', 'col-12') }}>
@@ -55,6 +54,5 @@
           </div>
 		    {% endif %}
 	    {% endblock %}
-    </div>
   </div>
 {% endif %}

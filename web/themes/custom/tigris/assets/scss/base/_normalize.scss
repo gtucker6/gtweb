@@ -7,6 +7,9 @@ body {
   overflow-y: scroll;
   height: 100%;
   width: 100%;
+  > div {
+    overflow-x: hidden;
+  }
 }
 main {
   min-height: 80vh;
