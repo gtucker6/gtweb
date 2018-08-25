@@ -14,9 +14,6 @@
         } else {
           $(document.body).css('margin-top', $mainNav.outerHeight() + 'px');
         }
-        if(!$(document.body).hasClass('path-frontpage')) {
-          $(context).find('.layout-container').css('margin-top', $mainNav.outerHeight() + 'px');
-        }
       });
     }
   $(window).on('resize', function(){
