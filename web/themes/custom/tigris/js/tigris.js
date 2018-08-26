@@ -11,9 +11,8 @@
         if($(document.body).hasClass('toolbar-fixed')) {
           // Position nav away from toolbar
           $(this).css('top', $toolbar.outerHeight() + "px");
-        } else {
-          $(document.body).css('margin-top', $mainNav.outerHeight() + 'px');
         }
+        $(document.body).css('margin-top', $mainNav.outerHeight() + 'px');
       });
     }
   $(window).on('resize', function(){
