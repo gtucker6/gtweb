@@ -12,11 +12,14 @@ and open the template in the editor.
         background-color: #e9ecef;
     }
     .webform-progress-tracker {
-        > .is-active {
+        > .is-active, > .is-active:hover {
             .progress-marker {
                 background-color: $accent-color;
             }
         }
+    }
+    textarea, input:not(.form-submit) {
+        border-color: rgb(169, 169, 169);
     }
 }
 .webform-submission-form {
