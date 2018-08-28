@@ -1,6 +1,6 @@
 .path-frontpage{
-  header {
-    background: url("../images/track.jpeg") no-repeat center fixed;
+  header.loaded {
+    background: url("../images/track-min.jpeg") no-repeat center fixed;
     background-size: cover;
   }
   h2 {

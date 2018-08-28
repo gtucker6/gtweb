@@ -4,6 +4,13 @@
             positionMainNav('nav.fixed-top', context);
         }
     };
+    Drupal.behaviors.transitionImages = {
+      attach: function (context, settings) {
+        $(window).on('load', function() {
+          $(context).find('.hero').addClass('loaded');
+        });
+      }
+    };
     function positionMainNav(nav, context) {
       $(nav, context).once('fixedNavbars').each(function(){
         let $mainNav = $(this);
@@ -15,7 +22,7 @@
         $(document.body).css('margin-top', $mainNav.outerHeight() + 'px');
       });
     }
-  $(window).on('resize', function(){
+  $(window).on('resize', function() {
     positionMainNav('nav.fixed-top', document.body);
   });
 })(jQuery, Drupal, this, this.document);
