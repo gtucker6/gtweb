@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_basic_page_content
     - node.type.paragraphs_basic_page
     - paragraphs.paragraphs_type.bp_carousel
+    - paragraphs.paragraphs_type.bp_image
     - paragraphs.paragraphs_type.media
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.text_image
@@ -32,6 +33,7 @@ settings:
       text_image: text_image
       text_images: text_images
       bp_carousel: bp_carousel
+      bp_image: bp_image
     target_bundles_drag_drop:
       preview:
         weight: 7
@@ -54,33 +56,18 @@ settings:
       text_images:
         enabled: true
         weight: 12
-      bp_blank:
+      font_awesome_icon:
         weight: 20
         enabled: false
-      bp_block:
+      font_awesome_item:
         weight: 21
         enabled: false
       bp_carousel:
         enabled: true
         weight: 22
-      bp_columns:
-        weight: 23
-        enabled: false
-      bp_columns_three_uneven:
-        weight: 24
-        enabled: false
-      bp_columns_two_uneven:
-        weight: 25
-        enabled: false
-      bp_column_wrapper:
-        weight: 26
-        enabled: false
       bp_image:
+        enabled: true
         weight: 27
-        enabled: false
-      bp_simple:
-        weight: 28
-        enabled: false
       bp_tabs:
         weight: 29
         enabled: false
