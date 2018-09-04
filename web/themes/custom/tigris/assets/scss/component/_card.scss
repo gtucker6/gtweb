@@ -8,3 +8,19 @@
 .card--default {
   margin: $spacing;
 }
+.card {
+  &.card-default {
+    border-color: $main-hover-color;
+    background-color: $main-color;
+    color: $light-white;
+    a {
+      color: $light-white;
+    }
+  }
+}
+.clickable-card:hover {
+  text-decoration: none;
+  .card {
+    background-color: $main-hover-color;
+  }
+}

@@ -1,17 +1,19 @@
+.bg-circle {
+    height: 250px;
+    width: 250px;
+    border: 1px solid;
+    border-radius: 50%;
+}
 .layout {
     &.layout--onecol {
         padding: $spacing;
-       &.layout--taxonomy_term.full-description {
-           min-height: 300px;
+       &.layout--taxonomy_term.featured {
            height: 100%;
-           .layout__region {
-               height: 100%;
+           .layout__region--content {
                display: flex;
                flex-flow: row wrap;
-               .field--name-taxonomy-term-link {
-                   align-self: flex-end;
-                   flex: 100%;
-               }
+               justify-content: center;
+               height: 100%;
            }
        }
     }
@@ -53,5 +55,11 @@
                 }
             }
         }
+    }
+}
+
+@media screen and (min-width: 40em) {
+    .layout--twocol > .layout__region--first, .layout--twocol > .layout__region--second {
+        flex: 0 0 100%;
     }
 }

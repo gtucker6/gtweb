@@ -1,11 +1,10 @@
 .block {
   &.block-block-content {
     padding: $spacing;
-    //margin: $spacing;
   }
   &.block--type-introduction-cta {
-    width: 800px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 800px;
     min-height: 300px;
     display: flex;
     flex-flow: row wrap;
