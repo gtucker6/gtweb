@@ -7,7 +7,7 @@
     margin: 25px 0;
   }
 }
-body:not(.path-frontpage) {
+body:not(.path-frontpage):not(.path-taxonomy) {
   h1 {
     text-align: center;
     margin-bottom: 0;
