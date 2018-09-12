@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Bootstrap Paragraphs template for Entity Reference Revisions Field.
+ * Overrides field template to add column class based on loop length.
  *
  * To override output, copy the "field.html.twig" from the templates directory
  * to your theme's directory and customize it, just like customizing other
@@ -33,29 +33,12 @@
  * - field_type: The type of the field.
  * - label_display: The display settings for the label.
  *
- * @ingroup templates
- *
  * @see template_preprocess_field()
  */
 #}
-{%
-  set title_classes = [
-    'field--label',
-    label_display == 'visually_hidden' ? 'sr-only',
-  ]
-%}
 
-{% if label_hidden %}
-  {% for item in items %}
+{%- for item in items -%}
+  <div class="paragraph--type--bp-columns__{{ loop.length }}col">
     <div{{ item.attributes }}>{{ item.content }}</div>
-  {% endfor %}
-{% else %}
-  <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
-  {% for item in items %}
-    {% if item.attributes|length  == 0 %}
-      {{ item.content }}
-    {% else %}
-      <div{{ item.attributes }}>{{ item.content }}</div>
-    {% endif %}
-  {% endfor %}
-{% endif %}
+  </div>
+{%- endfor -%}

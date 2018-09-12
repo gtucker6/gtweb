@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Bootstrap Paragraphs template for displaying a Carousel.
+ * Bootstrap Paragraphs template for displaying an Accordion (Collapse).
  *
  * Available variables:
  * - paragraph: Full paragraph entity.
@@ -118,23 +118,6 @@
   %}
 {% endif %}
 
-{# Renders Slide Interval field. #}
-{# Converts database values to classes supplied by template. #}
-{% if content.bp_slide_interval|render %}
-  {% set slide_interval = content.bp_slide_interval['#items'].getString() %}
-  {% set slide_interval_classes = [
-    'false' == slide_interval ? 'false',
-    '1000' == slide_interval ? '1000',
-    '2000' == slide_interval ? '2000',
-    '3000' == slide_interval ? '3000',
-    '4000' == slide_interval ? '4000',
-    '5000' == slide_interval ? '5000',
-    '6000' == slide_interval ? '6000',
-    '7000' == slide_interval ? '7000',
-  ]
-  %}
-{% endif %}
-
 {# The template default set classes. #}
 {# Sets Paragraph ID as class. #}
 {%
@@ -143,8 +126,8 @@ set classes = [
 'paragraph--type--' ~ paragraph.bundle|clean_class,
 view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 'paragraph--id--' ~ paragraph.id.value,
-'carousel',
-'slide',
+accordion_active ? 'paragraph--accordion_active--',
+ 'accordian',
 ]
 %}
 
@@ -160,35 +143,52 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   {% set classes = classes|merge(layout_background_classes) %}
 {% endif %}
 
-{# Sets Unique ID for Carousel from Paragraph ID. #}
-{% set paragraph_id = 'myCarousel-' ~ paragraph.id.value %}
+{# Sets Unique ID for Accordion from Paragraph ID. #}
+{% set paragraph_id = 'accordion-' ~ paragraph.id.value %}
 
-{# Prints Carousel template. #}
-{{ content|without('bp_slide_content','bp_slide_interval', 'bp_width', 'bp_background') }}
-<div{{ attributes.addClass(classes).setAttribute('id', paragraph_id).setAttribute('data-interval', slide_interval_classes).setAttribute('data-ride', 'carousel') }}>
-  {{ title_suffix }}
-  <ol class="carousel-indicators">
-    {% for key, item in content.bp_slide_content if key|first != '#' %}
-      <li class="{% if loop.first %}active{% endif %}" data-slide-to="{{ key }}" data-target="#{{ paragraph_id }}"></li>
-    {% endfor %}
-  </ol>
-  <div class="carousel-inner" role="list">
-    {% for key, item in content.bp_slide_content if key|first != '#' %}
-      <div class="paragraph--layout-slideshow__slide-{{ key + 1 }} item carousel-item{% if loop.first %} active{% endif %}" role="listitem">
-        {{ item|without('caption') }}
-        <div class="carousel-caption d-none d-md-block">
-          <p>{{ item.caption }}</p>
+{# Prints Accordion template. #}
+<div class="paragraph--bp-accordion-container">
+  {% if content.bp_accordion_expand['#items'].getString() %}
+    <button type="button" class="btn btn-primary bp-accordion-button" title="{{ 'Click to expand all accordions in this section.'|trans }}">
+      {{ 'Expand All'|trans }}
+    </button>
+  {% endif %}
+  <div{{ attributes.addClass(classes).setAttribute('id', paragraph_id) }} role="tablist" aria-multiselectable="true">
+      {{ title_suffix }}
+        {% if content.bp_show_indicators['#items'].getString() %}
+          {% set indicator_class = 'display' %}
+        {% else %}
+          {% set indicator_class = 'normal' %}
+        {%  endif %}
+        {# Loop through all of the accordion sections. #}
+        {% for key, item in content.bp_accordion_section if key|first != '#' %}
+            {{ devel_breakpoint() }}
+          {# Set variables if accordion should be shown. #}
+          {% if item['#paragraph'].bp_show_button.value %}
+            {% set show_accordion = ' in' %}
+            {% set aria = 'true' %}
+          {% else %}
+            {% set show_accordion = '' %}
+            {% set aria = 'false' %}
+          {% endif %}
+    <div class="card">
+          <div class="card-header" id="heading-{{ paragraph_id }}-{{ key + 1 }}">
+            <div class="panel-title">
+              <a class="{{ (indicator_class) }}" role="button" data-toggle="collapse" data-target="#collapse-{{ paragraph_id }}-{{ key + 1 }}" aria-expanded="false" href="#collapse-{{ paragraph_id }}-{{ key + 1 }}" aria-controls="collapse-{{ paragraph_id }}-{{ key + 1 }}">
+                {# Print the accordion section title. #}
+                {{ item['#paragraph'].bp_accordion_section_title.value }}
+              </a>
+            </div>
+          </div>
+      <div id="collapse-{{ paragraph_id }}-{{ key + 1 }}" class="card-block panel-collapse collapse {{ show_accordion }}" data-parent="#{{ paragraph_id  }}" aria-labelledby="heading-{{ paragraph_id }}-{{ key + 1 }}">
+          {# Loop through all of the accordion section bodies. #}
+        <div class="card-body">
+            {{ item }}
         </div>
       </div>
-    {% endfor %}
-  </div>
-  <a class="carousel-control-prev" href="#{{ paragraph_id }}" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#{{ paragraph_id }}" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
 
+    </div>
+        {% endfor %}
+      </div>
+  </div>
+</div>
