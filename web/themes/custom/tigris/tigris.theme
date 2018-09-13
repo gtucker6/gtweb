@@ -1,13 +1,13 @@
 <?php
 
-use Drupal\paragraphs\Entity\Paragraph;
-use Drupal\media\Entity\Media;
-use Drupal\Core\Field\FieldItemListInterface;
-use Drupal\image\Plugin\Field\FieldType\ImageItem;
 /**
  * @file
  * Tigris theme hooks.
  */
+
+use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\Core\Url;
 
 /**
  * Implements hook_preprocess_HOOK().
@@ -34,40 +34,61 @@ function tigris_preprocess_html(&$variables) {
  * Implements hook_preprocess_HOOK() for block.html.twig.
  */
 function tigris_preprocess_block(&$variables) {
-  // adding custom attribute class for block
+  // Adding block type class for block.
   if ($variables['elements']['#base_plugin_id'] === 'block_content') {
     $blockType = strtr($variables['content']['#block_content']->bundle(), '_', '-');
     $variables['attributes']['class'][] = 'block--type-' . $blockType;
   }
 }
 
-function tigris_preprocess_paragraph__bp_carousel(&$variables) {
- $paragraph = $variables['elements']['#paragraph'];
- $slide_content = $variables['content']['bp_slide_content'];
- if (!empty($slide_content) && $paragraph instanceof Paragraph) {
-   foreach ($slide_content as $key => $value) {
-     if (!is_int($key) || !is_array($slide_content[$key])) {
-       continue;
-     }
-     $slide = $slide_content[$key]['#paragraph'];
-     if (!$slide instanceof Paragraph) {
-       continue;
-     }
-     $caption_field = $slide->get('field_description')->view();
-     $caption_field['#label_display'] = 'hidden';
-     $slide->set('field_description', NULL);
-     unset($field_description);
-     $variables['content']['bp_slide_content'][$key]['caption'] = $caption_field;
-   }
- }
+/**
+ * Implements hook_preprocess_HOOK() for paragraph__section.html.twig.
+ */
+function tigris_preprocess_paragraph__section(&$variables) {
+  if (!empty($variables['elements']['#paragraph'])) {
+    /** @var Drupal\paragraphs\Entity\Paragraph $paragraph */
+    $paragraph = $variables['elements']['#paragraph'];
+    $heading_type = $paragraph->toArray()['field_section_heading_type'];
+    if (!empty($heading_type[0])) {
+      $variables['content']['field_section_heading'][0]['#template'] = '<' . $heading_type[0]['value'] . '>' .
+        $variables['content']['field_section_heading'][0]['#template'] .
+        '</' . $heading_type[0]['value'] . '>';
+    }
+  }
 }
 
+/**
+ * Implements hook_preprocess_HOOK() for paragraph__bp_carousel.html.twig.
+ */
+function tigris_preprocess_paragraph__bp_carousel(&$variables) {
+  $paragraph = $variables['elements']['#paragraph'];
+  $slide_content = $variables['content']['bp_slide_content'];
+  if (!empty($slide_content) && $paragraph instanceof Paragraph) {
+    foreach ($slide_content as $key => $value) {
+      if (!is_int($key) || !is_array($slide_content[$key])) {
+        continue;
+      }
+      $slide = $slide_content[$key]['#paragraph'];
+      if (!$slide instanceof Paragraph) {
+        continue;
+      }
+      $caption_field = $slide->get('field_description')->view();
+      $caption_field['#label_display'] = 'hidden';
+      $slide->set('field_description', NULL);
+      $variables['content']['bp_slide_content'][$key]['caption'] = $caption_field;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for layout__onecol__taxonomy_term.html.twig.
+ */
 function tigris_preprocess_layout__onecol__taxonomy_term($variables) {
   if ($variables['content']['#bundle'] === 'web_skills') {
     $term = $variables['content']['#taxonomy_term'];
-    if ($term instanceof \Drupal\taxonomy\Entity\Term) {
+    if ($term instanceof Term) {
       $safe_name = str_replace(' ', '-', strtolower($term->getName()));
-      $new_url = \Drupal\Core\Url::fromUserInput('/skills/' . $safe_name);
+      $new_url = Url::fromUserInput('/skills/' . $safe_name);
       $variables['content']['content']['taxonomy_term_link'][0][0]['#context']['entity_url'] = $new_url;
     }
   }
