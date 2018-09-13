@@ -15,7 +15,7 @@
   padding-left: 0;
 }
 
-section.paragraph, .previews {
+[class*="paragraph--width--"] {
   margin: 0 auto;
 }
 .paragraph--width--tiny {
