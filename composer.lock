@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9d047800bc226c8ef8aee2ae71e7ee77",
+    "content-hash": "31cdcfe0e6f6bbdf95379c7b7f1f3e1c",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1425,64 +1425,6 @@
             }
         },
         {
-            "name": "drupal/bootstrap_paragraphs",
-            "version": "2.0.0-beta5",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupal.org/project/bootstrap_paragraphs",
-                "reference": "8.x-2.0-beta5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/bootstrap_paragraphs-8.x-2.0-beta5.zip",
-                "reference": "8.x-2.0-beta5",
-                "shasum": "d0f75fd3aa8800a967045e1de9b27179e52cda00"
-            },
-            "require": {
-                "drupal/core": "*",
-                "drupal/entity_reference_revisions": "*",
-                "drupal/paragraphs": "*",
-                "drupal/viewsreference": "*"
-            },
-            "require-dev": {
-                "drupal/contact_formatter": "*",
-                "drupal/paragraphs": "*"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-2.x": "2.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-2.0-beta5",
-                    "datestamp": "1531408721",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "albertski",
-                    "homepage": "https://www.drupal.org/user/1327432"
-                },
-                {
-                    "name": "thejimbirch",
-                    "homepage": "https://www.drupal.org/user/2507260"
-                }
-            ],
-            "description": "A suite of Paragraph bundles made with the Boostrap framework.",
-            "homepage": "https://www.drupal.org/project/bootstrap_paragraphs",
-            "support": {
-                "source": "http://cgit.drupalcode.org/bootstrap_paragraphs"
-            }
-        },
-        {
             "name": "drupal/config_direct_save",
             "version": "1.0.0",
             "source": {
@@ -2873,6 +2815,55 @@
             "homepage": "https://www.drupal.org/project/pathauto",
             "support": {
                 "source": "http://cgit.drupalcode.org/pathauto"
+            }
+        },
+        {
+            "name": "drupal/responsive_menu",
+            "version": "2.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/responsive_menu",
+                "reference": "8.x-2.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/responsive_menu-8.x-2.6.zip",
+                "reference": "8.x-2.6",
+                "shasum": "8dc4f4251ada211fad52aa9d0c02d50c4752d457"
+            },
+            "require": {
+                "drupal/core": "^8.4"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.6",
+                    "datestamp": "1515872884",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Tancredi D'Onofrio (tanc)",
+                    "homepage": "https://www.drupal.org/u/tanc",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Provides a javascript based off-canvas responsive menu with depth. At wider browser widths it provides a horizontal menu capable of drop downs and flyouts",
+            "homepage": "https://drupal.org/project/responsive_menu",
+            "support": {
+                "source": "https://cgit.drupalcode.org/responsive_menu",
+                "issues": "https://drupal.org/project/issues/responsive_menu"
             }
         },
         {
@@ -8367,7 +8358,6 @@
     "minimum-stability": "alpha",
     "stability-flags": {
         "drupal/better_exposed_filters": 15,
-        "drupal/bootstrap_paragraphs": 10,
         "drupal/contact_storage": 10,
         "drupal/simple_block": 10,
         "drupal/webform": 5
