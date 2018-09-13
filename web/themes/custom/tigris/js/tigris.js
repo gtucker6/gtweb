@@ -18,8 +18,10 @@
         if($(document.body).hasClass('toolbar-fixed')) {
           // Position nav away from toolbar
           $(this).css('top', $toolbar.outerHeight() + "px");
+
         }
-        $(document.body).css('margin-top', $mainNav.outerHeight() + 'px');
+        $(context).find('.layout-container').css('margin-top', $mainNav.outerHeight());
+        //
       });
     }
   $(window).on('resize', function() {
