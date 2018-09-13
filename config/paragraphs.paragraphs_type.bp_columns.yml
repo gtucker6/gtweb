@@ -1,0 +1,11 @@
+uuid: 1e97ee68-b12b-436d-a9fd-fe59a9ed4dd7
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: ZIqYoYeeg89FHoqWHTADdXPP-6bpFlyUg0HPB1iShSA
+id: bp_columns
+label: 'Columns (Equal)'
+icon_uuid: null
+description: null
+behavior_plugins: {  }

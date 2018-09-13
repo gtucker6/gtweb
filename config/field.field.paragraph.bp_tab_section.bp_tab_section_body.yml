@@ -1,13 +1,14 @@
-uuid: c4da90f7-f269-4445-97d4-4a0375d8c32f
+uuid: 2a084690-e34c-4fb9-a174-573f420ab3ec
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.bp_tab_section_body
+    - paragraphs.paragraphs_type.bp_accordion
     - paragraphs.paragraphs_type.bp_carousel
+    - paragraphs.paragraphs_type.bp_columns
     - paragraphs.paragraphs_type.bp_image
     - paragraphs.paragraphs_type.bp_tab_section
-    - paragraphs.paragraphs_type.bp_view
   module:
     - entity_reference_revisions
 _core:
@@ -27,8 +28,9 @@ settings:
   handler_settings:
     target_bundles:
       bp_image: bp_image
+      bp_accordion: bp_accordion
       bp_carousel: bp_carousel
-      bp_view: bp_view
+      bp_columns: bp_columns
     target_bundles_drag_drop:
       bp_simple:
         enabled: true

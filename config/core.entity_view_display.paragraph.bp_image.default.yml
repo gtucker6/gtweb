@@ -7,6 +7,7 @@ dependencies:
     - field.field.paragraph.bp_image.bp_image_field
     - field.field.paragraph.bp_image.bp_link
     - field.field.paragraph.bp_image.bp_width
+    - field.field.paragraph.bp_image.field_image_text
     - paragraphs.paragraphs_type.bp_image
   module:
     - image
@@ -36,7 +37,7 @@ content:
     type: image
     region: content
   bp_link:
-    weight: 3
+    weight: 4
     label: hidden
     settings:
       trim_length: null
@@ -53,6 +54,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: list_key
+    region: content
+  field_image_text:
+    weight: 3
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
 hidden:
   created: true

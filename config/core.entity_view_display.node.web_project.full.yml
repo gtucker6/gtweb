@@ -55,7 +55,7 @@ third_party_settings:
         effect: none
         speed: fast
         id: ''
-        classes: 'previews row'
+        classes: 'previews row paragraph--width--wide'
       label: Preview
 id: node.web_project.full
 targetEntityType: node

@@ -5,15 +5,13 @@ dependencies:
   config:
     - field.storage.paragraph.field_section
     - paragraphs.paragraphs_type.section
-    - paragraphs.paragraphs_type.subsection
-    - paragraphs.paragraphs_type.text
   module:
     - entity_reference_revisions
 id: paragraph.section.field_section
 field_name: field_section
 entity_type: paragraph
 bundle: section
-label: Section
+label: 'Section Content'
 description: ''
 required: false
 translatable: false
@@ -22,14 +20,9 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
-    target_bundles:
-      subsection: subsection
-      text: text
+    negate: 1
+    target_bundles: null
     target_bundles_drag_drop:
-      preview:
-        weight: 4
-        enabled: false
       section:
         weight: 5
         enabled: false
@@ -37,12 +30,39 @@ settings:
         weight: 6
         enabled: false
       subsection:
-        enabled: true
         weight: 7
+        enabled: false
       text:
-        enabled: true
         weight: 10
+        enabled: false
       text_image:
         weight: 11
+        enabled: false
+      bp_carousel:
+        weight: 13
+        enabled: false
+      bp_image:
+        weight: 14
+        enabled: false
+      bp_tabs:
+        weight: 15
+        enabled: false
+      bp_accordion:
+        weight: 16
+        enabled: false
+      bp_tab_section:
+        weight: 16
+        enabled: false
+      bp_accordion_section:
+        weight: 17
+        enabled: false
+      media:
+        weight: 18
+        enabled: false
+      bp_columns:
+        weight: 19
+        enabled: false
+      bp_modal:
+        weight: 22
         enabled: false
 field_type: entity_reference_revisions

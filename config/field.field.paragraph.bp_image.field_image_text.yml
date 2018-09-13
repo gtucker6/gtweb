@@ -1,0 +1,19 @@
+uuid: c1421f3d-05e5-48cb-95a0-eb962b89e8fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_text
+    - paragraphs.paragraphs_type.bp_image
+id: paragraph.bp_image.field_image_text
+field_name: field_image_text
+entity_type: paragraph
+bundle: bp_image
+label: 'Image Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

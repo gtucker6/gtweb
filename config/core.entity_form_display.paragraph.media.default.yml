@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.media.bp_width
     - field.field.paragraph.media.field_media_files
     - paragraphs.paragraphs_type.media
 id: paragraph.media.default
@@ -10,6 +11,12 @@ targetEntityType: paragraph
 bundle: media
 mode: default
 content:
+  bp_width:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_media_files:
     weight: 0
     settings: {  }

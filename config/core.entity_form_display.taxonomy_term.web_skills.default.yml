@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.taxonomy_term.web_skills.field_font_awesome_icon
     - field.field.taxonomy_term.web_skills.field_logo_image
+    - field.field.taxonomy_term.web_skills.field_years_experience
     - image.style.thumbnail
     - taxonomy.vocabulary.web_skills
   module:
@@ -38,6 +39,13 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+    region: content
+  field_years_experience:
+    weight: 33
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
     region: content
   name:
     type: string_textfield

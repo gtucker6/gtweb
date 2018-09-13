@@ -1,0 +1,21 @@
+uuid: 6da1cdc6-cfad-4f63-a040-e71e054d1717
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section_heading_type
+    - paragraphs.paragraphs_type.section
+  module:
+    - options
+id: paragraph.section.field_section_heading_type
+field_name: field_section_heading_type
+entity_type: paragraph
+bundle: section
+label: 'Section Heading Type'
+description: 'The type of heading element to use for this section.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

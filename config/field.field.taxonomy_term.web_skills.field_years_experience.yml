@@ -1,0 +1,23 @@
+uuid: 4bf4808b-2c89-4b47-88a0-56ff919ebaac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_years_experience
+    - taxonomy.vocabulary.web_skills
+id: taxonomy_term.web_skills.field_years_experience
+field_name: field_years_experience
+entity_type: taxonomy_term
+bundle: web_skills
+label: 'Years Experience'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

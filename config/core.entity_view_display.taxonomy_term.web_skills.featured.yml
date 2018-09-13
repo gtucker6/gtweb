@@ -1,0 +1,83 @@
+uuid: a22ff5a1-c015-4ebb-a86a-dd4e60362556
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.featured
+    - field.field.taxonomy_term.web_skills.field_font_awesome_icon
+    - field.field.taxonomy_term.web_skills.field_logo_image
+    - image.style.card
+    - taxonomy.vocabulary.web_skills
+  module:
+    - ds
+    - field_group
+    - fontawesome
+    - image
+third_party_settings:
+  ds:
+    layout:
+      id: layout__onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings: {  }
+    regions:
+      content:
+        - group_flex
+        - field_font_awesome_icon
+        - field_logo_image
+        - taxonomy_term_title
+    fields:
+      taxonomy_term_title:
+        plugin_id: taxonomy_term_title
+        weight: 23
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: h3
+          class: ''
+  field_group:
+    group_flex:
+      children:
+        - field_font_awesome_icon
+        - field_logo_image
+        - taxonomy_term_title
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        label: Flex
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'd-flex justify-content-center align-items-center align-content-center card w-100 card-default'
+      label: Flex
+id: taxonomy_term.web_skills.featured
+targetEntityType: taxonomy_term
+bundle: web_skills
+mode: featured
+content:
+  field_font_awesome_icon:
+    weight: 21
+    label: visually_hidden
+    settings:
+      layers: false
+    third_party_settings: {  }
+    type: fontawesome_icon_formatter
+    region: content
+  field_logo_image:
+    weight: 22
+    label: visually_hidden
+    settings:
+      image_style: card
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  description: true

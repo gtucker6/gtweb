@@ -88,11 +88,12 @@ content:
       image_link: content
     third_party_settings: {  }
   field_project_summary:
-    type: text_default
+    type: text_trimmed
     weight: 2
     region: second
     label: visually_hidden
-    settings: {  }
+    settings:
+      trim_length: 400
     third_party_settings: {  }
   field_web_skills:
     type: entity_reference_label

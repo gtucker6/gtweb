@@ -3,17 +3,36 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.section.bp_width
+    - field.field.paragraph.section.field_background_color
     - field.field.paragraph.section.field_section
+    - field.field.paragraph.section.field_section_heading
+    - field.field.paragraph.section.field_section_heading_type
     - field.field.paragraph.section.field_section_title
     - paragraphs.paragraphs_type.section
   module:
     - ds
     - entity_reference_revisions
+    - options
 id: paragraph.section.default
 targetEntityType: paragraph
 bundle: section
 mode: default
 content:
+  bp_width:
+    type: list_default
+    weight: 2
+    region: content
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_background_color:
+    type: list_default
+    weight: 3
+    region: content
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
   field_section:
     type: entity_reference_revisions_entity_view
     weight: 1
@@ -25,7 +44,7 @@ content:
       ds:
         ds_limit: ''
     region: content
-  field_section_title:
+  field_section_heading:
     weight: 0
     label: visually_hidden
     settings:
@@ -33,4 +52,6 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-hidden: {  }
+hidden:
+  field_section_heading_type: true
+  field_section_title: true

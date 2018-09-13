@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_article_content
     - node.type.article
-    - paragraphs.paragraphs_type.preview
     - paragraphs.paragraphs_type.section
     - paragraphs.paragraphs_type.text_images
   module:
@@ -25,7 +24,6 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      preview: preview
       section: section
       text_images: text_images
     target_bundles_drag_drop:

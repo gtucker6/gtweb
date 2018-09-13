@@ -3,30 +3,78 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.section.bp_width
+    - field.field.paragraph.section.field_background_color
     - field.field.paragraph.section.field_section
+    - field.field.paragraph.section.field_section_heading
+    - field.field.paragraph.section.field_section_heading_type
     - field.field.paragraph.section.field_section_title
     - paragraphs.paragraphs_type.section
   module:
+    - field_group
     - paragraphs
+third_party_settings:
+  field_group:
+    group_section_heading_settings:
+      children:
+        - field_section_heading_type
+        - field_section_title
+        - field_section_heading
+      parent_name: ''
+      weight: 2
+      format_type: fieldset
+      format_settings:
+        label: 'Section Heading Settings'
+        description: ''
+        required_fields: true
+        id: ''
+        classes: 'form-section-heading-settings d-flex'
+      label: 'Section Heading Settings'
 id: paragraph.section.default
 targetEntityType: paragraph
 bundle: section
 mode: default
 content:
+  bp_width:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_background_color:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_section:
     type: entity_reference_paragraphs
-    weight: 1
+    weight: 6
     settings:
       title: Content
       title_plural: Contents
       edit_mode: open
-      add_mode: button
-      form_display_mode: sections
+      add_mode: dropdown
+      form_display_mode: default
       default_paragraph_type: _none
     third_party_settings: {  }
     region: content
+  field_section_heading:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_section_heading_type:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_section_title:
-    weight: 0
+    weight: 4
     settings:
       size: 60
       placeholder: ''

@@ -1,0 +1,10 @@
+uuid: 9b5360bd-278e-4030-9b7f-f5ccb66d2b90
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.featured
+label: Featured
+targetEntityType: taxonomy_term
+cache: true
