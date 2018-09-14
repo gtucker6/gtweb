@@ -16,4 +16,10 @@ body:not(.path-frontpage):not(.path-taxonomy) {
 }
 .paragraph--type--bp-carousel {
   float: none;
+  .carousel-item {
+    img {
+      width: 100%;
+      height: unset;
+    }
+  }
 }
