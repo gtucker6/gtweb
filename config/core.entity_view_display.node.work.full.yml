@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.work.field_company_address
     - field.field.node.work.field_company_email
     - field.field.node.work.field_company_number_s
-    - field.field.node.work.field_company_websites
     - field.field.node.work.field_finish_date
     - field.field.node.work.field_start_date
     - field.field.node.work.field_work_description
@@ -97,5 +96,4 @@ content:
     type: text_default
     region: content
 hidden:
-  field_company_websites: true
   links: true

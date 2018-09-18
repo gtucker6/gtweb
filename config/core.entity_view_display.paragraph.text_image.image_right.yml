@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.image_right
+    - field.field.paragraph.text_image.bp_width
     - field.field.paragraph.text_image.field_description
     - field.field.paragraph.text_image.field_image
     - field.field.paragraph.text_image.field_view_mode_selector
@@ -11,6 +12,7 @@ dependencies:
   module:
     - ds
     - image
+    - options
     - text
 third_party_settings:
   ds:
@@ -25,11 +27,19 @@ third_party_settings:
         - field_description
       second:
         - field_image
+        - bp_width
 id: paragraph.text_image.image_right
 targetEntityType: paragraph
 bundle: text_image
 mode: image_right
 content:
+  bp_width:
+    type: list_key
+    weight: 2
+    region: second
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
   field_description:
     weight: 0
     label: visually_hidden

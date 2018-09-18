@@ -3,18 +3,27 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.text_image.bp_width
     - field.field.paragraph.text_image.field_description
     - field.field.paragraph.text_image.field_image
     - field.field.paragraph.text_image.field_view_mode_selector
     - paragraphs.paragraphs_type.text_image
   module:
     - image
+    - options
     - text
 id: paragraph.text_image.default
 targetEntityType: paragraph
 bundle: text_image
 mode: default
 content:
+  bp_width:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
   field_description:
     weight: 0
     label: visually_hidden

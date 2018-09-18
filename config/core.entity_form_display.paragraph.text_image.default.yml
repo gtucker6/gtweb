@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.text_image.bp_width
     - field.field.paragraph.text_image.field_description
     - field.field.paragraph.text_image.field_image
     - field.field.paragraph.text_image.field_view_mode_selector
@@ -17,8 +18,14 @@ targetEntityType: paragraph
 bundle: text_image
 mode: default
 content:
-  field_description:
+  bp_width:
     weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_description:
+    weight: 1
     settings:
       rows: 5
       placeholder: ''
@@ -26,7 +33,7 @@ content:
     type: text_textarea
     region: content
   field_image:
-    weight: 1
+    weight: 2
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -34,7 +41,7 @@ content:
     type: image_image
     region: content
   field_view_mode_selector:
-    weight: 2
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     type: vmode_selector_widget

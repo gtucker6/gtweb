@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.work.field_company_address
     - field.field.node.work.field_company_email
     - field.field.node.work.field_company_number_s
-    - field.field.node.work.field_company_websites
     - field.field.node.work.field_finish_date
     - field.field.node.work.field_start_date
     - field.field.node.work.field_work_description
@@ -15,7 +14,6 @@ dependencies:
   module:
     - address
     - datetime
-    - link
     - telephone
     - text
     - user
@@ -25,41 +23,29 @@ bundle: work
 mode: default
 content:
   field_company_address:
-    weight: 109
+    weight: 6
     label: above
     settings: {  }
     third_party_settings: {  }
     type: address_default
     region: content
   field_company_email:
-    weight: 104
+    weight: 2
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_company_number_s:
-    weight: 103
+    weight: 1
     label: above
     settings:
       title: ''
     third_party_settings: {  }
     type: telephone_link
     region: content
-  field_company_websites:
-    weight: 110
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
-    region: content
   field_finish_date:
-    weight: 107
+    weight: 5
     label: above
     settings:
       format_type: medium
@@ -68,7 +54,7 @@ content:
     type: datetime_default
     region: content
   field_start_date:
-    weight: 106
+    weight: 4
     label: above
     settings:
       format_type: medium
@@ -77,22 +63,18 @@ content:
     type: datetime_default
     region: content
   field_work_description:
-    weight: 105
+    weight: 3
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_work_title:
-    weight: 108
+    weight: 0
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
-  links:
-    weight: 100
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  links: true

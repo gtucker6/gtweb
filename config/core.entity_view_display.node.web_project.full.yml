@@ -31,9 +31,9 @@ third_party_settings:
       settings: {  }
     regions:
       content:
+        - field_project_source
         - group_preview
         - field_project_description
-        - field_project_source
         - field_preview_desktop
         - field_preview_tablet
         - field_preview_mobile
@@ -44,7 +44,7 @@ third_party_settings:
         - field_preview_tablet
         - field_preview_mobile
       parent_name: ''
-      weight: 0
+      weight: 1
       format_type: html_element
       format_settings:
         label: Preview
@@ -91,7 +91,7 @@ content:
     third_party_settings: {  }
   field_project_description:
     type: entity_reference_revisions_entity_view
-    weight: 1
+    weight: 2
     region: content
     label: visually_hidden
     settings:
@@ -101,7 +101,7 @@ content:
       ds:
         ds_limit: ''
   field_project_source:
-    weight: 2
+    weight: 0
     label: visually_hidden
     settings:
       trim_length: 80

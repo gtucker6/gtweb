@@ -1,0 +1,22 @@
+uuid: 1d5dfbbb-3fb5-446a-8e69-bfd7f9ecc9ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content_body
+    - paragraphs.paragraphs_type.bp_columns
+  module:
+    - text
+id: paragraph.bp_columns.field_content_body
+field_name: field_content_body
+entity_type: paragraph
+bundle: bp_columns
+label: 'Content Body'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary
