@@ -20,19 +20,35 @@
     content['#entity_type'] ~ '--' ~ content['#view_mode']|replace({'_': '-'}),
   ]
 %}
+{% if content.bp_width|render %}
+    {% set layout_width = content.bp_width['#items'].getString() %}
+    {% set layout_width_classes = [
+        'paragraph--width--tiny' == layout_width ? 'paragraph--width--tiny',
+        'paragraph--width--narrow' == layout_width ? 'paragraph--width--narrow',
+        'paragraph--width--medium' == layout_width ? 'paragraph--width--medium',
+        'paragraph--width--wide' == layout_width ? 'paragraph--width--wide',
+        'paragraph--width--full' == layout_width ? 'paragraph--width--full',
+    ]
+    %}
+{% endif %}
+{# Merges Width field with classes. #}
+{% set width_field = content.bp_width|render %}
+{% if width_field %}
+    {% set classes = classes|merge(layout_width_classes) %}
+{% endif %}
 {% if content %}
   <div{{ attributes.addClass(classes) }}>
 	    {% block col_top %}
 		    {% if content.top %}
           <div {{ region_attributes.top.addClass('layout__region', 'layout__region--top', 'col-12') }}>
-              {{ content.top }}
+              {{ content.top|without('bp_width') }}
           </div>
 		    {% endif %}
 	    {% endblock %}
 	    {% block col_first %}
 		    {% if content.first %}
           <div {{ region_attributes.first.addClass('layout__region', 'layout__region--first', 'col-12 col-md-6') }}>
-              {{ content.first }}
+              {{ content.first|without('bp_width') }}
           </div>
 		    {% endif %}
 	    {% endblock %}
@@ -40,7 +56,7 @@
 	    {% block col_second %}
 		    {% if content.second %}
           <div {{ region_attributes.second.addClass('layout__region', 'layout__region--second', 'col-12 col-md-6') }}>
-              {{ content.second }}
+              {{ content.second|without('bp_width') }}
           </div>
 		    {% endif %}
 	    {% endblock %}
@@ -48,7 +64,7 @@
 	    {% block col_bottom %}
 		    {% if content.bottom %}
           <div {{ region_attributes.bottom.addClass('layout__region', 'layout__region--bottom', 'col-12') }}>
-              {{ content.bottom }}
+              {{ content.bottom|without('bp_width') }}
           </div>
 		    {% endif %}
 	    {% endblock %}

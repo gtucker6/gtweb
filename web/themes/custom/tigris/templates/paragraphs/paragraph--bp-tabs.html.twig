@@ -148,10 +148,12 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 <div{{ attributes.addClass(classes).setAttribute('id', paragraph_id) }} role="tablist" aria-multiselectable="true">
   <div class="paragraph__column">
     {{ title_suffix }}
-    <ul class="nav nav-tabs" role="tablist">
+    <ul class="nav nav-tabs" role="tablist" id="myTabs">
       {# Loops through the tab sections to print the tab section titles. #}
       {% for key, item in content.bp_tab_section if key|first != '#' %}
-        <li role="presentation" class="{% if loop.first %}active{% endif %}"><a href="#{{ paragraph_id }}-{{ key + 1 }}" aria-controls="{{ item['#paragraph'].bp_tab_section_title.value }}" role="tab" data-toggle="tab">{{ item['#paragraph'].bp_tab_section_title.value }}</a></li>
+        <li role="presentation" class="nav-item">
+          <a class="nav-link {% if loop.first %}active{% endif %}" href="#{{ paragraph_id }}-{{ key + 1 }}" aria-controls="{{ item['#paragraph'].bp_tab_section_title.value }}" role="tab" data-toggle="tab">{{ item['#paragraph'].bp_tab_section_title.value }}</a>
+        </li>
       {% endfor %}
     </ul>
     <div class="tab-content">
