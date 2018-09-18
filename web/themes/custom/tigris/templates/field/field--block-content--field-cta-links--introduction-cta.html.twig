@@ -57,7 +57,7 @@
   {% set col_classes = 'col-12' ~ ' col-md-' ~ 12 // count %}
   {% for item in items %}
     <div{{ item.attributes.addClass('field__item', col_classes, 'd-flex', 'align-items-center', 'justify-content-center') }}>
-      <span class="intro-cta-link">{{ item.content }}</span>
+      <span class="intro-cta-link-wrapper">{{ item.content }}</span>
     </div>
   {% endfor %}
 </div>
