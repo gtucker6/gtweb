@@ -15,7 +15,7 @@
     .field--name-field-cta-links {
       min-height: 400px;
       .field__item {
-        .intro-cta-link {
+        .intro-cta-link-wrapper {
           @media(min-width: $breakpoint-min-md) {
             transform: rotate(45deg);
           }
@@ -25,7 +25,7 @@
           margin: 15px;
           border-radius: 5px;
         }
-        .intro-cta-link:hover {
+        .intro-cta-link-wrapper:hover {
           transform: rotate(-90deg);
         }
         a {
@@ -44,14 +44,14 @@
         a:not(:hover) {
           transform: rotate(-45deg);
         }
-        .intro-cta-link {
+        .intro-cta-link-wrapper {
           background-color: $dark-grey;
           border: 1px solid darken($main-hover-color, 5%);
           a {
             color: $main-hover-color;
           }
         }
-        .intro-cta-link:hover {
+        .intro-cta-link-wrapper:hover {
           background-color: $dark-grey;
           border: 1px solid darken($accent-hover-color, 5%);
           a {
