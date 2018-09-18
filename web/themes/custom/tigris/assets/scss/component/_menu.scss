@@ -44,3 +44,18 @@
     }
   }
 }
+nav {
+  &.breadcrumb {
+    margin: 0;
+  }
+}
+
+.mm-menu_theme-dark {
+  background-color: #424249;
+  a.nav-link {
+    padding-left: 15px;
+  }
+  a.nav-link:hover {
+    background-color: rgba(250, 250, 250, .25);
+  }
+}

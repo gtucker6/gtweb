@@ -95,7 +95,7 @@
 /** End Custom Colors. */
 
 /** Misc Colors. */
-.btn-main:not(:hover), .btn-accent:not(:hover), .btn-dark:not(:hover), .text-color--white, .badge, .more-link a {
+.bg-dark, .btn-main:not(:hover), .btn-accent:not(:hover), .btn-dark:not(:hover), .text-color--white, .badge, .more-link a {
     color: $light-white;
 }
 .btn-accent:hover, .btn-main:hover {

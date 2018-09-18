@@ -4,8 +4,6 @@
   }
   &.block--type-introduction-cta {
     width: 100%;
-    max-width: 800px;
-    min-height: 300px;
     display: flex;
     flex-flow: row wrap;
     @media(max-width: 330px) {
@@ -14,63 +12,53 @@
     .field {
       flex: 1 1 100%;
     }
-    .field--type-link {
-      .field__items {
-        display: flex;
-        align-items: center;
-        @media(max-width: 330px) {
-          flex-flow: column;
-          align-items: flex-start;
-          > .field__item {
-            margin: 10px 0;
+    .field--name-field-cta-links {
+      min-height: 400px;
+      .field__item {
+        .intro-cta-link {
+          @media(min-width: $breakpoint-min-md) {
+            transform: rotate(45deg);
+          }
+          transition: .5s;
+          height: 200px;
+          width: 200px;
+          margin: 15px;
+          border-radius: 5px;
+        }
+        .intro-cta-link:hover {
+          transform: rotate(-90deg);
+        }
+        a {
+          transform: rotate(90deg);
+          transition: .5s;
+          height: 200px;
+          width: 200px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 28px;
+          font-weight: bolder;
+          text-decoration: none;
+
+        }
+        a:not(:hover) {
+          transform: rotate(-45deg);
+        }
+        .intro-cta-link {
+          background-color: $dark-grey;
+          border: 1px solid darken($main-hover-color, 5%);
+          a {
+            color: $main-hover-color;
           }
         }
-        .field__item {
-          &:first-child {
-            margin-right: $spacing;
-            a:not(.btn) {
-              color: #fff;
-              font-weight: bolder;
-              &:not(:hover) {
-                background-color: $main-color;
-              }
-              &:hover {
-                background-color: $main-hover-color;
-              }
-            }
-          }
-          &:nth-child(2) {
-            a:not(.btn) {
-              color: white;
-              &:not(:hover) {
-                background-color: $light-grey;
-              }
-              &:hover {
-                background-color: $grey;
-              }
-            }
-          }
-          a:not(.btn) {
-            text-decoration: none;
-            display: inline-block;
-            font-weight: 400;
-            white-space: nowrap;
-            vertical-align: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            border: 1px solid transparent;
-            padding: .375rem .75rem;
-            line-height: 1.5;
-            border-radius: .25rem;
-            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        .intro-cta-link:hover {
+          background-color: $dark-grey;
+          border: 1px solid darken($accent-hover-color, 5%);
+          a {
+            color: $accent-hover-color;
           }
         }
       }
     }
-  }
-  &.block-page-title-block {
-    padding: 15px;
   }
 }

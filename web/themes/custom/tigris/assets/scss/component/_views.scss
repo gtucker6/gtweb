@@ -1,8 +1,4 @@
-#block-views-block-web-skills-block-web-skills {
-  h2 {
-    text-align: center;
-    padding: 15px 0;
-  }
+.view-web-skills {
   .view-content.row {
     justify-content: center;
     .views-field-nothing, .field-content {
@@ -16,6 +12,20 @@
     }
     .image-style-card {
       margin: 0 auto;
+    }
+  }
+}
+.view-my-work {
+  .view-content {
+    margin: 0;
+  }
+  .view-content > div {
+    padding: 35px 0;
+    border-bottom: 2px solid #e5e5e5;
+  }
+  .field--name-field-project-source {
+    .field__label {
+      display: none;
     }
   }
 }

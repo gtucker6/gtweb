@@ -7,7 +7,7 @@ $accent-hover-color: #FF5225;
 // Greys
 $grey: rgb(66, 66, 73);
 $light-grey: lighten($grey, 25%);
-$dark-grey: darken($grey, 25%);
+$dark-grey: #424249;
 // Whites
 $dark-white: #f7f7f7;
 $white: #fff;
@@ -23,6 +23,7 @@ $breakpoint-min-md: 768px;
 $breakpoint-min-lg: 992px;
 $breakpoint-min-xl: 1200px;
 
+$breakpoint-max-xs: 575px;
 $breakpoint-max-sm: 767px;
 $breakpoint-max-md: 991px;
 $breakpoint-max-lg: 1199px;
