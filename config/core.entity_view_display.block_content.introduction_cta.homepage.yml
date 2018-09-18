@@ -7,6 +7,7 @@ dependencies:
     - core.entity_view_mode.block_content.homepage
     - field.field.block_content.introduction_cta.body
     - field.field.block_content.introduction_cta.field_cta_button
+    - field.field.block_content.introduction_cta.field_cta_links
   module:
     - link
     - text
@@ -22,8 +23,10 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_cta_button:
+  field_cta_links:
+    type: link
     weight: 1
+    region: content
     label: visually_hidden
     settings:
       trim_length: 80
@@ -32,6 +35,5 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
-    region: content
-hidden: {  }
+hidden:
+  field_cta_button: true

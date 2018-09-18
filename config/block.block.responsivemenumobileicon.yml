@@ -14,7 +14,7 @@ provider: null
 plugin: responsive_menu_toggle
 settings:
   id: responsive_menu_toggle
-  label: 'Responsive menu mobile icon'
+  label: 'Menu Icon'
   provider: responsive_menu
   label_display: '0'
 visibility: {  }

@@ -4,11 +4,12 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.featured
+    - field.storage.node.field_project_source
     - field.storage.node.field_project_summary
-    - field.storage.node.field_web_skills
     - node.type.web_project
   module:
     - ds
+    - link
     - node
     - text
     - user
@@ -209,6 +210,71 @@ display:
           separator: ''
           hide_empty: false
       fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: '<h1> {{ title__value }} </h1>'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: '<h1>'
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: node
+          entity_field: title
+          plugin_id: field
         field_project_summary:
           id: field_project_summary
           table: node__field_project_summary
@@ -258,8 +324,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: text_default
-          settings: {  }
+          type: text_trimmed
+          settings:
+            trim_length: 300
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -271,10 +338,10 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_web_skills:
-          id: field_web_skills
-          table: node__field_web_skills
-          field: field_web_skills
+        field_project_source:
+          id: field_project_source
+          table: node__field_project_source
+          field: field_project_source
           relationship: none
           group_type: group
           admin_label: ''
@@ -319,11 +386,15 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
+          click_sort_column: uri
+          type: link
           settings:
-            link: false
-          group_column: target_id
+            trim_length: 80
+            url_only: false
+            url_plain: false
+            rel: '0'
+            target: '0'
+          group_column: ''
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -331,7 +402,7 @@ display:
           delta_reversed: false
           delta_first_last: false
           multi_type: separator
-          separator: ''
+          separator: ', '
           field_api_classes: true
           plugin_id: field
       pager:
@@ -348,8 +419,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.field_project_source'
         - 'config:field.storage.node.field_project_summary'
-        - 'config:field.storage.node.field_web_skills'
   page_my_work:
     display_plugin: page
     id: page_my_work

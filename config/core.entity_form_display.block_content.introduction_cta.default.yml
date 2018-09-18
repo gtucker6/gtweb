@@ -6,7 +6,9 @@ dependencies:
     - block_content.type.introduction_cta
     - field.field.block_content.introduction_cta.body
     - field.field.block_content.introduction_cta.field_cta_button
+    - field.field.block_content.introduction_cta.field_cta_links
   module:
+    - link
     - link_class
     - text
 id: block_content.introduction_cta.default
@@ -28,9 +30,17 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
-      link_class_mode: select_class
-      link_class_force: ''
-      link_class_select: "btn btn-main| Main color\nbtn btn-accent| Accent color"
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_cta_links:
+    weight: 28
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      link_class_mode: force_class
+      link_class_force: intro-cta-link
+      link_class_select: ''
     third_party_settings: {  }
     type: link_class_field_widget
     region: content

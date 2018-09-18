@@ -1,0 +1,81 @@
+uuid: 9607a09e-2ab6-4ed0-bc5d-1ef31e7231a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.project_page
+    - field.field.node.work.field_company_address
+    - field.field.node.work.field_company_email
+    - field.field.node.work.field_company_number_s
+    - field.field.node.work.field_finish_date
+    - field.field.node.work.field_start_date
+    - field.field.node.work.field_work_description
+    - field.field.node.work.field_work_title
+    - node.type.work
+  module:
+    - address
+    - datetime
+    - telephone
+    - text
+    - user
+id: node.work.project_page
+targetEntityType: node
+bundle: work
+mode: project_page
+content:
+  field_company_address:
+    weight: 5
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_company_email:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_company_number_s:
+    weight: 1
+    label: above
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  field_finish_date:
+    weight: 4
+    label: above
+    settings:
+      timezone_override: America/New_York
+      format_type: html_month
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_start_date:
+    weight: 3
+    label: above
+    settings:
+      timezone_override: America/New_York
+      format_type: html_month
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_work_description:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_work_title:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  links: true
