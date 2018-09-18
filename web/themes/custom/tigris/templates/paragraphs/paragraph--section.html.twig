@@ -118,7 +118,10 @@
   ]
   %}
 {% endif %}
-
+{% if content.field_background_color|render %}
+    {% set custom_background = content.field_background_color['#items'].getString() %}
+{% endif %}
+{{ devel_breakpoint() }}
 {# The template default set classes. #}
 {# Sets Paragraph ID as class. #}
 {%
@@ -137,14 +140,15 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 
 {# Merges Background field with classes. #}
 {% set background_field = content.bp_background|render %}
-{% if background_field %}
-  {% set classes = classes|merge(layout_background_classes) %}
+{% set custom_background_field = content.field_background_color|render %}
+{% if custom_background_field %}
+  {% set classes = classes|merge(['bg-color', custom_background]) %}
 {% endif %}
 
 {# Prints div with classes, and content without Width and Background. #}
 <section {{ attributes.addClass(classes) }}>
   <div class="paragraph__column">
     {{ title_suffix }}
-    {{ content|without('bp_width', 'bp_background') }}
+    {{ content|without('bp_width', 'bp_background', 'field_background_color') }}
   </div>
 </section>
