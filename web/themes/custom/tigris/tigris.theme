@@ -90,6 +90,14 @@ function tigris_preprocess_paragraph__bp_carousel(&$variables) {
   }
 }
 
+
+function tigris_preprocess_layout__onecol__node_work(&$variables) {
+  if (!isset($variables['content']['field_finish_date'][0])) {
+    $variables['content']['field_finish_date']['#markup'] = 'Present';
+    $variables['content']['content']['field_finish_date']['#markup'] = 'Present';
+  }
+}
+
 /**
  * Implements hook_preprocess_HOOK() for layout__onecol__taxonomy_term.html.twig.
  */
