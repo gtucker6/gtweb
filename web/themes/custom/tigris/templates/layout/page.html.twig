@@ -46,7 +46,7 @@
     {% block nav %}
         {% if page.primary_menu %}
             {% set nav_classes = ['fixed-top', 'navbar', 'navbar-custom'] %}
-            <nav class="navbar navbar-dark link-color--main {{ nav_classes|join(' ') }}">
+            <nav class="navbar navbar-dark link-color--main bg-beige--light {{ nav_classes|join(' ') }}">
                 {{ page.primary_menu }}
             </nav>
         {% endif %}
@@ -111,7 +111,7 @@
 
     {% block footer %}
         {% if page.footer %}
-            <footer role="contentinfo" class="bg-dark link-color--main border-bottom border--main p--default pb pt text-color--light">
+            <footer role="contentinfo" class="bg-beige--light link-color--main border-bottom border--main p--default pb pt text-color--dark">
                 <div class="container">
                     {{ page.footer }}
                 </div>
