@@ -19,9 +19,9 @@
   .view-content {
     margin: 0;
   }
-  .view-content > div {
+  .view-content > div:not(:last-child) {
     padding: 35px 0;
-    border-bottom: 2px solid #e5e5e5;
+    border-bottom: 2px solid $light-beige;
   }
   .field--name-field-project-source {
     .field__label {

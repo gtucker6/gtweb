@@ -1,9 +1,13 @@
 // Main and accent colors for theme
-$main-color: #0AACFB;
-$main-hover-color:  #58C9FF;
-$accent-color: #FF7A57;
+$accent-color: #7ea5a4;
+$accent-hover-color:  darken($accent-color, 10%);
+$main-hover-color: #ff9389;
+$main-color: #ee5f64;
 
-$accent-hover-color: #FF5225;
+// Browns
+$light-beige: lighten(#f1d7bb, 12%);
+$beige: #f1d7bb;
+$dark-beige: #e5c4a3;
 // Greys
 $grey: rgb(66, 66, 73);
 $light-grey: lighten($grey, 25%);

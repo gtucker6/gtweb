@@ -9,6 +9,7 @@
 .link-color--main a:hover:not(.btn) {
     color: $main-hover-color;
 }
+
 .btn-main:hover {
     background: $main-hover-color;
 }
@@ -68,6 +69,17 @@
 }
 /** End Light Colors. */
 
+/* Brown/Beige Colors */
+.bg-beige, .btn-beige:not(:hover) {
+    background-color: $beige;
+}
+.bg-beige--light {
+    background-color: $light-beige;
+}
+.bg-beige--dark {
+    background-color: $dark-beige;
+}
+/* End Brown/Beige Colors */
 /** Custom Colors. */
 .badge a, .badge:not(.badge-light):not(.badge-white) {
     color: $light-white !important;

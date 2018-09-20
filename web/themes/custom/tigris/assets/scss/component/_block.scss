@@ -12,6 +12,9 @@
     .field {
       flex: 1 1 100%;
     }
+    .field--name-body {
+      text-align: center;
+    }
     .field--name-field-cta-links {
       min-height: 400px;
       .field__item {
@@ -45,14 +48,14 @@
           transform: rotate(-45deg);
         }
         .intro-cta-link-wrapper {
-          background-color: $dark-grey;
-          border: 1px solid darken($main-hover-color, 5%);
+          background-color: $main-color;
+          border: 1px solid darken($main-color, 5%);
           a {
-            color: $main-hover-color;
+            color: $light-white;
           }
         }
         .intro-cta-link-wrapper:hover {
-          background-color: $dark-grey;
+          background-color: $light-white;
           border: 1px solid darken($accent-hover-color, 5%);
           a {
             color: $accent-hover-color;

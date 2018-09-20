@@ -1,12 +1,13 @@
 .hero {
-  min-height: 65vh;
+  min-height: 90vh;
   &.hero--intro {
 
   }
 }
 .overlay {
   &.overlay--dark {
-    background-color: rgba($dark-grey, .55);
+    //background-image: linear-gradient(180deg,rgba($accent-color,.65) 0,rgba($dark-grey,0.65) 65%);
+    background-color: rgba($dark-grey, .75);
     min-height: inherit;
     height: 100%;
     width: 100%;
@@ -14,7 +15,7 @@
   &.overlay--cover {
     height: 80%;
     width: 100%;
-    background-image: linear-gradient(-180deg,rgba(45,174,240,.5) 0,rgba(45,174,240,0) 95%);
+    background-image: linear-gradient(-180deg, rgba(45,174,240,0) 0,rgba(45,174,240,.5) 35%);
     position: absolute;
     bottom: 0;
     transform: skewY(-6deg);

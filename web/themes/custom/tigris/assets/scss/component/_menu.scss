@@ -1,7 +1,6 @@
 .menu {
   &.menu--professional-profiles {
     margin: 35px 0;
-    background-color: $grey;
     ul.nav.nav-pills {
       border: 3px solid $accent-color;
       height: 30px;
@@ -51,11 +50,15 @@ nav {
 }
 
 .mm-menu_theme-dark {
-  background-color: #424249;
+  background-color: $light-beige;
   a.nav-link {
     padding-left: 15px;
+
+  }
+  a.nav-link, a.mm-navbar__title {
+    color: $main-color;
   }
   a.nav-link:hover {
-    background-color: rgba(250, 250, 250, .25);
+    background-color: rgba($dark-beige, .25);
   }
 }

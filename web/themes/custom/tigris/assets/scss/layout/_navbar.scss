@@ -1,7 +1,11 @@
 .navbar {
   &.navbar-custom {
-    border-bottom: 2px solid $dark-grey;
-    background-color: $grey;
+    border-bottom: 2px solid $beige;
+    a {
+      color: $main-hover-color;
+      font-weight: bolder;
+      font-size: 25px;
+    }
   }
   &.logo-dark {
     background-color: $light-white;
@@ -33,4 +37,7 @@
 
 a.navbar-toggler {
   display: inline-block;
+}
+.navbar-toggler-icon, .responsive-menu-toggle-icon::before, .responsive-menu-toggle-icon::after {
+  background-color: $main-color !important;
 }
