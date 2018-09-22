@@ -18,6 +18,7 @@
         "drupal/admin_toolbar": "^1.24",
         "drupal/backup_migrate": "^4.0",
         "drupal/better_exposed_filters": "^3.0@alpha",
+        "drupal/charts": "^3.0@beta",
         "drupal/config_direct_save": "^1.0",
         "drupal/config_installer": "^1.0",
         "drupal/console": "^1",
@@ -90,6 +91,7 @@
     "extra": {
         "installer-paths": {
             "web/core": ["type:drupal-core"],
+            "web/libraries/{$name}": ["type:drupal-library"],
             "web/modules/contrib/{$name}": ["type:drupal-module"],
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
