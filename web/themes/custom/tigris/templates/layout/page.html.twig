@@ -42,11 +42,14 @@
  * @see html.html.twig
  */
 #}
+{% if attributes is not empty %}
+    <div {{ attributes }}>
+{% endif %}
 <div class="layout-container">
     {% block nav %}
         {% if page.primary_menu %}
             {% set nav_classes = ['fixed-top', 'navbar', 'navbar-custom'] %}
-            <nav class="navbar navbar-dark link-color--main bg-beige--light {{ nav_classes|join(' ') }}">
+            <nav class="navbar link-color--light {{ nav_classes|join(' ') }}">
                 {{ page.primary_menu }}
             </nav>
         {% endif %}
@@ -56,14 +59,12 @@
         {% if page.header %}
             {% set header_classes = [] %}
             {% set overlay_classes = [] %}
-            {% if is_front %}
-                {% set header_classes = header_classes|merge(['hero', 'hero--intro', 'header--nav-fixed-top']) %}
-                {% set overlay_classes = overlay_classes|merge(['overlay', 'overlay--dark']) %}
-            {% endif %}
-            <header class="text-color--white {{ header_classes|join(' ') }}">
+            {% set header_classes = header_classes|merge(['hero', 'hero--title']) %}
+            {% set overlay_classes = overlay_classes|merge(['overlay', 'bg-main']) %}
+            <header class="text-color--light {{ header_classes|join(' ') }}">
                 <div class="{{ overlay_classes|join(' ') }}">
                     <div class="container-fluid">
-                        <div class="row">
+                        <div class="row justify-content-center">
                             {{ page.header }}
                         </div>
                     </div>
@@ -72,21 +73,9 @@
         {% endif %}
     {% endblock %}
 
-    {% if page.secondary_menu %}
-        <div class="link-color--main">
-            {{ page.secondary_menu }}
-        </div>
-    {% endif %}
 
-    {% if page.breadcrumb or page.highlighted %}
-        <div class="link-color--main">
-            {{ page.breadcrumb }}
-            {{ page.highlighted }}
-        </div>
-    {% endif %}
-    {{ page.help }}
 
-    <main role="main" class="bg-white">
+    <main role="main" class="bg-light">
         <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
         {% block main %}
             <div class="container">
@@ -111,12 +100,16 @@
 
     {% block footer %}
         {% if page.footer %}
-            <footer role="contentinfo" class="bg-beige--light link-color--main border-bottom border--main p--default pb pt text-color--dark">
-                <div class="container">
-                    {{ page.footer }}
+            <footer role="contentinfo" class="hero link-color--main text-color--dark">
+                <div class="overlay bg-beige--light">
+                    <div class="container">
+                        {{ page.footer }}
+                    </div>
                 </div>
             </footer>
         {% endif %}
     {% endblock %}
 </div>
-
+{% if attributes is not empty %}
+    </div>
+{% endif %}
