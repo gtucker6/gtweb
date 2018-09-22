@@ -55,11 +55,6 @@
 }
 
 header {
-  &.header--nav-fixed-top {
-    > .overlay {
-
-    }
-  }
   > .overlay > .container, > .overlay > .container > .row {
     min-height: inherit;
   }

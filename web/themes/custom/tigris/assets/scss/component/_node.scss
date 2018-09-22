@@ -1,6 +1,9 @@
 .path-node {
-
   &.page-node-type-web-project {
-
+    .field--name-field-section-heading {
+      h2 {
+        text-align: center;
+      }
+    }
   }
 }
