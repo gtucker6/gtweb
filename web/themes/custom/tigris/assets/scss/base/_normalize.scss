@@ -7,15 +7,21 @@ body {
   overflow-y: scroll;
   height: 100%;
   width: 100%;
+  min-height: 100%;
   > div {
     overflow-x: hidden;
   }
 }
+main, footer {
+  display: flex;
+  flex-flow: column;
+}
+/*
 main {
-  min-height: 80vh;
+  //min-height: 80vh;
   width: 100%;
 }
 footer {
-  min-height: 35vh;
+  //min-height: 35vh;
   width: 100%;
-}
+}*/

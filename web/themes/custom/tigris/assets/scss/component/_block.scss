@@ -6,14 +6,12 @@
     width: 100%;
     display: flex;
     flex-flow: row wrap;
+    text-align: center;
     @media(max-width: 330px) {
       flex-flow: column;
     }
     .field {
       flex: 1 1 100%;
-    }
-    .field--name-body {
-      text-align: center;
     }
     .field--name-field-cta-links {
       min-height: 400px;
@@ -48,17 +46,17 @@
           transform: rotate(-45deg);
         }
         .intro-cta-link-wrapper {
-          background-color: $main-color;
+          background-color: $white;
           border: 1px solid darken($main-color, 5%);
           a {
-            color: $light-white;
+            color: $main-color;
           }
         }
         .intro-cta-link-wrapper:hover {
-          background-color: $light-white;
-          border: 1px solid darken($accent-hover-color, 5%);
+          background-color: $white;
+          border: 1px solid darken($main-hover-color, 5%);
           a {
-            color: $accent-hover-color;
+            color: $main-hover-color;
           }
         }
       }

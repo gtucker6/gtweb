@@ -1,26 +1,59 @@
 .hero {
-  min-height: 90vh;
+  min-height: 30vh;
   &.hero--intro {
-
+    min-height: 100vh;
   }
-}
-.overlay {
-  &.overlay--dark {
-    //background-image: linear-gradient(180deg,rgba($accent-color,.65) 0,rgba($dark-grey,0.65) 65%);
-    background-color: rgba($dark-grey, .75);
+  &.hero--title {
+    @media(max-width: $breakpoint-max-xs) {
+      min-height: 100vh;
+    }
+    @media(min-width: $breakpoint-min-sm) {
+
+    }
+  }
+  &:not(.hero--image) {
+    .overlay {
+      &.overlay--main {
+        background-image: linear-gradient(to top, #ffe9d4, #ffddc7, #ffd1bc, #ffc4b4, #ffb7af);
+      }
+      &.overlay--accent {
+        background-image: linear-gradient(to top, #ffe9d4, #e0dfc3, #bdd5bd, #9dc9bf, #87bac3);
+      }
+      &.overlay--beige {
+        background-image: linear-gradient(to right top, #fff6e1, #fbeed7, #f7e7cd, #f4dfc4, #f1d7bb);
+      }
+      &.overlay--mix {
+        background-image: linear-gradient(to bottom, #ee5f64, #dc74b3, #a397dd, #78aeda, #87bac3);
+      }
+    }
+  }
+  &.hero--image {
+    .overlay {
+      &.overlay--dark {
+        background: rgba($dark-grey, .75);
+      }
+      &.overlay--main {
+        background-image: linear-gradient(to bottom, rgba(#ee5f64, .65), rgba(#ee5f64, .85), rgba(#f0a17e, .95), rgba(#f4c8a7, .85), rgba(#f1d7bb, .65));
+      }
+      &.overlay--accent {
+        background-image: linear-gradient(to top, rgba(#ffe9d4, .75), rgba(#e0dfc3,.85), rgba(#bdd5bd,.85), rgba(#9dc9bf,.85), rgba(#87bac3,.75));
+      }
+      &.overlay--mix {
+        background-image: linear-gradient(to bottom, rgba(#ee5f64, .85), rgba(#dc74b3, .85), rgba(#a397dd, .85), rgba(#78aeda, .85), rgba(#87bac3, .85));
+      }
+    }
+  }
+  .overlay {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
     min-height: inherit;
     height: 100%;
     width: 100%;
   }
-  &.overlay--cover {
-    height: 80%;
-    width: 100%;
-    background-image: linear-gradient(-180deg, rgba(45,174,240,0) 0,rgba(45,174,240,.5) 35%);
-    position: absolute;
-    bottom: 0;
-    transform: skewY(-6deg);
-  }
 }
+
 header {
   &.header--nav-fixed-top {
     > .overlay {

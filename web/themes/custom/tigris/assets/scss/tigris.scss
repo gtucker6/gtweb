@@ -1,10 +1,10 @@
 @import "base/variables";
 @import "base/normalize";
 @import "layout/grid";
-@import "layout/navbar";
 @import "layout/page";
 @import "layout/header";
 @import "layout/region";
+@import "component/navbar";
 @import "component/utilities";
 @import "component/layouts";
 @import "component/paragraph";
@@ -13,7 +13,7 @@
 @import "component/webform";
 @import "component/views";
 @import "component/card";
-@import "component/menu";
+@import "component/navs";
 @import "component/block";
 @import "component/button";
 @import "theme/colors";

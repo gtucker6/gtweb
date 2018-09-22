@@ -13,10 +13,19 @@
 .btn-main:hover {
     background: $main-hover-color;
 }
+.btn-outline-main:not(:hover) {
+    border: 1px solid $main-hover-color;
+    background-color: transparent;
+    color: $main-hover-color;
+}
+.btn-outline-main:hover {
+    background-color: $main-color;
+    color: $white;
+}
 /** End Main Colors. */
 
 /** Accent Colors. */
-.bg-accent, .btn-accent:not(:hover), .more-link > a:not(:hover) {
+.bg-accent, .btn-accent:not(:hover), .more-link > a:not(:hover), .badge-accent:not(:hover) {
     background-color: $accent-color;
 }
 .link-color--accent a:not(:hover):not(.btn):not(.badge), .text-color--accent {
@@ -25,7 +34,7 @@
 .link-color--accent a:hover:not(.btn):not(.badge), .link-color--accent a.navbar-brand:hover, a.link-color--accent:hover:not(.btn):not(.badge) {
     color: $accent-hover-color;
 }
-.btn-accent:hover, .more-link > a:hover {
+.btn-accent:hover, .more-link > a:hover, span.badge-accent:hover {
     background: $accent-hover-color;
 }
 /** End Accent Colors. */
@@ -59,13 +68,21 @@
 
 /** Light Colors. */
 .overlay--light {
-    background-color: rgba($dark-white, .75%);
+    background-color: rgba($white, .75%);
 }
 .text-color--light {
-    color: $dark-white;
+    color: $white;
 }
 .bg-light, .btn-light:not(:hover) {
-    background-color: $dark-white !important;
+    background-color: $white !important;
+}
+.link-color--light {
+    a:not(:hover):not(.btn):not(.badge) {
+        color: $white;
+    }
+    a:hover:not(.btn):not(.badge) {
+        color: $dark-white;
+    }
 }
 /** End Light Colors. */
 
@@ -79,6 +96,13 @@
 .bg-beige--dark {
     background-color: $dark-beige;
 }
+.text-color--beige {
+    color: $dark-beige;
+}
+.link-color--beige {
+    color: $light-beige;
+}
+
 /* End Brown/Beige Colors */
 /** Custom Colors. */
 .badge a, .badge:not(.badge-light):not(.badge-white) {
@@ -108,10 +132,10 @@
 
 /** Misc Colors. */
 .bg-dark, .btn-main:not(:hover), .btn-accent:not(:hover), .btn-dark:not(:hover), .text-color--white, .badge, .more-link a {
-    color: $light-white;
+    color: $white;
 }
 .btn-accent:hover, .btn-main:hover {
-    color: white;
+    color: $white;
 }
 /** End Misc Colors. */
 

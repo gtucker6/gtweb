@@ -13,6 +13,14 @@
   }
 }
 
+.badge > a {
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  padding: .25em .4em;
+  margin: -.25em -.4em;
+}
+
 .more-link > a {
   display: inline-block;
   text-decoration: none;

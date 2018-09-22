@@ -10,12 +10,6 @@
 }
 .card {
   &.card-default {
-    border-color: $main-hover-color;
-    background-color: $main-color;
-    color: $light-white;
-    a {
-      color: $light-white;
-    }
   }
 }
 .clickable-card:hover {

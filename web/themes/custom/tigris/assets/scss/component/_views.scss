@@ -1,3 +1,11 @@
+.view:not(.view-my-work), .block-views {
+  h2 {
+    text-align: center;
+  }
+  .views-row {
+    width: 100%;
+  }
+}
 .view-web-skills {
   .view-content.row {
     justify-content: center;
