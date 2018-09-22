@@ -17,6 +17,12 @@
 
 [class*="paragraph--width--"] {
   margin: 0 auto;
+  p {
+    padding: 15px;
+  }
+  &[style*="bg-"] {
+
+  }
 }
 .paragraph--width--tiny {
   width: 33.3333%;
