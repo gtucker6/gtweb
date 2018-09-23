@@ -1,7 +1,16 @@
 (function($, Drupal, window, document, undefined) {
-    Drupal.behaviors.fixedNavbars = {
+    Drupal.behaviors.tigrisNavbar = {
         attach: function (context, settings) {
-            positionFixedLayouts('nav.fixed-top', context);
+          let navbar = new Menu('nav.navbar-custom.fixed-top');
+          $(context).find(navbar.element).once('tigrisNavbar').each(function() {
+            navbar.position(context);
+          }).trigger('scroll');
+          $(window).on('resize', function() {
+            navbar.position(context);
+          });
+          $(window).on('scroll', function() {
+            navbar.changeColor(context, 'main')
+          });
         }
     };
     Drupal.behaviors.transitionImages = {
@@ -11,27 +20,33 @@
         });
       }
     };
-    function Menu(element) {
-      this.classes = function () {
-        return $(element).attr("class").split(' ');
-      }
-
-    }
-    function positionFixedLayouts(nav, context) {
-      $(nav, context).once('fixedNavbars').each(function(){
-        let $mainNav = $(this);
+    function Menu(nav) {
+      this.element = $(nav);
+      this.changeColor = function(context, color = 'shade') {
+        if ($(window).scrollTop() >= ($(context).find('header.hero').outerHeight() - this.getHeight())) {
+          $(nav).addClass('bg-'+ color);
+        }
+        if($(window).scrollTop() < ($(context).find('header.hero').outerHeight() - this.getHeight())) {
+          $(nav).removeClass('bg-'+ color);
+        }
+      }.bind(this);
+      this.getWidth = function() {
+        return $(nav).outerWidth();
+      };
+      this.getHeight = function() {
+        return $(nav).outerHeight();
+      };
+      this.position = function (context) {
         let $toolbar = $(context).find('#toolbar-bar');
         if($(document.body).hasClass('toolbar-fixed')) {
           // Position nav away from toolbar
-          $(this).css('top', $toolbar.outerHeight() + "px");
-
+          $(nav).css('top', $toolbar.outerHeight() + "px");
         }
         if(!$(context).find('header').hasClass('hero')) {
-          $(context).find('.layout-container').css('margin-top', $mainNav.outerHeight());
+          $(context).find('.layout-container').css('margin-top', this.getHeight());
         }
-      });
+      }.bind(this);
     }
-  $(window).on('resize', function() {
-    positionFixedLayouts('nav.fixed-top', document.body);
-  });
+
+
 })(jQuery, Drupal, this, this.document);

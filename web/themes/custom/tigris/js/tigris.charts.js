@@ -26,8 +26,6 @@
             $outerChart.addClass('charts-' + settings.tigrisChart.provider + '-outer');
             $(this).find('svg > rect').attr('fill', 'transparent');
           });
-          $(window).bind('resize', function () {
-          });
         });
         }
       }
