@@ -12,7 +12,7 @@ dependencies:
 id: homepageintro
 theme: tigris
 region: header
-weight: 0
+weight: -4
 provider: null
 plugin: 'block_content:ccee461f-f5f8-4da5-a60c-c06cd7a3f211'
 settings:

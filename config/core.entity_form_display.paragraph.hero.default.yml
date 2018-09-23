@@ -1,0 +1,31 @@
+uuid: 8838b42c-6ecd-482f-ba50-f98ca97baa35
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hero.field_background_color
+    - field.field.paragraph.hero.field_hero_title
+    - paragraphs.paragraphs_type.hero
+id: paragraph.hero.default
+targetEntityType: paragraph
+bundle: hero
+mode: default
+content:
+  field_background_color:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_hero_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

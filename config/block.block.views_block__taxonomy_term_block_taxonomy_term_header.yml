@@ -1,0 +1,31 @@
+uuid: 58cefc0e-8811-48f8-83d9-71f1f810f4af
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.taxonomy_term
+  module:
+    - system
+    - views
+  theme:
+    - tigris
+id: views_block__taxonomy_term_block_taxonomy_term_header
+theme: tigris
+region: header
+weight: 0
+provider: null
+plugin: 'views_block:taxonomy_term-block_taxonomy_term_header'
+settings:
+  id: 'views_block:taxonomy_term-block_taxonomy_term_header'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: "/taxonomy/term/%\r\n/skills/%"
+    negate: false
+    context_mapping: {  }

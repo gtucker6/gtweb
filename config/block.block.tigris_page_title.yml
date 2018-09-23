@@ -10,7 +10,7 @@ _core:
   default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
 id: tigris_page_title
 theme: tigris
-region: content
+region: header
 weight: -6
 provider: null
 plugin: page_title_block
@@ -22,6 +22,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/taxonomy/term*\r\n<front>\r\n/portfolio/*"
+    pages: "/taxonomy/term*\r\n<front>"
     negate: true
     context_mapping: {  }

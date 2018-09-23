@@ -8,7 +8,6 @@ dependencies:
     - field.field.paragraph.section.field_section
     - field.field.paragraph.section.field_section_heading
     - field.field.paragraph.section.field_section_heading_type
-    - field.field.paragraph.section.field_section_title
     - paragraphs.paragraphs_type.section
   module:
     - ds
@@ -54,4 +53,3 @@ content:
     region: content
 hidden:
   field_section_heading_type: true
-  field_section_title: true

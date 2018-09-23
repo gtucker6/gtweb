@@ -4,12 +4,14 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.full_description
-    - core.entity_view_mode.taxonomy_term.tag
     - field.storage.taxonomy_term.field_font_awesome_icon
     - field.storage.taxonomy_term.field_logo_image
+    - field.storage.taxonomy_term.field_years_experience
     - image.style.card
     - taxonomy.vocabulary.web_skills
   module:
+    - charts
+    - charts_google
     - ds
     - fontawesome
     - image
@@ -143,6 +145,46 @@ display:
           entity_type: taxonomy_term
           entity_field: vid
           plugin_id: bundle
+        status:
+          id: status
+          table: taxonomy_term_field_data
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: taxonomy_term
+          entity_field: status
+          plugin_id: boolean
       sorts: {  }
       title: 'Web Skills'
       header: {  }
@@ -162,7 +204,7 @@ display:
   block_web_skills:
     display_plugin: block
     id: block_web_skills
-    display_title: Block
+    display_title: Skills
     position: 1
     display_options:
       display_extenders: {  }
@@ -497,6 +539,49 @@ display:
           empty_zero: false
           hide_alter_empty: false
           plugin_id: custom
+      sorts: {  }
+      filters:
+        status:
+          id: status
+          table: taxonomy_term_field_data
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: taxonomy_term
+          entity_field: status
+          plugin_id: boolean
+      display_description: ''
     cache_metadata:
       max-age: -1
       contexts:
@@ -509,44 +594,292 @@ display:
   block_web_skills_tags:
     display_plugin: block
     id: block_web_skills_tags
-    display_title: Block
+    display_title: 'Skills List'
     position: 2
     display_options:
       display_extenders: {  }
       style:
-        type: default
+        type: chart
         options:
-          row_class: tag
-          default_row_class: false
-          uses_fields: false
+          grouping: {  }
+          library: google
+          type: bar
+          label_field: name
+          fields:
+            table: ''
+          data_fields:
+            name: 0
+            field_years_experience: field_years_experience
+          field_colors:
+            name: '#ffe9ec'
+            field_years_experience: '#b9dce2'
+          title: ''
+          title_position: out
+          tooltips: ''
+          data_labels: 'TRUE'
+          data_markers: 'TRUE'
+          legend_position: top
+          background: ''
+          three_dimensional: 1
+          polar: 0
+          width: ''
+          width_units: ''
+          height: ''
+          height_units: ''
+          max: '100'
+          min: '0'
+          green_from: '50'
+          green_to: '100'
+          yellow_from: '25'
+          yellow_to: '50'
+          red_from: '0'
+          red_to: '25'
+          xaxis_title: 'Confidence Level (Percentage)'
+          xaxis_labels_rotation: '0'
+          yaxis_title: Skill
+          yaxis_min: '1'
+          yaxis_max: '100'
+          yaxis_prefix: ''
+          yaxis_suffix: '%'
+          yaxis_decimal_count: ''
+          yaxis_labels_rotation: '0'
       defaults:
         style: false
         row: false
+        pager: false
+        title: false
+        filters: false
+        filter_groups: false
+        cache: false
+        fields: false
       row:
-        type: 'ds_entity:taxonomy_term'
+        type: fields
         options:
+          default_field_elements: false
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      pager:
+        type: none
+        options:
+          offset: 0
+      display_description: ''
+      title: 'My Skills'
+      block_description: 'Skills Tag List'
+      filters:
+        vid:
+          id: vid
+          table: taxonomy_term_field_data
+          field: vid
+          value:
+            web_skills: web_skills
+          entity_type: taxonomy_term
+          entity_field: vid
+          plugin_id: bundle
+        field_provided_service_value:
+          id: field_provided_service_value
+          table: taxonomy_term__field_provided_service
+          field: field_provided_service_value
           relationship: none
-          view_mode: tag
-          alternating_fieldset:
-            alternating: false
-            allpages: false
-            item_0: default
-            item_1: default
-            item_2: default
-            item_3: default
-            item_4: default
-            item_5: default
-          grouping_fieldset:
-            group: false
-          advanced_fieldset:
-            advanced: false
+          group_type: group
+          admin_label: ''
+          operator: '!='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: boolean
+        status:
+          id: status
+          table: taxonomy_term_field_data
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: taxonomy_term
+          entity_field: status
+          plugin_id: boolean
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      cache:
+        type: none
+        options: {  }
+      block_hide_empty: true
+      fields:
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          entity_type: taxonomy_term
+          entity_field: name
+          label: ''
+          alter:
+            alter_text: false
+            make_link: false
+            absolute: false
+            trim: false
+            word_boundary: false
+            ellipsis: false
+            strip_tags: false
+            html: false
+          hide_empty: false
+          empty_zero: false
+          type: string
+          settings:
+            link_to_entity: true
+          plugin_id: term_name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          exclude: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_alter_empty: true
+          click_sort_column: value
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          convert_spaces: false
+        field_years_experience:
+          id: field_years_experience
+          table: taxonomy_term__field_years_experience
+          field: field_years_experience
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: '{{ field_years_experience__value / 4 * 100 }}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_unformatted
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+      sorts: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:field.storage.taxonomy_term.field_years_experience'
   page_1:
     display_plugin: page
     id: page_1
@@ -899,6 +1232,48 @@ display:
           hide_alter_empty: false
           plugin_id: custom
       path: skills
+      sorts: {  }
+      filters:
+        status:
+          id: status
+          table: taxonomy_term_field_data
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: taxonomy_term
+          entity_field: status
+          plugin_id: boolean
     cache_metadata:
       max-age: -1
       contexts:

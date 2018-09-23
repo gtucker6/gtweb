@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.bp_columns.bp_background
     - field.field.paragraph.bp_columns.bp_column_content
     - field.field.paragraph.bp_columns.bp_width
     - field.field.paragraph.bp_columns.field_content_body
@@ -18,12 +17,6 @@ targetEntityType: paragraph
 bundle: bp_columns
 mode: default
 content:
-  bp_background:
-    weight: 0
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
   bp_column_content:
     type: entity_reference_paragraphs
     weight: 3

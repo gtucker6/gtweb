@@ -8,8 +8,8 @@ _core:
   default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
 id: tigris_local_tasks
 theme: tigris
-region: secondary_menu
-weight: -5
+region: sidebar_first
+weight: -6
 provider: null
 plugin: local_tasks_block
 settings:

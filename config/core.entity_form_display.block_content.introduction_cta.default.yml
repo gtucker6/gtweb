@@ -8,7 +8,6 @@ dependencies:
     - field.field.block_content.introduction_cta.field_cta_button
     - field.field.block_content.introduction_cta.field_cta_links
   module:
-    - link
     - link_class
     - text
 id: block_content.introduction_cta.default
@@ -30,8 +29,11 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
+      link_class_mode: force_class
+      link_class_force: 'btn btn-outline-light'
+      link_class_select: ''
     third_party_settings: {  }
-    type: link_default
+    type: link_class_field_widget
     region: content
   field_cta_links:
     weight: 28

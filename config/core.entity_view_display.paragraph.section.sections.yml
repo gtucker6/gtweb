@@ -4,8 +4,11 @@ status: false
 dependencies:
   config:
     - core.entity_view_mode.paragraph.sections
+    - field.field.paragraph.section.bp_width
+    - field.field.paragraph.section.field_background_color
     - field.field.paragraph.section.field_section
-    - field.field.paragraph.section.field_section_title
+    - field.field.paragraph.section.field_section_heading
+    - field.field.paragraph.section.field_section_heading_type
     - paragraphs.paragraphs_type.section
   module:
     - ds
@@ -27,4 +30,7 @@ content:
         ds_limit: ''
     region: content
 hidden:
-  field_section_title: true
+  bp_width: true
+  field_background_color: true
+  field_section_heading: true
+  field_section_heading_type: true

@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.text.bp_width
+    - field.field.paragraph.text.field_background_color
     - field.field.paragraph.text.field_content_body
     - paragraphs.paragraphs_type.text
   module:
@@ -12,6 +14,18 @@ targetEntityType: paragraph
 bundle: text
 mode: default
 content:
+  bp_width:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_background_color:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_content_body:
     weight: 0
     settings:

@@ -1,0 +1,32 @@
+uuid: 43166388-b21f-4e3e-9f40-ec7596ae40f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.web_service
+    - field.field.block_content.web_service.body
+    - field.field.block_content.web_service.field_service_icon
+  module:
+    - fontawesome
+    - text
+id: block_content.web_service.default
+targetEntityType: block_content
+bundle: web_service
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_service_icon:
+    weight: 1
+    label: above
+    settings:
+      layers: false
+    third_party_settings: {  }
+    type: fontawesome_icon_formatter
+    region: content
+hidden: {  }

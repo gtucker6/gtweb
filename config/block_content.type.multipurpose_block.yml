@@ -1,0 +1,8 @@
+uuid: dc4efac1-dbfe-4e28-90d0-bdcf723c8719
+langcode: en
+status: true
+dependencies: {  }
+id: multipurpose_block
+label: 'Multipurpose Block'
+revision: 0
+description: ''

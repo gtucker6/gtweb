@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.paragraphs_basic_page.field_basic_page_content
     - node.type.paragraphs_basic_page
   module:
     - user
@@ -15,4 +16,7 @@ content:
   links:
     weight: 100
     region: content
-hidden: {  }
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_basic_page_content: true

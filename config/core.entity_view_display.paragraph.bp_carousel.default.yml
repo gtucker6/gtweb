@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.bp_carousel.bp_background
     - field.field.paragraph.bp_carousel.bp_slide_content
     - field.field.paragraph.bp_carousel.bp_slide_interval
     - field.field.paragraph.bp_carousel.bp_width
@@ -19,13 +18,6 @@ targetEntityType: paragraph
 bundle: bp_carousel
 mode: default
 content:
-  bp_background:
-    weight: 0
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: list_key
-    region: content
   bp_slide_content:
     type: entity_reference_revisions_entity_view
     weight: 3

@@ -9,7 +9,7 @@ dependencies:
 id: responsivemenumobileicon
 theme: tigris
 region: primary_menu
-weight: 0
+weight: -5
 provider: null
 plugin: responsive_menu_toggle
 settings:

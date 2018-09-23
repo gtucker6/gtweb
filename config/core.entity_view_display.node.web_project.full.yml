@@ -19,6 +19,8 @@ dependencies:
     - entity_reference_revisions
     - field_group
     - image
+    - link
+    - text
     - user
 third_party_settings:
   ds:
@@ -30,7 +32,11 @@ third_party_settings:
       settings: {  }
     regions:
       content:
+        - group_main_top
+        - field_project_summary
+        - field_project_source
         - group_preview
+        - group_main_bottom
         - field_project_description
         - field_preview_desktop
         - field_preview_tablet
@@ -41,8 +47,8 @@ third_party_settings:
         - field_preview_desktop
         - field_preview_tablet
         - field_preview_mobile
-      parent_name: ''
-      weight: 0
+      parent_name: group_main_top
+      weight: 3
       format_type: html_element
       format_settings:
         label: Preview
@@ -53,8 +59,43 @@ third_party_settings:
         effect: none
         speed: fast
         id: ''
-        classes: 'previews row '
+        classes: 'previews row'
       label: Preview
+    group_main_top:
+      children:
+        - field_project_summary
+        - field_project_source
+        - group_preview
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        label: 'Main Top'
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'content-main--top content-main container'
+      label: 'Main Top'
+    group_main_bottom:
+      children:
+        - field_project_description
+      parent_name: ''
+      weight: 4
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: 'content-main--bottom content-main'
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Main Bottom'
 id: node.web_project.full
 targetEntityType: node
 bundle: web_project
@@ -89,7 +130,7 @@ content:
     third_party_settings: {  }
   field_project_description:
     type: entity_reference_revisions_entity_view
-    weight: 1
+    weight: 5
     region: content
     label: visually_hidden
     settings:
@@ -98,9 +139,26 @@ content:
     third_party_settings:
       ds:
         ds_limit: ''
+  field_project_source:
+    type: link
+    weight: 2
+    region: content
+    label: visually_hidden
+    settings:
+      trim_length: 80
+      rel: ''
+      target: ''
+      url_only: false
+      url_plain: false
+    third_party_settings: {  }
+  field_project_summary:
+    type: text_default
+    weight: 1
+    region: content
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   field_company: true
-  field_project_source: true
-  field_project_summary: true
   field_web_skills: true
   links: true

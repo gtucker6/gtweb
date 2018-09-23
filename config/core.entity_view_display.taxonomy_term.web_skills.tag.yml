@@ -6,7 +6,33 @@ dependencies:
     - core.entity_view_mode.taxonomy_term.tag
     - field.field.taxonomy_term.web_skills.field_font_awesome_icon
     - field.field.taxonomy_term.web_skills.field_logo_image
+    - field.field.taxonomy_term.web_skills.field_provided_service
+    - field.field.taxonomy_term.web_skills.field_years_experience
     - taxonomy.vocabulary.web_skills
+  module:
+    - ds
+third_party_settings:
+  ds:
+    layout:
+      id: layout__onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes: {  }
+        wrappers:
+          content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+    regions:
+      content:
+        - description
+        - field_font_awesome_icon
+        - field_logo_image
+        - field_provided_service
+        - field_years_experience
 id: taxonomy_term.web_skills.tag
 targetEntityType: taxonomy_term
 bundle: web_skills
@@ -16,3 +42,5 @@ hidden:
   description: true
   field_font_awesome_icon: true
   field_logo_image: true
+  field_provided_service: true
+  field_years_experience: true
