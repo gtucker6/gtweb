@@ -1,0 +1,18 @@
+.charts-google, .charts-google-outer, .charts-google-inner, .charts-google svg {
+  max-width: 100%;
+  min-height: 500px;
+  width: 100%;
+}
+.charts-google svg text {
+  font-weight: bolder;
+  line-height: 2em;
+}
+.charts-google g {
+  display: block;
+}
+@media(max-width: 575px) {
+  .charts-google svg > rect {
+     width: 400px;
+     height: 400px;
+  }
+}

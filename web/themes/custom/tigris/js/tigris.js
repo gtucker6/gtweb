@@ -1,7 +1,7 @@
 (function($, Drupal, window, document, undefined) {
     Drupal.behaviors.fixedNavbars = {
         attach: function (context, settings) {
-            positionMainNav('nav.fixed-top', context);
+            positionFixedLayouts('nav.fixed-top', context);
         }
     };
     Drupal.behaviors.transitionImages = {
@@ -11,7 +11,13 @@
         });
       }
     };
-    function positionMainNav(nav, context) {
+    function Menu(element) {
+      this.classes = function () {
+        return $(element).attr("class").split(' ');
+      }
+
+    }
+    function positionFixedLayouts(nav, context) {
       $(nav, context).once('fixedNavbars').each(function(){
         let $mainNav = $(this);
         let $toolbar = $(context).find('#toolbar-bar');
@@ -20,11 +26,12 @@
           $(this).css('top', $toolbar.outerHeight() + "px");
 
         }
-        $(context).find('.layout-container').css('margin-top', $mainNav.outerHeight());
-        //
+        if(!$(context).find('header').hasClass('hero')) {
+          $(context).find('.layout-container').css('margin-top', $mainNav.outerHeight());
+        }
       });
     }
   $(window).on('resize', function() {
-    positionMainNav('nav.fixed-top', document.body);
+    positionFixedLayouts('nav.fixed-top', document.body);
   });
 })(jQuery, Drupal, this, this.document);
