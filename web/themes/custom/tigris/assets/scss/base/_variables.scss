@@ -1,20 +1,22 @@
 // Main and accent colors for theme
 
 $accent-hover-color: #87BAC3;
-$accent-color: lighten($accent-hover-color, 10%);
+$accent-color: #B9DCE2;
 $main-color: #ff9389;
 $main-hover-color: #ee5f64;
 
 // Browns/Beiges
 
+$brown: #D69354;
+
 $beige: #f1d7bb;
-$light-beige: #faf0e5;
+$light-beige: lighten($beige, 10%);
 $dark-beige: #e5c4a3;
 
 // Greys
-$grey: rgb(66, 66, 73);
-$light-grey: lighten($grey, 25%);
-$dark-grey: #424249;
+$grey: #6678AC;
+$light-grey: lighten($grey, 10%);
+$dark-grey: darken($grey, 5%);
 // Whites
 $white: #fff7f8;
 $light-white: #fff;

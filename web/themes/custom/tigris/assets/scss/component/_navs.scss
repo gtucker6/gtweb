@@ -54,17 +54,19 @@ nav {
   }
 }
 
-.mm-menu_theme-dark {
-  background-color: $white;
-
+.mm-menu_theme-light {
   a.nav-link {
     padding-left: 15px;
 
   }
-  a.nav-link, a.mm-navbar__title {
-    color: $main-color;
+  a.mm-navbar__title {
+    display: none;
+  }
+  a.nav-link {
+    color: $main-hover-color;
+    font-size: 22px;
   }
   a.nav-link:hover {
-    background-color: rgba($main-hover-color, .25);
+    background-color: rgba($grey, .25);
   }
 }

@@ -1,4 +1,10 @@
 .block {
+  &#block-myskills {
+    img {
+      filter: grayscale(100%);
+    }
+
+  }
   &.block-block-content {
     padding: $spacing;
   }

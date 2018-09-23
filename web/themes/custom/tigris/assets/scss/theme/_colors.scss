@@ -46,7 +46,7 @@
 .overlay--dark {
     background-color: rgba($grey, .75%);
 }
-.link-color--grey a:not(:hover):not(.btn):not(.badge), .text-color--grey {
+.link-color--grey a:not(:hover):not(.btn):not(.badge), .text-color--grey, .text-color--dark {
     color: $grey;
 }
 .link-color--grey a:hover:not(.btn):not(.badge), .link-color--grey a.navbar-brand:hover, a.link-color--grey:hover {
@@ -139,4 +139,31 @@
 }
 /** End Misc Colors. */
 
-
+/* Front Page */
+.layout-content {
+    .section:nth-child(2) {
+        background-color: $main-hover-color;
+        color: $white;
+        text {
+            fill: $white;
+        }
+        path {
+            fill: $grey;
+        }
+    }
+    .section:nth-child(3) {
+        background-color: $white;
+        color: $grey;
+        a {
+            color: $main-color;
+        }
+        a:hover {
+            color: $main-hover-color;
+        }
+    }
+    .section:nth-child(4) {
+        background-color: $grey;
+        color: $white;
+    }
+}
+/* End Front Page */

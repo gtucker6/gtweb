@@ -8,6 +8,10 @@
                flex-flow: row wrap;
                justify-content: center;
                height: 100%;
+               .field--name-taxonomy-term-title {
+                   width:  100%;
+                   text-align:  center;
+               }
            }
        }
        &.full-description {
@@ -59,6 +63,6 @@
 
 @media screen and (min-width: 40em) {
     .layout--twocol > .layout__region--first, .layout--twocol > .layout__region--second {
-        flex: 0 0 100%;
+        flex: 0 1 100%;
     }
 }
