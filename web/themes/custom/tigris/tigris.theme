@@ -142,8 +142,12 @@ function tigris_preprocess_paragraph__bp_carousel(&$variables) {
  */
 function tigris_preprocess_layout__onecol__node_work(&$variables) {
   if (!isset($variables['content']['field_finish_date'][0])) {
-    $variables['content']['field_finish_date']['#markup'] = 'Present';
-    $variables['content']['content']['field_finish_date']['#markup'] = 'Present';
+    if (isset($variables['content']['content']['group_job_description']['group_dates']['field_finish_date'])) {
+      $variables['content']['content']['group_job_description']['group_dates']['field_finish_date']['#markup'] = 'Present';
+    }
+    else {
+      $variables['content']['content']['field_finish_date']['#markup'] = 'Present';
+    }
   }
 }
 
