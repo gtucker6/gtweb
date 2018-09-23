@@ -12,7 +12,7 @@ dependencies:
 id: myskills
 theme: tigris
 region: content
-weight: -6
+weight: -4
 provider: null
 plugin: 'block_content:c2071094-4bda-4ab4-ac0b-58d2ff4e8322'
 settings:

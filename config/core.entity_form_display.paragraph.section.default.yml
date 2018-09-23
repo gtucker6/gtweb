@@ -17,7 +17,6 @@ third_party_settings:
     group_section_heading_settings:
       children:
         - field_section_heading_type
-        - field_section_title
         - field_section_heading
       parent_name: ''
       weight: 2
@@ -52,7 +51,7 @@ content:
     settings:
       title: Content
       title_plural: Contents
-      edit_mode: open
+      edit_mode: closed
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: _none

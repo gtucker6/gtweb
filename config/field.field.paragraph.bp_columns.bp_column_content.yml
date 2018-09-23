@@ -10,6 +10,7 @@ dependencies:
     - paragraphs.paragraphs_type.bp_image
     - paragraphs.paragraphs_type.bp_tabs
     - paragraphs.paragraphs_type.media
+    - paragraphs.paragraphs_type.section
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.text_image
     - paragraphs.paragraphs_type.view
@@ -38,6 +39,7 @@ settings:
       bp_columns: bp_columns
       bp_tabs: bp_tabs
       media: media
+      section: section
       text: text
       text_image: text_image
       view: view
@@ -73,8 +75,8 @@ settings:
         enabled: true
         weight: 27
       section:
+        enabled: true
         weight: 28
-        enabled: false
       subsection:
         weight: 29
         enabled: false
