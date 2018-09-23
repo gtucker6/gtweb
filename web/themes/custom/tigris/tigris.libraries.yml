@@ -8,7 +8,7 @@ bootstrap4:
   dependencies:
     - core/jquery
 
-global-styling:
+global:
   css:
     theme:
       css/tigris.css: {}
@@ -19,7 +19,21 @@ global-styling:
     - core/jquery
     - core/jquery.once
     - tigris/bootstrap4
-   
+
+charts:
+  css:
+    theme:
+      css/tigris.charts.css: {}
+  js:
+    js/tigris.charts.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery
+    - core/jquery.once
+    - tigris/global
+    - charts_google/google
+
 modal:
   js:
     js/modal.js: {}

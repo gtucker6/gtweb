@@ -8,6 +8,9 @@
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\Core\Url;
+use Drupal\views\ViewExecutable;
+use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\charts\Plugin\views\style\ChartsPluginStyleChart;
 
 /**
  * Implements hook_preprocess_HOOK().
@@ -67,6 +70,50 @@ function tigris_preprocess_paragraph__section(&$variables) {
   }
 }
 
+/**
+ * Implements hook_views_pre_render().
+ */
+function tigris_views_pre_render(ViewExecutable $view) {
+  $style_plugin = $view->style_plugin;
+  if ($style_plugin instanceof ChartsPluginStyleChart) {
+    $settings_data = [];
+    foreach ($view->element['#view']->result as $index => $resultRow) {
+      if (!$resultRow->_entity instanceof ContentEntityInterface) {
+        continue;
+      }
+      $data = $style_plugin->options['data_fields'];
+      foreach ($data as $key => $value) {
+        if (isset($resultRow->_entity->toArray()[$key])) {
+          if ($value !== 0) {
+            $experience = (int) $resultRow->_entity->get($key)->getString();
+            $confidence_percentage = floor(($experience / 4) * 100);
+            $resultRow->_entity->set($key, $confidence_percentage);
+          }
+          else {
+            $data_key = str_replace(' ', '_', strtolower($resultRow->_entity->get($key)->getString()));
+            $settings_data['chart'][$data_key][] = $resultRow->_entity->get($key)->getString();
+          }
+        }
+      }
+
+      if (isset($experience) && isset($data_key) && isset($confidence_percentage)) {
+        $settings_data['columns'] = 4;
+        $settings_data['chart'][$data_key][] = $experience;
+        $settings_data['chart'][$data_key][] = $confidence_percentage;
+        $view->element['#view']->result[$index] = $resultRow;
+      }
+    }
+    // element_id = web_skills__block_web_skills_tags
+    $settings = [];
+    $settings['tigrisChart']['id'] = $view->storage->id() . '__' . $view->current_display;
+    $settings['tigrisChart']['provider'] = $view->style_plugin->options['library'];
+    $settings['tigrisChart']['type'] = $style_plugin->options['type'];
+    $settings['tigrisChart']['widthUnits'] = $view->style_plugin->options['width_units'];
+    $settings['tigrisChart']['heightUnits'] = $view->style_plugin->options['height_units'];
+    $view->element['#attached']['drupalSettings'] = $settings;
+    $view->element['#attached']['library'][] = 'tigris/charts';
+  }
+}
 /**
  * Implements hook_preprocess_HOOK() for paragraph__bp_carousel.html.twig.
  */
