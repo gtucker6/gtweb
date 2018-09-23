@@ -3,9 +3,18 @@
 {% block paragraph %}
 {# Prints div with classes, and content without Width and Background. #}
 <div{{ attributes.addClass(classes) }}>
-  <div class="paragraph__column">
-    {{ title_suffix }}
-    {{ content|without('bp_width', 'bp_background') }}
+  <div class="paragraph__column row">
+    {% set count = content['bp_column_content']['#items'].getValue|length %}
+    {% for key, item in content.bp_column_content if '#' not in key %}
+        {% if count < 4 %}
+            {% set col_class = 'col-md-' ~ (12/count)|round(0, 'ceil') %}
+        {% else %}
+            {% set col_class = 'col-md-3' %}
+        {% endif %}
+        <div class="col-12 {{ col_class }}">
+            {{ item }}
+        </div>
+    {% endfor %}
   </div>
 </div>
 {% endblock %}
