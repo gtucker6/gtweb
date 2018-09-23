@@ -21,6 +21,7 @@ body {
 main, footer {
   display: flex;
   flex-flow: column;
+  min-height: 60vh;
 }
 /*
 main {
