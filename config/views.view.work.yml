@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.project_page
     - field.storage.node.field_company_address
     - field.storage.node.field_company_email
     - field.storage.node.field_company_number_s
@@ -64,13 +65,15 @@ display:
           offset: 0
       style:
         type: default
-      row:
-        type: fields
         options:
-          default_field_elements: false
-          inline: {  }
-          separator: ''
-          hide_empty: false
+          row_class: col-12
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: project_page
       fields:
         title:
           id: title
@@ -512,55 +515,6 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        nothing:
-          id: nothing
-          table: views
-          field: nothing
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: true
-            text: "<div class='row'>\n  <div class='col-12'>\n    <strong>Company Name:</strong>  <p> {{ title }} </p>\n  </div>\n  <div class='col-12'>\n    <strong>Job Title:</strong> <p>{{ field_work_title }}</p>\n  </div>\n  <div class='col-12'>\n    <span class='dates'>\n    {% if field_finish_date is empty %}\n    <strong>Dates:</strong> <p>{{ field_start_date }} - Present </p>\n    {% else %}\n    <strong>Dates:</strong>  <p>{{ field_start_date }} - {{ field_finish_date }} </p>\n    {% endif %}\n    </span>\n  </div>\n  <div class='col-12'>\n     <strong>Location:</strong> {{ field_company_address }}\n   </div>\n  <div class='col-12'>\n       <strong>Contact Information:</strong>\n       <p> \n          {{ field_company_email }} <br>\n         {{ field_company_number_s }}\n      </p>\n  </div>\n</div>"
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: false
-          plugin_id: custom
       filters:
         status:
           value: '1'

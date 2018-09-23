@@ -15,39 +15,130 @@ dependencies:
   module:
     - address
     - datetime
+    - ds
+    - field_group
     - telephone
     - text
     - user
+third_party_settings:
+  field_group:
+    group_dates:
+      children:
+        - field_start_date
+        - field_finish_date
+      parent_name: group_job_description
+      weight: 14
+      format_type: html_element
+      format_settings:
+        label: Dates
+        element: div
+        show_label: false
+        label_element: h5
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'd-flex flex-wrap'
+      label: Dates
+    group_contact_information:
+      children:
+        - field_company_number_s
+        - field_company_address
+        - field_company_email
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        label: 'Contact Information'
+        element: div
+        show_label: true
+        label_element: h4
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: ''
+      label: 'Contact Information'
+    group_job_description:
+      children:
+        - field_work_description
+        - field_work_title
+        - node_title
+        - group_dates
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        label: 'About the Job'
+        element: div
+        show_label: true
+        label_element: h4
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: ''
+      label: 'About the Job'
+  ds:
+    layout:
+      id: layout__onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings: {  }
+    regions:
+      content:
+        - group_job_description
+        - group_contact_information
+        - field_company_number_s
+        - field_company_address
+        - field_company_email
+        - field_work_description
+        - field_work_title
+        - node_title
+        - field_start_date
+        - group_dates
+        - field_finish_date
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 13
+        label: inline
+        formatter: default
+        settings:
+          wrapper: p
+          class: ''
+          link: false
 id: node.work.project_page
 targetEntityType: node
 bundle: work
 mode: project_page
 content:
   field_company_address:
-    weight: 5
+    weight: 4
     label: above
     settings: {  }
     third_party_settings: {  }
     type: address_default
     region: content
   field_company_email:
-    weight: 2
-    label: above
+    weight: 5
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    type: email_mailto
     region: content
   field_company_number_s:
-    weight: 1
-    label: above
+    weight: 3
+    label: hidden
     settings:
       title: ''
     third_party_settings: {  }
     type: telephone_link
     region: content
   field_finish_date:
-    weight: 4
-    label: above
+    weight: 15
+    label: visually_hidden
     settings:
       timezone_override: America/New_York
       format_type: html_month
@@ -55,8 +146,8 @@ content:
     type: datetime_default
     region: content
   field_start_date:
-    weight: 3
-    label: above
+    weight: 14
+    label: visually_hidden
     settings:
       timezone_override: America/New_York
       format_type: html_month
@@ -64,15 +155,15 @@ content:
     type: datetime_default
     region: content
   field_work_description:
-    weight: 6
-    label: above
+    weight: 11
+    label: visually_hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_work_title:
-    weight: 0
-    label: above
+    weight: 12
+    label: inline
     settings: {  }
     third_party_settings: {  }
     type: text_default
