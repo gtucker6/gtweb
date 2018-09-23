@@ -72,7 +72,26 @@
             </header>
         {% endif %}
     {% endblock %}
-
+    {% block secondary_menu %}
+        {% if page.secondary_menu %}
+        {% endif %}
+        {{ page.secondary_menu  }}
+    {% endblock %}
+    {% block breadcrumb %}
+        {% if page.breadcrumb %}
+        {% endif %}
+        {{ page.breadcrumb }}
+    {% endblock %}
+    {% block highlighted %}
+        {% if page.highlighted %}
+            {{ page.highlighted }}
+        {% endif %}
+    {% endblock %}
+    {% block help %}
+        {% if page.help %}
+            {{ page.help }}
+        {% endif %}
+    {% endblock %}
 
 
     <main role="main" class="bg-light">
