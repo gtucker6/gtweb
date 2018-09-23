@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "84d7b85349f9f810232eebced8b67654",
+    "content-hash": "a0f39da42d65126be3f03a0d21b25715",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2120,7 +2120,8 @@
                     "merge-extra": false
                 },
                 "patches_applied": {
-                    "Layout Discovery layouts deprecation": "https://www.drupal.org/files/issues/2018-07-04/drupal_layout_discovery-2911996-15.patch"
+                    "Layout Discovery layouts deprecation": "https://www.drupal.org/files/issues/2018-07-04/drupal_layout_discovery-2911996-15.patch",
+                    "Views relationship node view mode fix": "https://www.drupal.org/files/issues/2018-08-22/2457999-183.patch"
                 }
             },
             "autoload": {
