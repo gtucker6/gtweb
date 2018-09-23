@@ -63,6 +63,7 @@
 {% block main %}
     <div class="container-fluid">
         <div class="layout-content">
+            {{ devel_breakpoint() }}
             {% for key, item in page.content if '#' not in key %}
                 {% set i = 0 %}
                 <section id='section-{{ key|replace({'_':'-'}) }}' class="section d-flex flex-column">

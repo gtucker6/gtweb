@@ -16,7 +16,7 @@
     'layout--twocol',
 	  'layout--twocol--' ~ content['#view_mode']|replace({'_': '-'}),
     content['#view_mode']|replace({'_': '-'}),
-    content['#entity_type'] ~ '--',
+    content['#entity_type'] ~ '--' ~ content['#view_mode']|replace({'_': '-'}),
     'link-color--main',
     'text-color--darkgrey',
     'justify-content-center',

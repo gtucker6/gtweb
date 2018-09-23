@@ -35,7 +35,6 @@
 {% if width_field %}
     {% set classes = classes|merge(layout_width_classes) %}
 {% endif %}
-{{ devel_breakpoint() }}
 {% if content %}
   <div{{ attributes.addClass(classes) }}>
     <div {{ region_attributes.content.addClass('layout__region', 'layout__region--content') }}>
