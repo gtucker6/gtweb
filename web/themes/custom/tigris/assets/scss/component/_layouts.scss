@@ -1,64 +1,75 @@
 .layout {
-    &.layout--onecol {
-        padding: $spacing 0;
-       &.layout--taxonomy_term.featured {
-           height: 100%;
-           .layout__region--content {
-               display: flex;
-               flex-flow: row wrap;
-               justify-content: center;
-               height: 100%;
-               .field--name-taxonomy-term-title {
-                   width:  100%;
-                   text-align:  center;
-               }
-           }
+	.layout__region {
+		@media (min-width: $breakpoint-min-sm) {
+			.d-flex > * {
+				flex: 1;
+			}
+		}
+		@media (max-width: $breakpoint-max-xs) {
+			.d-flex {
+				flex-flow: column;
+			}
+		}
+	}
+	&.layout--onecol {
+		padding: $spacing 0;
+		&.layout--taxonomy_term.featured {
+			height: 100%;
+     .layout__region--content {
+       display: flex;
+       flex-flow: row wrap;
+       justify-content: center;
+       height: 100%;
+       .field--name-taxonomy-term-title {
+           width:  100%;
+           text-align:  center;
        }
-       &.full-description {
-           background-color: $light-tint;
-           padding: 15px;
-           height: 100%;
-       }
-    }
-    &.layout--twocol {
-        padding: $spacing 0;
-        .d-flex {
-            > .field {
-                margin-left: 10px;
-                margin-right: 10px;
-            }
-        }
-        &.right-images-preview {
-            @media screen and (max-width: $breakpoint-max-sm) {
-                .layout__region--first {
-                    order: 2;
-                }
-                .layout__region--second {
-                    order: 1;
-                }
-            }
-            .layout__region {
-                &.layout__region--first {
-                    padding: $spacing;
-                    .field:not(.field--name-node-title) {
-                        margin-top: 10px;
-                        margin-bottom: 10px;
-                    }
-                }
-            }
-        }
-        &.left-images-preview, &.featured, &.teaser {
-            .layout__region {
-                &.layout__region--second {
-                    padding: $spacing;
-                    .field:not(.field--name-node-title) {
-                        margin-top: 10px;
-                        margin-bottom: 10px;
-                    }
-                }
-            }
-        }
-    }
+     }
+		}
+		&.full-description {
+			background-color: $light-tint;
+			padding: 15px;
+			height: 100%;
+		}
+	}
+	&.layout--twocol {
+		padding: $spacing 0;
+		.d-flex {
+			> .field:first-child {
+				margin-right: 10px;
+			}
+		}
+		&.right-images-preview {
+			@media screen and (max-width: $breakpoint-max-sm) {
+				.layout__region--first {
+					order: 2;
+				}
+				.layout__region--second {
+					order: 1;
+				}
+			}
+			.layout__region {
+				&.layout__region--first {
+					padding: $spacing;
+					.field:not(.field--name-node-title) {
+						margin-top: 10px;
+						margin-bottom: 10px;
+					}
+				}
+			}
+		}
+		&.left-images-preview, &.featured, &.teaser {
+			.layout__region {
+				&.layout__region--second {
+					padding: $spacing;
+					.field:not(.field--name-node-title) {
+						margin-top: 10px;
+						margin-bottom: 10px;
+					}
+				}
+			}
+		}
+	}
 }
 
 @media screen and (min-width: 40em) {
