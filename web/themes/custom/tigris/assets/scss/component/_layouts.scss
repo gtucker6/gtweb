@@ -2,7 +2,7 @@
 	.layout__region {
 		@media (min-width: $breakpoint-min-sm) {
 			.d-flex > * {
-				flex: 1;
+				max-width: 50%;
 			}
 		}
 		@media (max-width: $breakpoint-max-xs) {
