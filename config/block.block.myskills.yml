@@ -1,9 +1,9 @@
-uuid: be481859-3ef0-43e8-b663-e3b98664c9ec
+uuid: 16d12291-ec48-481a-be41-b9a70493ab58
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:multipurpose_block:c2071094-4bda-4ab4-ac0b-58d2ff4e8322'
+    - 'block_content:multipurpose_block:8ddc3992-4502-4dc1-9b30-36fcca7ead16'
   module:
     - block_content
     - system
@@ -12,11 +12,11 @@ dependencies:
 id: myskills
 theme: tigris
 region: content
-weight: -4
+weight: 0
 provider: null
-plugin: 'block_content:c2071094-4bda-4ab4-ac0b-58d2ff4e8322'
+plugin: 'block_content:8ddc3992-4502-4dc1-9b30-36fcca7ead16'
 settings:
-  id: 'block_content:c2071094-4bda-4ab4-ac0b-58d2ff4e8322'
+  id: 'block_content:8ddc3992-4502-4dc1-9b30-36fcca7ead16'
   label: 'My Skills'
   provider: block_content
   label_display: visible

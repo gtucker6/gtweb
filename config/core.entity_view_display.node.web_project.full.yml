@@ -19,8 +19,6 @@ dependencies:
     - entity_reference_revisions
     - field_group
     - image
-    - link
-    - text
     - user
 third_party_settings:
   ds:
@@ -33,10 +31,8 @@ third_party_settings:
     regions:
       content:
         - group_main_top
-        - field_project_summary
-        - field_project_source
-        - group_preview
         - group_main_bottom
+        - group_preview
         - field_project_description
         - field_preview_desktop
         - field_preview_tablet
@@ -48,7 +44,7 @@ third_party_settings:
         - field_preview_tablet
         - field_preview_mobile
       parent_name: group_main_top
-      weight: 3
+      weight: 5
       format_type: html_element
       format_settings:
         label: Preview
@@ -63,8 +59,6 @@ third_party_settings:
       label: Preview
     group_main_top:
       children:
-        - field_project_summary
-        - field_project_source
         - group_preview
       parent_name: ''
       weight: 0
@@ -84,7 +78,7 @@ third_party_settings:
       children:
         - field_project_description
       parent_name: ''
-      weight: 4
+      weight: 1
       format_type: html_element
       format_settings:
         id: ''
@@ -139,26 +133,9 @@ content:
     third_party_settings:
       ds:
         ds_limit: ''
-  field_project_source:
-    type: link
-    weight: 2
-    region: content
-    label: visually_hidden
-    settings:
-      trim_length: 80
-      rel: ''
-      target: ''
-      url_only: false
-      url_plain: false
-    third_party_settings: {  }
-  field_project_summary:
-    type: text_default
-    weight: 1
-    region: content
-    label: visually_hidden
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   field_company: true
+  field_project_source: true
+  field_project_summary: true
   field_web_skills: true
   links: true
