@@ -3,7 +3,7 @@
 {% block paragraph %}
 {# Prints div with classes, and content without Width and Background. #}
 <div{{ attributes.addClass(classes) }}>
-  <div class="paragraph__column row">
+  <div class="paragraph__column row align-columns-center align-items-center">
     {% set count = content['bp_column_content']['#items'].getValue|length %}
     {% for key, item in content.bp_column_content if '#' not in key %}
         {% if count < 4 %}
