@@ -12,6 +12,7 @@ use Drupal\views\ViewExecutable;
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\charts\Plugin\views\style\ChartsPluginStyleChart;
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\views\Plugin\views\row\EntityRow;
 
 /**
  * Implements hook_preprocess_HOOK().
@@ -76,10 +77,26 @@ function tigris_preprocess_paragraph__section(&$variables) {
     /** @var Drupal\paragraphs\Entity\Paragraph $paragraph */
     $paragraph = $variables['elements']['#paragraph'];
     $heading_type = $paragraph->toArray()['field_section_heading_type'];
-    if (!empty($heading_type[0])) {
+    if (!empty($heading_type[0]) & !empty($variables['content']['field_section_heading'][0])) {
       $variables['content']['field_section_heading'][0]['#template'] = '<' . $heading_type[0]['value'] . '>' .
         $variables['content']['field_section_heading'][0]['#template'] .
         '</' . $heading_type[0]['value'] . '>';
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for views_view.html.twig.
+ */
+function tigris_preprocess_views_view(&$variables) {
+  /** @var \Drupal\views\ViewExecutable $view */
+  $view = $variables['view'];
+  if (isset($variables['rows'][0])) {
+    $rendered_rows = $variables['rows'][0]['#rows'];
+    if (isset($view->rowPlugin->options['alternating_fieldset']) && $view->rowPlugin->options['alternating_fieldset']['alternating']) {
+      foreach ($rendered_rows as $index => $row) {
+        $variables['rows'][0]['#rows'][$index]['#view_mode'] = $view->rowPlugin->options['alternating_fieldset']['item_' . $index];
+      }
     }
   }
 }
@@ -90,7 +107,7 @@ function tigris_preprocess_paragraph__section(&$variables) {
 function tigris_views_pre_render(ViewExecutable $view) {
   $style_plugin = $view->style_plugin;
   if ($style_plugin instanceof ChartsPluginStyleChart) {
-    foreach ($view->element['#view']->result as $index => $resultRow) {
+    foreach ($view->result as $index => $resultRow) {
       if (!$resultRow->_entity instanceof ContentEntityInterface) {
         continue;
       }
@@ -107,12 +124,6 @@ function tigris_views_pre_render(ViewExecutable $view) {
           }
         }
       }
-
-      foreach($style_plugin->options['data_fields'] as $key => $data_field) {
-        if($data_field !== 0) {
-
-        }
-      }
       if (isset($experience) && isset($data_key) && isset($confidence_percentage)) {
         $view->element['#view']->result[$index] = $resultRow;
       }
@@ -126,6 +137,7 @@ function tigris_views_pre_render(ViewExecutable $view) {
     $view->element['#attached']['library'][] = 'tigris/charts';
   }
 }
+
 /**
  * Implements hook_preprocess_HOOK() for paragraph__bp_carousel.html.twig.
  */
