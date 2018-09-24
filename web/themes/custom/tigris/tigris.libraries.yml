@@ -34,6 +34,14 @@ charts:
     - tigris/global
     - charts_google/google
 
+textType:
+  js:
+    js/tigris.textType.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+
 modal:
   js:
     js/modal.js: {}
