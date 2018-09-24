@@ -149,7 +149,7 @@
 
 /* Front Page */
 .layout-content {
-    .section:nth-child(4) {
+    .section#section-myskills {
         background-color: $main-shade;
         color: $light;
         text {
@@ -159,7 +159,7 @@
             fill: $grey;
         }
     }
-    .section:nth-child(3) {
+    .section#section-views-block--services-block-services-offered {
         background-color: $light;
         color: $grey;
         a {
@@ -169,7 +169,7 @@
             color: $main;
         }
     }
-    .section:nth-child(2) {
+    .section#section-tigris-content {
         background-color: $grey;
         color: $light;
     }
