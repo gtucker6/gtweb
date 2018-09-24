@@ -21,7 +21,7 @@
     margin: 0 auto;
   }
 }
-.view-web-skills {
+.view-web-skills:not(.view-display-id-block_web_skills_used) {
   .view-content.row {
     justify-content: center;
     .views-field-nothing, .field-content {
@@ -44,7 +44,7 @@
   }
   .view-content > div:not(:last-child) {
     padding: 35px 0;
-    border-bottom: 2px solid $light-beige;
+    border-bottom: 2px solid $beige-tint;
   }
   .field--name-field-project-source {
     .field__label {

@@ -30,7 +30,7 @@
   &.hero--image {
     .overlay {
       &.overlay--dark {
-        background: rgba($dark-grey, .75);
+        background: rgba($grey-shade, .75);
       }
       &.overlay--main {
         background-image: linear-gradient(to bottom, rgba(#ee5f64, .65), rgba(#ee5f64, .85), rgba(#f0a17e, .95), rgba(#f4c8a7, .85), rgba(#f1d7bb, .65));

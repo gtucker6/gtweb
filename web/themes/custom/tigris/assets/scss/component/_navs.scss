@@ -2,7 +2,7 @@
   &.menu--professional-profiles {
     margin: 35px 0;
     ul.nav.nav-pills {
-      border: 3px solid $main-color;
+      border: 3px solid $main;
       height: 30px;
       position: relative;
       align-items: center;
@@ -10,8 +10,8 @@
         display: inline-block;
         .svg-inline--fa  {
           border-radius: 50%;
-          border: 2px solid $main-color;
-          background-color: $white;
+          border: 2px solid $main;
+          background-color: $light;
           padding: 15px;
           height: 55px;
           width: 55px;
@@ -30,7 +30,7 @@
         }
         &:hover {
           .svg-inline--fa {
-            background-color: lighten($accent-color, 35%);
+            background-color: lighten($accent, 35%);
           }
         }
       }
@@ -55,6 +55,7 @@ nav {
 }
 
 .mm-menu_theme-light {
+  background-color: $main;
   a.nav-link {
     padding-left: 15px;
 
@@ -63,7 +64,7 @@ nav {
     display: none;
   }
   a.nav-link {
-    color: $main-hover-color;
+    color: $light;
     font-size: 22px;
   }
   a.nav-link:hover {

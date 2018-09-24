@@ -1,47 +1,55 @@
 /** Main Colors */
 .bg-main, .btn-main:not(:hover) {
-    background-color: $main-color;
+    background-color: $main;
 }
-.link-color--main a:not(:hover):not(.btn):not(.badge), .text-color--main {
-    color: $main-color;
+.link-color--main a:not(:hover):not(.btn):not(.badge), a.link-color--main:not(:hover), .text-color--main {
+    color: $main;
 }
 
-.link-color--main a:hover:not(.btn) {
-    color: $main-hover-color;
+.link-color--main a:hover:not(.btn), a.link-color--main:hover {
+    color: $main-shade;
 }
 
 .btn-main:hover {
-    background: $main-hover-color;
+    background: $main-shade;
 }
 .btn-outline-main:not(:hover) {
-    border: 1px solid $main-hover-color;
+    border: 1px solid $main-shade;
     background-color: transparent;
-    color: $main-hover-color;
+    color: $main-shade;
 }
 .btn-outline-main:hover {
-    background-color: $main-color;
-    color: $white;
+    background-color: $main;
+    color: $light;
 }
 /** End Main Colors. */
 
 /** Accent Colors. */
 .bg-accent, .btn-accent:not(:hover), .more-link > a:not(:hover), .badge-accent:not(:hover) {
-    background-color: $accent-color;
+    background-color: $accent;
 }
 .link-color--accent a:not(:hover):not(.btn):not(.badge), .text-color--accent {
-    color: $accent-color;
+    color: $accent;
 }
 .link-color--accent a:hover:not(.btn):not(.badge), .link-color--accent a.navbar-brand:hover, a.link-color--accent:hover:not(.btn):not(.badge) {
-    color: $accent-hover-color;
+    color: $accent-shade;
 }
 .btn-accent:hover, .more-link > a:hover, span.badge-accent:hover {
-    background: $accent-hover-color;
+    background: $accent-shade;
 }
 /** End Accent Colors. */
 
 /** Dark Colors. */
 .bg-dark, .btn-dark:not(:hover) {
     background-color: $grey !important;
+}
+.bg-dark {
+    a:not(.btn):not(.badge) {
+     color: $main-tint;
+    }
+    a:hover:not(.btn):not(.badge) {
+      color: $main;
+    }
 }
 .overlay--dark {
     background-color: rgba($grey, .75%);
@@ -50,38 +58,38 @@
     color: $grey;
 }
 .link-color--grey a:hover:not(.btn):not(.badge), .link-color--grey a.navbar-brand:hover, a.link-color--grey:hover {
-    color: $light-grey;
+    color: $grey-tint;
 }
 .link-color--dark-grey a:hover:not(.btn):not(.badge), .text-color--dark-grey {
-    color: $dark-grey;
+    color: $grey-shade;
 }
 .link-color--light-grey a:not(:hover):not(.btn):not(.badge), .text-color--light-grey {
-    color: $light-grey;
+    color: $grey-tint;
 }
 .link-color--dark-grey a:hover:not(.btn):not(.badge), .link-color--dark-grey  a.navbar-brand:hover, a.link-color--dark-grey:hover {
-    color: $light-grey;
+    color: $grey-tint;
 }
 .link-color--light-grey a:hover:not(.btn):not(.badge), .link-color--light-grey a.navbar-brand:hover, a.link-color--light-grey:hover {
-    color: $dark-grey
+    color: $grey-shade
 }
 /** End Dark Colors. */
 
 /** Light Colors. */
 .overlay--light {
-    background-color: rgba($white, .75%);
+    background-color: rgba($light, .75%);
 }
 .text-color--light {
-    color: $white;
+    color: $light;
 }
 .bg-light, .btn-light:not(:hover) {
-    background-color: $white !important;
+    background-color: $light !important;
 }
 .link-color--light {
     a:not(:hover):not(.btn):not(.badge) {
-        color: $white;
+        color: $light;
     }
     a:hover:not(.btn):not(.badge) {
-        color: $dark-white;
+        color: $light-shade;
     }
 }
 /** End Light Colors. */
@@ -91,40 +99,40 @@
     background-color: $beige;
 }
 .bg-beige--light {
-    background-color: $light-beige;
+    background-color: $beige-tint;
 }
 .bg-beige--dark {
-    background-color: $dark-beige;
+    background-color: $beige-shade;
 }
 .text-color--beige {
-    color: $dark-beige;
+    color: $beige-shade;
 }
 .link-color--beige {
-    color: $light-beige;
+    color: $beige-tint;
 }
 
 /* End Brown/Beige Colors */
 /** Custom Colors. */
 .badge a, .badge:not(.badge-light):not(.badge-white) {
-    color: $light-white !important;
+    color: $light-tint !important;
 }
 .bg-duo {
-    color: $light-white;
+    color: $light-tint;
     a {
-        color: $light-white;
+        color: $light-tint;
     }
     &:nth-child(1n+0) {
-        background: $accent-color;
+        background: $accent;
     }
     &:nth-child(2n+0) {
-        background: $main-color;
+        background: $main;
     }
     @media (min-width: $breakpoint-min-sm) and (max-width: $breakpoint-max-sm) {
         &:nth-child(4), &:nth-child(5) {
-            background: $accent-color !important;
+            background: $accent !important;
         }
         &:nth-child(2), &:nth-child(3), &:nth-child(6) {
-            background: $main-hover-color !important;
+            background: $main-shade !important;
         }
     }
 }
@@ -132,38 +140,38 @@
 
 /** Misc Colors. */
 .bg-dark, .btn-main:not(:hover), .btn-accent:not(:hover), .btn-dark:not(:hover), .text-color--white, .badge, .more-link a {
-    color: $white;
+    color: $light;
 }
 .btn-accent:hover, .btn-main:hover {
-    color: $white;
+    color: $light;
 }
 /** End Misc Colors. */
 
 /* Front Page */
 .layout-content {
-    .section:nth-child(2) {
-        background-color: $main-hover-color;
-        color: $white;
+    .section:nth-child(4) {
+        background-color: $main-shade;
+        color: $light;
         text {
-            fill: $white;
+            fill: $light;
         }
         path {
             fill: $grey;
         }
     }
     .section:nth-child(3) {
-        background-color: $white;
+        background-color: $light;
         color: $grey;
         a {
-            color: $main-color;
+            color: $main-tint;
         }
         a:hover {
-            color: $main-hover-color;
+            color: $main;
         }
     }
-    .section:nth-child(4) {
+    .section:nth-child(2) {
         background-color: $grey;
-        color: $white;
+        color: $light;
     }
 }
 /* End Front Page */

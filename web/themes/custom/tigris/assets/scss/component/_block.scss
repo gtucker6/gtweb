@@ -52,17 +52,17 @@
           transform: rotate(-45deg);
         }
         .intro-cta-link-wrapper {
-          background-color: $white;
-          border: 1px solid darken($main-color, 5%);
+          background-color: $light;
+          border: 1px solid darken($main, 5%);
           a {
-            color: $main-color;
+            color: $main;
           }
         }
         .intro-cta-link-wrapper:hover {
-          background-color: $white;
-          border: 1px solid darken($main-hover-color, 5%);
+          background-color: $light;
+          border: 1px solid darken($main-shade, 5%);
           a {
-            color: $main-hover-color;
+            color: $main-shade;
           }
         }
       }
