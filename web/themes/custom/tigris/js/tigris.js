@@ -9,7 +9,7 @@
             navbar.position(context);
           });
           $(window).on('scroll', function() {
-            navbar.changeColor(context, 'main')
+            navbar.changeColor(context, 'main');
           });
         }
     };
@@ -23,11 +23,13 @@
     function Menu(nav) {
       this.element = $(nav);
       this.changeColor = function(context, color = 'shade') {
-        if ($(window).scrollTop() >= ($(context).find('header.hero').outerHeight() - this.getHeight())) {
-          $(nav).addClass('bg-'+ color);
-        }
-        if($(window).scrollTop() < ($(context).find('header.hero').outerHeight() - this.getHeight())) {
-          $(nav).removeClass('bg-'+ color);
+        if($(context).find('header.hero').length) {
+          if ($(window).scrollTop() >= ($(context).find('header.hero').outerHeight() - this.getHeight())) {
+            $(nav).addClass('bg-'+ color);
+          }
+          if($(window).scrollTop() < ($(context).find('header.hero').outerHeight() - this.getHeight())) {
+            $(nav).removeClass('bg-'+ color);
+          }
         }
       }.bind(this);
       this.getWidth = function() {
