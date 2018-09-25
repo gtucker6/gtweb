@@ -1,3 +1,18 @@
 .paragraph--type--bp-columns {
-
+  > .col-12 {
+    @media(max-width: $breakpoint-max-sm) {
+      &.col-duo {
+        &:nth-child(1) {
+          &.col-text-wrapper {
+            order: 2;
+          }
+        }
+        &:nth-child(2) {
+          &.col-image-wrapper, &.col-bp-carousel-wrapper {
+            order: 1;
+          }
+        }
+      }
+    }
+  }
 }
