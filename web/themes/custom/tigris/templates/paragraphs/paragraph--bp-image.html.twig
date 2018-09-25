@@ -8,7 +8,7 @@
     {% if content.bp_link|render is not empty %}
       <a href="{{ content.bp_link.0['#url'] }}">
     {% endif %}
-      {{ content|without('bp_width', 'bp_background', 'bp_link') }}
+      {{ content|without('bp_width', 'bp_background', 'field_background_color', 'field_vertical_alignment', 'field_horizontal_alignment') }}
     {% if content.bp_link|render is not empty %}
       </a>
     {% endif %}

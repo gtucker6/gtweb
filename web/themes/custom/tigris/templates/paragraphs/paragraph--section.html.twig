@@ -5,7 +5,7 @@
 <section {{ attributes.addClass(classes, 'row') }}>
   <div class="paragraph__column col-12">
     {{ title_suffix }}
-    {{ content|without('bp_width', 'bp_background', 'field_background_color') }}
+    {{ content|without('bp_width', 'bp_background', 'field_background_color', 'field_vertical_alignment', 'field_horizontal_alignment') }}
   </div>
 </section>
 {% endblock %}
