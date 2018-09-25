@@ -78,12 +78,23 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     {% set classes = classes|merge(['bg-color', custom_background]) %}
 {% endif %}
 
+{% set vertical_alignment = content.field_vertical_alignment|render %}
+{% set horizontal_alignment = content.field_vertical_alignment|render %}
+{% if vertical_alignment %}
+    {% set vertical_classes = content.field_vertical_alignment['#items'].getString()|split(',')|join(" ") %}
+    {% set classes = classes|merge([vertical_classes]) %}
+{% endif %}
+{% if horizontal_alignment %}
+    {% set horizontal_classes = content.field_horizontal_alignment['#items'].getString()|split(',')|join(" ") %}
+    {% set classes = classes|merge([horizontal_classes]) %}
+{% endif %}
+
 {% block paragraph %}
 {# Prints div with classes, and content without Width and Background. #}
-<div{{ attributes.addClass(classes) }}>
-  <div class="paragraph__column">
+<div{{ attributes.addClass(classes, 'row') }}>
+  <div class="paragraph__column col-12">
     {{ title_suffix }}
-    {{ content|without('bp_width', 'bp_background', 'field_background_color') }}
+    {{ content|without('bp_width', 'bp_background', 'field_background_color', 'field_vertical_alignment', 'field_horizontal_alignment') }}
   </div>
 </div>
 {% endblock %}
