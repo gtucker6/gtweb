@@ -1,10 +1,5 @@
 .layout {
 	.layout__region {
-		@media (min-width: $breakpoint-min-sm) {
-			.d-flex > * {
-				max-width: 50%;
-			}
-		}
 		@media (max-width: $breakpoint-max-xs) {
 			.d-flex {
 				flex-flow: column;
