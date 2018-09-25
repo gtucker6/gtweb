@@ -5,9 +5,11 @@ dependencies:
   config:
     - field.field.paragraph.section.bp_width
     - field.field.paragraph.section.field_background_color
+    - field.field.paragraph.section.field_horizontal_alignment
     - field.field.paragraph.section.field_section
     - field.field.paragraph.section.field_section_heading
     - field.field.paragraph.section.field_section_heading_type
+    - field.field.paragraph.section.field_vertical_alignment
     - paragraphs.paragraphs_type.section
   module:
     - ds
@@ -32,6 +34,13 @@ content:
     label: visually_hidden
     settings: {  }
     third_party_settings: {  }
+  field_horizontal_alignment:
+    weight: 4
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
   field_section:
     type: entity_reference_revisions_entity_view
     weight: 1
@@ -50,6 +59,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_vertical_alignment:
+    weight: 5
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
     region: content
 hidden:
   field_section_heading_type: true

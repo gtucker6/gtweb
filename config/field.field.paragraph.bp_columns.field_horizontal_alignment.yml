@@ -1,0 +1,21 @@
+uuid: 5160459c-6466-4ef3-9ef9-d84feb444db3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_horizontal_alignment
+    - paragraphs.paragraphs_type.bp_columns
+  module:
+    - options
+id: paragraph.bp_columns.field_horizontal_alignment
+field_name: field_horizontal_alignment
+entity_type: paragraph
+bundle: bp_columns
+label: 'Horizontal Alignment'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

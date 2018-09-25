@@ -292,7 +292,7 @@ display:
     display_options:
       path: node
       display_extenders: {  }
-      title: ''
+      title: 'Hi, I''m Gloria Tucker'
       defaults:
         title: false
         header: false

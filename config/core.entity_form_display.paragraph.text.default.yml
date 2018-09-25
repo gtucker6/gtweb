@@ -6,9 +6,29 @@ dependencies:
     - field.field.paragraph.text.bp_width
     - field.field.paragraph.text.field_background_color
     - field.field.paragraph.text.field_content_body
+    - field.field.paragraph.text.field_horizontal_alignment
+    - field.field.paragraph.text.field_vertical_alignment
     - paragraphs.paragraphs_type.text
   module:
+    - field_group
     - text
+third_party_settings:
+  field_group:
+    group_display_settings:
+      children:
+        - bp_width
+        - field_background_color
+        - field_horizontal_alignment
+        - field_vertical_alignment
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Display Settings'
 id: paragraph.text.default
 targetEntityType: paragraph
 bundle: text
@@ -27,13 +47,25 @@ content:
     type: options_select
     region: content
   field_content_body:
-    weight: 0
+    weight: 5
     settings:
       rows: 9
       summary_rows: 3
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea_with_summary
+    region: content
+  field_horizontal_alignment:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_vertical_alignment:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
 hidden:
   created: true

@@ -6,6 +6,8 @@ dependencies:
     - field.field.paragraph.text.bp_width
     - field.field.paragraph.text.field_background_color
     - field.field.paragraph.text.field_content_body
+    - field.field.paragraph.text.field_horizontal_alignment
+    - field.field.paragraph.text.field_vertical_alignment
     - paragraphs.paragraphs_type.text
   module:
     - options
@@ -17,14 +19,14 @@ mode: default
 content:
   bp_width:
     weight: 1
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: list_default
+    type: list_key
     region: content
   field_background_color:
     weight: 2
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_default
@@ -35,5 +37,19 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_horizontal_alignment:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  field_vertical_alignment:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
     region: content
 hidden: {  }

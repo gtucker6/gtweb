@@ -1,0 +1,25 @@
+uuid: 1c75a5af-dde6-4d88-ab83-66e70b377f8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.introduction_cta
+    - field.storage.block_content.field_skills
+id: block_content.introduction_cta.field_skills
+field_name: field_skills
+entity_type: block_content
+bundle: introduction_cta
+label: Skills
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: web_skills
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference

@@ -1,0 +1,21 @@
+uuid: a3bbed1d-2757-42f3-ae64-43eddf7f01bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vertical_alignment
+    - paragraphs.paragraphs_type.text
+  module:
+    - options
+id: paragraph.text.field_vertical_alignment
+field_name: field_vertical_alignment
+entity_type: paragraph
+bundle: text
+label: 'Vertical Alignment'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -6,7 +6,7 @@ dependencies:
     - block_content.type.introduction_cta
     - field.field.block_content.introduction_cta.body
     - field.field.block_content.introduction_cta.field_cta_button
-    - field.field.block_content.introduction_cta.field_cta_links
+    - field.field.block_content.introduction_cta.field_skills
   module:
     - link_class
     - text
@@ -35,16 +35,11 @@ content:
     third_party_settings: {  }
     type: link_class_field_widget
     region: content
-  field_cta_links:
+  field_skills:
     weight: 28
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-      link_class_mode: force_class
-      link_class_force: intro-cta-link
-      link_class_select: ''
+    settings: {  }
     third_party_settings: {  }
-    type: link_class_field_widget
+    type: options_select
     region: content
   info:
     type: string_textfield

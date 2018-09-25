@@ -7,12 +7,32 @@ dependencies:
     - field.field.paragraph.bp_image.bp_image_field
     - field.field.paragraph.bp_image.bp_link
     - field.field.paragraph.bp_image.bp_width
+    - field.field.paragraph.bp_image.field_horizontal_alignment
     - field.field.paragraph.bp_image.field_image_text
+    - field.field.paragraph.bp_image.field_vertical_alignment
     - image.style.thumbnail
     - paragraphs.paragraphs_type.bp_image
   module:
+    - field_group
     - image
     - link
+third_party_settings:
+  field_group:
+    group_display_settings:
+      children:
+        - bp_background
+        - bp_width
+        - field_vertical_alignment
+        - field_horizontal_alignment
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Display Settings'
 _core:
   default_config_hash: HdN79DCCkrP_BBFmnXk4bHUxNg16EtuZC7olW5xr2wE
 id: paragraph.bp_image.default
@@ -21,13 +41,13 @@ bundle: bp_image
 mode: default
 content:
   bp_background:
-    weight: 0
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   bp_image_field:
-    weight: 2
+    weight: 5
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -35,7 +55,7 @@ content:
     type: image_image
     region: content
   bp_link:
-    weight: 4
+    weight: 7
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -43,18 +63,30 @@ content:
     type: link_default
     region: content
   bp_width:
-    weight: 1
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_horizontal_alignment:
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_image_text:
-    weight: 3
+    weight: 6
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_vertical_alignment:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
 hidden:
   created: true

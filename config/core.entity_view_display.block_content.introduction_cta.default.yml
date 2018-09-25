@@ -6,7 +6,7 @@ dependencies:
     - block_content.type.introduction_cta
     - field.field.block_content.introduction_cta.body
     - field.field.block_content.introduction_cta.field_cta_button
-    - field.field.block_content.introduction_cta.field_cta_links
+    - field.field.block_content.introduction_cta.field_skills
   module:
     - link
     - text
@@ -34,16 +34,5 @@ content:
     third_party_settings: {  }
     type: link
     region: content
-  field_cta_links:
-    weight: 2
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
-    region: content
-hidden: {  }
+hidden:
+  field_skills: true

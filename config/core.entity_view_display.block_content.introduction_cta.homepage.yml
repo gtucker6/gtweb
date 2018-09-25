@@ -7,8 +7,9 @@ dependencies:
     - core.entity_view_mode.block_content.homepage
     - field.field.block_content.introduction_cta.body
     - field.field.block_content.introduction_cta.field_cta_button
-    - field.field.block_content.introduction_cta.field_cta_links
+    - field.field.block_content.introduction_cta.field_skills
   module:
+    - ds
     - link
     - text
 id: block_content.introduction_cta.homepage
@@ -19,23 +20,11 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 0
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     region: content
   field_cta_button:
-    type: link
-    weight: 1
-    region: content
-    label: visually_hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-  field_cta_links:
     type: link
     weight: 2
     region: content
@@ -47,4 +36,14 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
+  field_skills:
+    type: entity_reference_label
+    weight: 0
+    region: content
+    label: visually_hidden
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
 hidden: {  }
