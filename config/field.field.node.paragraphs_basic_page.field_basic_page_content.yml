@@ -5,13 +5,18 @@ dependencies:
   config:
     - field.storage.node.field_basic_page_content
     - node.type.paragraphs_basic_page
+    - paragraphs.paragraphs_type.bp_accordion
     - paragraphs.paragraphs_type.bp_carousel
+    - paragraphs.paragraphs_type.bp_columns
     - paragraphs.paragraphs_type.bp_image
+    - paragraphs.paragraphs_type.bp_tabs
     - paragraphs.paragraphs_type.hero
     - paragraphs.paragraphs_type.media
+    - paragraphs.paragraphs_type.section
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.text_image
     - paragraphs.paragraphs_type.text_images
+    - paragraphs.paragraphs_type.view
   module:
     - entity_reference_revisions
 id: node.paragraphs_basic_page.field_basic_page_content
@@ -29,17 +34,22 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
+      section: section
       media: media
       text: text
       text_image: text_image
       text_images: text_images
+      bp_accordion: bp_accordion
+      bp_columns: bp_columns
       bp_carousel: bp_carousel
       hero: hero
       bp_image: bp_image
+      bp_tabs: bp_tabs
+      view: view
     target_bundles_drag_drop:
       section:
+        enabled: true
         weight: 8
-        enabled: false
       media:
         enabled: true
         weight: 8
@@ -56,14 +66,14 @@ settings:
         enabled: true
         weight: 12
       bp_accordion:
+        enabled: true
         weight: 17
-        enabled: false
       bp_accordion_section:
         weight: 18
         enabled: false
       bp_columns:
+        enabled: true
         weight: 20
-        enabled: false
       bp_carousel:
         enabled: true
         weight: 22
@@ -77,12 +87,12 @@ settings:
         enabled: true
         weight: 27
       bp_tabs:
+        enabled: true
         weight: 29
-        enabled: false
       bp_tab_section:
         weight: 30
         enabled: false
       view:
+        enabled: true
         weight: 32
-        enabled: false
 field_type: entity_reference_revisions
