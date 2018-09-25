@@ -1,0 +1,20 @@
+uuid: f103c056-f350-4a73-8cb9-738fd917d4d0
+langcode: en
+status: true
+dependencies:
+  module:
+    - responsive_menu
+  theme:
+    - tigris
+id: responsivemenumobileicon
+theme: tigris
+region: primary_menu
+weight: 0
+provider: null
+plugin: responsive_menu_toggle
+settings:
+  id: responsive_menu_toggle
+  label: 'Responsive menu mobile icon'
+  provider: responsive_menu
+  label_display: '0'
+visibility: {  }
