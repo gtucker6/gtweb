@@ -149,6 +149,11 @@
 
 /* Front Page */
 .layout-content {
+    section.bg-color {
+        &.bg-light {
+
+        }
+    }
     .section#section-myskills {
         background-color: $main;
         color: $light;
