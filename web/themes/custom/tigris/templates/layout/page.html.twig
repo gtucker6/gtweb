@@ -42,93 +42,85 @@
  * @see html.html.twig
  */
 #}
-{% if attributes is not empty %}
-    <div {{ attributes }}>
-{% endif %}
-<div class="layout-container">
-    {% block nav %}
-        {% if page.primary_menu %}
-            {% set nav_classes = ['fixed-top', 'navbar', 'navbar-custom'] %}
-            <nav class="navbar link-color--light {{ nav_classes|join(' ') }}">
-                {{ page.primary_menu }}
-            </nav>
-        {% endif %}
-    {% endblock %}
+{% block nav %}
+    {% if page.primary_menu %}
+        {% set nav_classes = ['fixed-top', 'navbar', 'navbar-custom'] %}
+        <nav class="navbar navbar-expand-lg link-color--light {{ nav_classes|join(' ') }}">
+            {{ page.primary_menu }}
+        </nav>
+    {% endif %}
+{% endblock %}
 
-    {% block header %}
-        {% if page.header %}
-            {% set header_classes = [] %}
-            {% set overlay_classes = [] %}
-            {% set header_classes = header_classes|merge(['hero', 'hero--title']) %}
-            {% set overlay_classes = overlay_classes|merge(['overlay', 'bg-main']) %}
-            <header class="text-color--light {{ header_classes|join(' ') }}">
-                <div class="{{ overlay_classes|join(' ') }}">
-                    <div class="container-fluid">
-                        <div class="row justify-content-center">
-                            {{ page.header }}
-                        </div>
+{% block header %}
+    {% if page.header %}
+        {% set header_classes = [] %}
+        {% set overlay_classes = [] %}
+        {% set header_classes = header_classes|merge(['hero', 'hero--title']) %}
+        {% set overlay_classes = overlay_classes|merge(['overlay', 'bg-main']) %}
+        <header class="text-color--light {{ header_classes|join(' ') }}">
+            <div class="{{ overlay_classes|join(' ') }}">
+                <div class="container-fluid">
+                    <div class="row justify-content-center">
+                        {{ page.header }}
                     </div>
                 </div>
-            </header>
-        {% endif %}
-    {% endblock %}
-    {% block secondary_menu %}
-        {% if page.secondary_menu %}
-        {% endif %}
-        {{ page.secondary_menu  }}
-    {% endblock %}
-    {% block breadcrumb %}
-        {% if page.breadcrumb %}
-        {% endif %}
-        {{ page.breadcrumb }}
-    {% endblock %}
-    {% block highlighted %}
-        {% if page.highlighted %}
-            {{ page.highlighted }}
-        {% endif %}
-    {% endblock %}
-    {% block help %}
-        {% if page.help %}
-            {{ page.help }}
-        {% endif %}
-    {% endblock %}
-
-
-    <main role="main" class="bg-light">
-        <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-        {% block main %}
-            <div class="container">
-                <div class="layout-content">
-                    {{ page.content }}
-                </div>
-
-                {% if page.sidebar_first %}
-                    <aside class="layout-sidebar-first" role="complementary">
-                        {{ page.sidebar_first }}
-                    </aside>
-                {% endif %}
-
-                {% if page.sidebar_second %}
-                    <aside class="layout-sidebar-second" role="complementary">
-                        {{ page.sidebar_second }}
-                    </aside>
-                {% endif %}
             </div>
-        {% endblock %}
-    </main>
+        </header>
+    {% endif %}
+{% endblock %}
+{% block secondary_menu %}
+    {% if page.secondary_menu %}
+    {% endif %}
+    {{ page.secondary_menu  }}
+{% endblock %}
+{% block breadcrumb %}
+    {% if page.breadcrumb %}
+    {% endif %}
+    {{ page.breadcrumb }}
+{% endblock %}
+{% block highlighted %}
+    {% if page.highlighted %}
+        {{ page.highlighted }}
+    {% endif %}
+{% endblock %}
+{% block help %}
+    {% if page.help %}
+        {{ page.help }}
+    {% endif %}
+{% endblock %}
 
-    {% block footer %}
-        {% if page.footer %}
-            <footer role="contentinfo" class="hero link-color--main text-color--dark">
-                <div class="overlay bg-beige--light">
-                    <div class="container">
-                        {{ page.footer }}
-                    </div>
-                </div>
-            </footer>
-        {% endif %}
+
+<main role="main" class="bg-light">
+    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+    {% block main %}
+        <div class="container">
+            <div class="layout-content">
+                {{ page.content }}
+            </div>
+
+            {% if page.sidebar_first %}
+                <aside class="layout-sidebar-first" role="complementary">
+                    {{ page.sidebar_first }}
+                </aside>
+            {% endif %}
+
+            {% if page.sidebar_second %}
+                <aside class="layout-sidebar-second" role="complementary">
+                    {{ page.sidebar_second }}
+                </aside>
+            {% endif %}
+        </div>
     {% endblock %}
-</div>
-{% if attributes is not empty %}
-    </div>
-{% endif %}
+</main>
+
+{% block footer %}
+    {% if page.footer %}
+        <footer role="contentinfo" class="hero link-color--main text-color--dark">
+            <div class="overlay bg-beige--light">
+                <div class="container">
+                    {{ page.footer }}
+                </div>
+            </div>
+        </footer>
+    {% endif %}
+{% endblock %}

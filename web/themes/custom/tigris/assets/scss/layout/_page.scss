@@ -1,4 +1,8 @@
-.path-node {
+body:not(.path-frontpage) {
+  .layout-content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 }
 .path-frontpage{
   header.loaded {
