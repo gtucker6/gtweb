@@ -54,20 +54,16 @@ nav {
   }
 }
 
-.mm-menu_theme-light {
-  background-color: $main;
+.mm-menu.mm-menu_offcanvas {
+  background-color: $main-shade;
   a.nav-link {
     padding-left: 15px;
-
+    font-size: 25px;
+  }
+  a.nav-link:hover {
+    background-color: rgba($accent-shade, .75);
   }
   a.mm-navbar__title {
     display: none;
-  }
-  a.nav-link {
-    color: $light;
-    font-size: 22px;
-  }
-  a.nav-link:hover {
-    background-color: rgba($grey, .25);
   }
 }
