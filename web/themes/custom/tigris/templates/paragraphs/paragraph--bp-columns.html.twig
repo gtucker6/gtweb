@@ -4,7 +4,18 @@
 <div{{ attributes.addClass(classes, 'row') }}>
     {% set count = content['bp_column_content']['#items'].getValue|length %}
     {% for key, item in content.bp_column_content if '#' not in key %}
-        {{ item }}
+        {% if count < 4 %}
+            {% if count == 2 %}
+                {% set col_class = 'col-md-6 col-duo' %}
+            {% else %}
+                {% set col_class = 'col-md-' ~ (12/count)|round(0, 'ceil') %}
+            {% endif %}
+        {% else %}
+            {% set col_class = 'col-md-3' %}
+        {% endif %}
+        <div class="col-12 {{col_class}} {{ item['#attributes']['class'][0] }}-wrapper">
+            {{ item }}
+        </div>
     {% endfor %}
 </div>
 {% endblock %}

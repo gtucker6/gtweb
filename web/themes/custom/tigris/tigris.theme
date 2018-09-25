@@ -155,15 +155,7 @@ function tigris_preprocess_paragraph__bp_columns(&$variables) {
       $item = $variables['elements']['bp_column_content'][$i];
       /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
       $paragraph = $item['#paragraph'];
-      $variables['content']['bp_column_content'][$i]['#attributes']['class'][] = 'col-' . $paragraph->bundle();
-      $col_class = 'col-12';
-      if ($count <= 4) {
-        $col_class .= ' col-md-' . floor(12 / $count);
-      }
-      else {
-        $col_class .= ' col-md-4';
-      }
-      $variables['content']['bp_column_content'][$i]['#attributes']['class'][] = $col_class;
+      $variables['content']['bp_column_content'][$i]['#attributes']['class'][] = 'col-' . str_replace('_', '-', $paragraph->bundle());
     }
   }
 }
