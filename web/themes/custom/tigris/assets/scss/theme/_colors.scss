@@ -147,6 +147,18 @@
 }
 /** End Misc Colors. */
 
+a.carousel-control {
+    .svg-inline--fa {
+        font-size: 30px;
+    }
+    &:not(:hover) {
+        color: $main;
+        opacity: 1;
+    }
+    &:hover {
+        background-color: rgba($main, .75);
+    }
+}
 /* Front Page */
 .layout-content {
     section.bg-color {

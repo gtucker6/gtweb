@@ -1,7 +1,7 @@
 .layout {
 	.layout__region {
 		@media (max-width: $breakpoint-max-xs) {
-			.d-flex {
+			.d-flex:not(.dates):not(.item-logo) {
 				flex-flow: column;
 			}
 		}

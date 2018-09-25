@@ -29,21 +29,23 @@
   }
 }
 
-.paragraph.bg-color {
-  min-height: 100%;
-}
-.paragraph--width--tiny {
-  width: 33.3333%;
-}
-.paragraph--width--narrow {
-  width: 50%;
-}
-.paragraph--width--medium {
-  width: 66.666667%;
-}
-.paragraph--width--wide {
-  width: 83.333333%;
-}
-.paragraph--width--full {
-  width: 100%;
+@media (min-width: $breakpoint-min-sm) {
+  .paragraph.bg-color {
+    min-height: 100%;
+  }
+  .paragraph--width--tiny {
+    width: 33.3333%;
+  }
+  .paragraph--width--narrow {
+    width: 50%;
+  }
+  .paragraph--width--medium {
+    width: 66.666667%;
+  }
+  .paragraph--width--wide {
+    width: 83.333333%;
+  }
+  .paragraph--width--full {
+    width: 100%;
+  }
 }
