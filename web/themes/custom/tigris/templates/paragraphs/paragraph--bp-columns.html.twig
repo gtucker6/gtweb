@@ -4,14 +4,7 @@
 <div{{ attributes.addClass(classes, 'row') }}>
     {% set count = content['bp_column_content']['#items'].getValue|length %}
     {% for key, item in content.bp_column_content if '#' not in key %}
-        {% if count < 4 %}
-            {% set col_class = 'col-md-' ~ (12/count)|round(0, 'ceil') %}
-        {% else %}
-            {% set col_class = 'col-md-3' %}
-        {% endif %}
-        <div class="col-12 {{ col_class }}">
-            {{ item }}
-        </div>
+        {{ item }}
     {% endfor %}
 </div>
 {% endblock %}
