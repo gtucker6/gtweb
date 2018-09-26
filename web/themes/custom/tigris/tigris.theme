@@ -148,17 +148,20 @@ function tigris_preprocess_paragraph__bp_carousel(&$variables) {
  * Implements hook_preprocess_HOOK() for paragraph__bp_columns.html.twig.
  */
 function tigris_preprocess_paragraph__bp_columns(&$variables) {
-  $items = $variables['elements']['bp_column_content']['#items'];
-  $count = count($items->getValue());
-  if ($items instanceof EntityReferenceRevisionsFieldItemList) {
-    for ($i = 0; $i < $count; $i++) {
-      $item = $variables['elements']['bp_column_content'][$i];
-      /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
-      $paragraph = $item['#paragraph'];
-      $variables['content']['bp_column_content'][$i]['#attributes']['class'][] = 'col-' . str_replace('_', '-', $paragraph->bundle());
+  if (!empty($variables['elements']['bp_column_content']['#items'])) {
+    $items = $variables['elements']['bp_column_content']['#items'];
+    $count = count($items->getValue());
+    if ($items instanceof EntityReferenceRevisionsFieldItemList) {
+      for ($i = 0; $i < $count; $i++) {
+        $item = $variables['elements']['bp_column_content'][$i];
+        /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+        $paragraph = $item['#paragraph'];
+        $variables['content']['bp_column_content'][$i]['#attributes']['class'][] = 'col-' . str_replace('_', '-', $paragraph->bundle());
+      }
     }
   }
 }
+
 /**
  * Implements hook_preprocess_HOOK() for paragraph__section.html.twig.
  */
