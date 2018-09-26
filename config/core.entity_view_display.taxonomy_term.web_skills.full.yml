@@ -6,13 +6,13 @@ dependencies:
     - core.entity_view_mode.taxonomy_term.full
     - field.field.taxonomy_term.web_skills.field_font_awesome_icon
     - field.field.taxonomy_term.web_skills.field_logo_image
-    - image.style.icon
+    - field.field.taxonomy_term.web_skills.field_provided_service
+    - field.field.taxonomy_term.web_skills.field_years_experience
     - taxonomy.vocabulary.web_skills
   module:
     - ds
     - field_group
     - fontawesome
-    - image
     - text
 third_party_settings:
   ds:
@@ -25,7 +25,6 @@ third_party_settings:
     regions:
       content:
         - group_flex
-        - field_logo_image
         - group_description
         - field_font_awesome_icon
         - description
@@ -43,7 +42,6 @@ third_party_settings:
   field_group:
     group_flex:
       children:
-        - field_logo_image
         - field_font_awesome_icon
         - taxonomy_term_title
       parent_name: ''
@@ -96,13 +94,7 @@ content:
     third_party_settings: {  }
     type: fontawesome_icon_formatter
     region: content
-  field_logo_image:
-    weight: 1
-    label: visually_hidden
-    settings:
-      image_style: icon
-      image_link: ''
-    third_party_settings: {  }
-    type: image
-    region: content
-hidden: {  }
+hidden:
+  field_logo_image: true
+  field_provided_service: true
+  field_years_experience: true

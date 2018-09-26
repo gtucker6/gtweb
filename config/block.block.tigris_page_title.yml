@@ -11,7 +11,7 @@ _core:
 id: tigris_page_title
 theme: tigris
 region: header
-weight: -6
+weight: -7
 provider: null
 plugin: page_title_block
 settings:

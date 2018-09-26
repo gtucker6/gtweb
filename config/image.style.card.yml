@@ -5,11 +5,11 @@ dependencies: {  }
 name: card
 label: Card
 effects:
-  a87ff21a-ca06-4d71-83fd-0b81ab137050:
-    uuid: a87ff21a-ca06-4d71-83fd-0b81ab137050
-    id: image_scale
+  1bef9788-5ccc-4a1a-be36-1c9663f9f353:
+    uuid: 1bef9788-5ccc-4a1a-be36-1c9663f9f353
+    id: image_scale_and_crop
     weight: 1
     data:
       width: 350
-      height: null
-      upscale: false
+      height: 350
+      anchor: center-center

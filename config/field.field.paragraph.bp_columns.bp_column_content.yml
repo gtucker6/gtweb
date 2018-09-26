@@ -9,10 +9,10 @@ dependencies:
     - paragraphs.paragraphs_type.bp_columns
     - paragraphs.paragraphs_type.bp_image
     - paragraphs.paragraphs_type.bp_tabs
+    - paragraphs.paragraphs_type.font_awesome_item
     - paragraphs.paragraphs_type.media
     - paragraphs.paragraphs_type.section
     - paragraphs.paragraphs_type.text
-    - paragraphs.paragraphs_type.text_image
     - paragraphs.paragraphs_type.view
   module:
     - entity_reference_revisions
@@ -38,10 +38,10 @@ settings:
       bp_carousel: bp_carousel
       bp_columns: bp_columns
       bp_tabs: bp_tabs
+      font_awesome_item: font_awesome_item
       media: media
       section: section
       text: text
-      text_image: text_image
       view: view
     target_bundles_drag_drop:
       bp_image:
@@ -71,6 +71,9 @@ settings:
       hero:
         weight: 25
         enabled: false
+      font_awesome_item:
+        enabled: true
+        weight: 26
       media:
         enabled: true
         weight: 27
@@ -84,8 +87,8 @@ settings:
         enabled: true
         weight: 30
       text_image:
-        enabled: true
         weight: 31
+        enabled: false
       text_images:
         weight: 32
         enabled: false
