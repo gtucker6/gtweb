@@ -2,8 +2,8 @@
 
 {% block paragraph %}
 {# Prints div with classes, and content without Width and Background. #}
-<div{{ attributes.addClass(classes) }}>
-  <div class="paragraph__column">
+<div{{ attributes.addClass(classes, 'row') }}>
+  <div class="paragraph__column col-12">
     {{ title_suffix }}
     {% if content.bp_link|render is not empty %}
       <a href="{{ content.bp_link.0['#url'] }}">

@@ -45,7 +45,7 @@
 {% block nav %}
     {% if page.primary_menu %}
         {% set nav_classes = ['fixed-top', 'navbar', 'navbar-custom'] %}
-        <nav class="navbar navbar-expand-lg link-color--light {{ nav_classes|join(' ') }}">
+        <nav class="navbar navbar-expand-lg {{ nav_classes|join(' ') }}">
             {{ page.primary_menu }}
         </nav>
     {% endif %}

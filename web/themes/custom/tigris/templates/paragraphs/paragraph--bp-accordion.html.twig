@@ -40,6 +40,9 @@ accordion_active ? 'paragraph--accordion_active--',
                 {# Print the accordion section title. #}
                 {{ item['#paragraph'].bp_accordion_section_title.value }}
               </a>
+                <a class="icon-indicator {{ (indicator_class) }}" role="button" data-toggle="collapse" data-target="#collapse-{{ paragraph_id }}-{{ key + 1 }}" aria-expanded="false" href="#collapse-{{ paragraph_id }}-{{ key + 1 }}" aria-controls="collapse-{{ paragraph_id }}-{{ key + 1 }}">
+                    <span class="fas fa-plus"></span>
+                </a>
             </div>
           </div>
           <div id="collapse-{{ paragraph_id }}-{{ key + 1 }}" class="card-block panel-collapse collapse {{ show_accordion }}" data-parent="#{{ paragraph_id  }}" aria-labelledby="heading-{{ paragraph_id }}-{{ key + 1 }}">
