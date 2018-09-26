@@ -18,3 +18,25 @@
     background-color: $main-shade;
   }
 }
+.accordian {
+  .card {
+    border-width: 3px;
+    background-color: $main;
+    margin: 15px 0;
+    .card-header .heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      align-content: center;
+    }
+    a:not(.btn) {
+      color: $light-tint;
+    }
+    a:not(.btn):hover {
+      color: $light-shade;
+    }
+    .card-block {
+      background-color: white;
+    }
+  }
+}

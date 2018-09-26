@@ -1,5 +1,9 @@
 .paragraph--type--bp-columns {
   > .col-12 {
+    min-height: 100%;
+    > .paragraph {
+      min-height: 100%;
+    }
     @media(max-width: $breakpoint-max-sm) {
       &.col-duo {
         &:nth-child(1) {

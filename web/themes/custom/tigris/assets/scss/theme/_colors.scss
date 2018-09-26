@@ -113,6 +113,9 @@
 
 /* End Brown/Beige Colors */
 /** Custom Colors. */
+.bg-overlay--light {
+    background-color: rgba(255,255,255,0.96);
+}
 .badge a, .badge:not(.badge-light):not(.badge-white) {
     color: $light-tint !important;
 }
