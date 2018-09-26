@@ -15,10 +15,28 @@
        flex-flow: row wrap;
        justify-content: center;
        height: 100%;
+	     position: relative;
+	     width: 100%;
+	     .field--name-field-logo-image, .field--name-field-logo-image img {
+		     width: 100%;
+	     }
        .field--name-taxonomy-term-title {
-           width:  100%;
-           text-align:  center;
+	       width:  100%;
+	       text-align: center;
+	       position: absolute;
+	       bottom: 0;
+	       right: 0;
+	       left: 0;
+	       background-color: rgba($grey, .96);
        }
+
+	     a {
+		     color: $main-tint;
+		     text-decoration: none;
+	     }
+	     a:hover {
+		     color: $main;
+	     }
      }
 		}
 		&.full-description {

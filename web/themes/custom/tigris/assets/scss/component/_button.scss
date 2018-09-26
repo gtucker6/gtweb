@@ -1,16 +1,12 @@
 .svg-inline--fa {
   margin: 5px;
 }
-
-.field--type-fontawesome-icon, .field--name-field-logo-image {
-  margin-right: 5px;
+.btn-outline-light:hover {
+  background-color: $main;
+  color: $light;
 }
-.path-taxonomy {
-  .field--name-field-logo-image {
-    img {
-      background-color: black;
-    }
-  }
+.field--type-fontawesome-icon {
+  margin-right: 5px;
 }
 
 .badge > a {

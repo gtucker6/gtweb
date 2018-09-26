@@ -1,3 +1,9 @@
+a:not(.btn):not(.badge) {
+    color: $main
+}
+a:hover:not(.btn):not(.badge) {
+    color: $main-shade;
+}
 /** Main Colors */
 .bg-main, .btn-main:not(:hover) {
     background-color: $main;
@@ -182,12 +188,6 @@ a.carousel-control {
     .section#section-views-block--services-block-services-offered {
         background-color: $light;
         color: $grey;
-        a {
-            color: $main-tint;
-        }
-        a:hover {
-            color: $main;
-        }
     }
     .section#section-tigris-content {
         background-color: $grey;

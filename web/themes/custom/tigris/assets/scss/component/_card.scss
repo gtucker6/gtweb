@@ -28,12 +28,12 @@
       justify-content: space-between;
       align-items: center;
       align-content: center;
-    }
-    a:not(.btn) {
-      color: $light-tint;
-    }
-    a:not(.btn):hover {
-      color: $light-shade;
+      a:not(.btn) {
+        color: $light-tint;
+      }
+      a:not(.btn):hover {
+        color: $light-shade;
+      }
     }
     .card-block {
       background-color: white;
