@@ -1,0 +1,21 @@
+uuid: 2dbaeb11-5b7f-49b5-b198-8255fe4d58c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - paragraphs.paragraphs_type.font_awesome_item
+  module:
+    - text
+id: paragraph.font_awesome_item.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: font_awesome_item
+label: 'Item Description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

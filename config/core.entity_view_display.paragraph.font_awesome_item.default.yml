@@ -1,0 +1,32 @@
+uuid: e7f90fe5-e5d9-4275-8063-a4e549f8d55d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.font_awesome_item.field_description
+    - field.field.paragraph.font_awesome_item.field_font_awesome_icon
+    - paragraphs.paragraphs_type.font_awesome_item
+  module:
+    - fontawesome
+    - text
+id: paragraph.font_awesome_item.default
+targetEntityType: paragraph
+bundle: font_awesome_item
+mode: default
+content:
+  field_description:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_font_awesome_icon:
+    weight: 0
+    label: above
+    settings:
+      layers: false
+    third_party_settings: {  }
+    type: fontawesome_icon_formatter
+    region: content
+hidden: {  }
