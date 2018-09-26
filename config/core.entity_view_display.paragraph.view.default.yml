@@ -3,15 +3,40 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.view.bp_width
+    - field.field.paragraph.view.field_horizontal_alignment
+    - field.field.paragraph.view.field_vertical_alignment
     - field.field.paragraph.view.field_view
     - paragraphs.paragraphs_type.view
   module:
+    - options
     - viewsreference
 id: paragraph.view.default
 targetEntityType: paragraph
 bundle: view
 mode: default
 content:
+  bp_width:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_horizontal_alignment:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_vertical_alignment:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
   field_view:
     weight: 0
     label: hidden
