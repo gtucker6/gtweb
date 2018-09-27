@@ -1,5 +1,4 @@
 module:
-  active_theme_behaviors: 0
   address: 0
   admin_toolbar: 0
   admin_toolbar_tools: 0
@@ -31,6 +30,7 @@ module:
   filter: 0
   fontawesome: 0
   fontawesome_menu_icons: 0
+  gtweb_mods: 0
   help: 0
   history: 0
   image: 0
