@@ -1,7 +1,7 @@
-a:not(.btn):not(.badge) {
+a:not(.btn):not(.badge):not(.carousel-control) {
     color: $main
 }
-a:hover:not(.btn):not(.badge) {
+a:hover:not(.btn):not(.badge):not(.carousel-control) {
     color: $main-shade;
 }
 /** Main Colors */
