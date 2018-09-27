@@ -1,5 +1,7 @@
 @import "base/variables";
 @import "base/normalize";
+@import "theme/colors";
+@import "theme/typography";
 @import "layout/grid";
 @import "layout/page";
 @import "layout/header";
@@ -17,6 +19,4 @@
 @import "component/navs";
 @import "component/block";
 @import "component/button";
-@import "theme/colors";
-@import "theme/typography";
 
