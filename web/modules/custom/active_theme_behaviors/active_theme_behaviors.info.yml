@@ -1,5 +1,0 @@
-name: 'Active Theme Behaviors'
-type: module
-description: 'Theme Behaviors working on the active theme'
-core: 8.x
-package: 'Custom'

@@ -1,4 +1,0 @@
-active_theme_behaviors.contact:
-  title: Contact
-  route_name: active_theme_behaviors.contact
-  base_route: active_theme_behaviors.contact

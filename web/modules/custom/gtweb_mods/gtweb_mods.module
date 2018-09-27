@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * Contains gtweb_mods.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function gtweb_mods_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the gtweb_mods module.
+    case 'help.page.gtweb_mods':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('GTWeb customizations') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_link_alter().
+ */
+function gtweb_mods_link_alter(&$variables) {
+  /** @var \Drupal\Core\Url $url */
+  $url = $variables['url'];
+  if ($url->isExternal()) {
+    $variables['options']['attributes']['rel'] = 'nofollow';
+    $variables['options']['attributes']['target'] = '_blank';
+  }
+}
