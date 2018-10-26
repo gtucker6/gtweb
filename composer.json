@@ -37,6 +37,7 @@
         "drupal/backup_migrate": "^4.0",
         "drupal/better_exposed_filters": "^3.0@alpha",
         "drupal/charts": "^3.0@beta",
+        "drupal/codesnippet": "^1.6",
         "drupal/config_direct_save": "^1.0",
         "drupal/config_installer": "^1.0",
         "drupal/console": "^1",
