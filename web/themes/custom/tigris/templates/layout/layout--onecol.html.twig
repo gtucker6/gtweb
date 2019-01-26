@@ -19,26 +19,10 @@
      content['#view_mode']|replace({'_': '-'}),
   ]
 %}
-{% if content.bp_width|render %}
-    {% set layout_width = content.bp_width['#items'].getString() %}
-    {% set layout_width_classes = [
-        'paragraph--width--tiny' == layout_width ? 'paragraph--width--tiny',
-        'paragraph--width--narrow' == layout_width ? 'paragraph--width--narrow',
-        'paragraph--width--medium' == layout_width ? 'paragraph--width--medium',
-        'paragraph--width--wide' == layout_width ? 'paragraph--width--wide',
-        'paragraph--width--full' == layout_width ? 'paragraph--width--full',
-    ]
-    %}
-{% endif %}
-{# Merges Width field with classes. #}
-{% set width_field = content.bp_width|render %}
-{% if width_field %}
-    {% set classes = classes|merge(layout_width_classes) %}
-{% endif %}
-{% if content %}
-  <div{{ attributes.addClass(classes) }}>
+{% if content.content|render %}
+  <div {{ attributes.addClass(classes) }}>
     <div {{ region_attributes.content.addClass('layout__region', 'layout__region--content') }}>
-      {{ content.content|without('bp_width') }}
+      {{ content.content }}
     </div>
   </div>
 {% endif %}
