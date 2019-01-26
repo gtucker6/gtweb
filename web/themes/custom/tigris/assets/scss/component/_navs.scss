@@ -62,7 +62,8 @@ nav {
     color: white;
   }
   a.nav-link:hover {
-    background-color: rgba($accent-shade, .75);
+    background-color: $main-tint;
+    font-weight: bold;
   }
   a.mm-navbar__title {
     display: none;
