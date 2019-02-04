@@ -1,10 +1,21 @@
+.field--name-field-web-skills {
+  margin: 15px 0;
+}
 body:not(.path-frontpage) {
   .layout-content {
     padding-top: 20px;
     padding-bottom: 20px;
   }
+  .page-title {
+    padding-top: 110px;
+    padding-bottom: 110px;
+  }
 }
 .path-frontpage{
+  .page-title {
+    padding-top: 110px;
+    padding-bottom: 35px;
+  }
   header.loaded {
     background: url("../images/track-trees.jpg") no-repeat center fixed;
     background-size: cover;
@@ -14,10 +25,6 @@ body:not(.path-frontpage) {
       text-align: center;
     }
   }
-}
-.page-title {
-  padding-top: 110px;
-  padding-bottom: 110px;
 }
 body:not(.path-taxonomy) {
   h1 {
@@ -32,9 +39,6 @@ body:not(.path-taxonomy) {
       height: unset;
     }
   }
-}
-.section:not(#section-tigris-local-actions) {
-  padding: 25px;
 }
 form {
   padding: 15px;
