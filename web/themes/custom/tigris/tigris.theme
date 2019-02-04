@@ -258,4 +258,5 @@ function recursively_get_paragraphs_section_heading_level(ParagraphInterface $pa
     }
   }
   return $heading_level;
+
 }
