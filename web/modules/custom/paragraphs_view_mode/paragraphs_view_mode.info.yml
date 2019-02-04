@@ -1,0 +1,7 @@
+name: 'Paragraphs View Mode'
+type: module
+description: 'Paragraphs view mode selector'
+core: 8.x
+package: 'Custom'
+dependencies:
+  - paragraphs

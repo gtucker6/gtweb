@@ -1,0 +1,14 @@
+{
+  "name": "drupal/paragraphs_view_mode",
+  "type": "drupal-module",
+  "description": "Paragraphs view mode selector",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/paragraphs_view_mode",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/paragraphs_view_mode",
+    "source": "http://cgit.drupalcode.org/paragraphs_view_mode"
+  },
+  "require": { }
+}
