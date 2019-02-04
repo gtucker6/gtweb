@@ -7,6 +7,9 @@
       .col-bp-image-wrapper {
         display: none;
       }
+      svg {
+        overflow-x: auto;
+      }
     }
   }
   &.block--type-introduction-cta {
