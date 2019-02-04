@@ -12,6 +12,7 @@
 }
 @media(max-width: 575px) {
   .charts-google svg > rect {
+    max-width: 100%;
      width: 400px;
      height: 400px;
   }
