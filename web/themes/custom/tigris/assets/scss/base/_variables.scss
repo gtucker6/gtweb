@@ -1,21 +1,19 @@
 // Main and accent colors for theme
 
 
-$accent-tint: #B9DCE2;
-$accent: #99ccd5;
-$accent-shade: #87BAC3;
-$main-tint: #ffafa8;
-$main: #ff9389;
-$main-shade: #ee5f64;
+$accent-two: #56ff86;
+$accent-two-tint: lighten($accent-two, 15%);
+$accent-two-shade: darken($accent-two, 15%);
+$accent: #6f56ff;
+$accent-tint: lighten($accent, 15%);
+$accent-shade: darken($accent, 15%);
+$main: #56cfff;
+$main-tint: lighten($main, 15%);
+$main-shade: darken($main, 15%);
 
+$black: #343a40;
 
 // Browns/Beiges
-
-$brown: #D69354;
-
-$beige: #f1d7bb;
-$beige-tint: lighten($beige, 10%);
-$beige-shade: #e5c4a3;
 
 // Greys
 $grey: #6678AC;

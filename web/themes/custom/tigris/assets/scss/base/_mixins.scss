@@ -1,0 +1,13 @@
+$spacing_properties: ('margin') ('padding');
+$directions: ('left', 'right', 'top', 'bottom');
+@mixin direction-x-spacing {
+	@each $i in $spacing_properties {
+		.#{$i}{ #{$i}: $spacing; }
+		$spacing_first: str_slice($i, 0, 1);
+		@each $j in $directions {
+			$direction_first: str_slice($j, 0, 1);
+			.#{$spacing_first}#{$direction_first} { #{$i}-#{$j}: $spacing; }
+			.#{"n"+$spacing_first}#{$direction_first} { #{$i}-#{$j}: unquote('-' + $spacing); }
+		}
+	}
+}
