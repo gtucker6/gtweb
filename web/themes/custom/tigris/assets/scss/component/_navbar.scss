@@ -17,32 +17,26 @@
       transform: translateY(0)!important;
       transition: transform .3s,height .3s,background .3s,opacity .3s,border-color 0.3s;
     }
-    &:not(.bg-overylay--light) {
-      a.nav-link {
-        padding: 0;
-        margin-left: .5rem;
-        margin-right: .5rem;
-      }
-      .active > a.nav-link, .nav-link:hover {
-        border-bottom: 2px solid;
-      }
-      a {
-        color: $light-tint;
-      }
-      a:hover {
-        color: $light;
-      }
+    a.nav-link {
+      padding: 0;
+      margin-left: .5rem;
+      margin-right: .5rem;
     }
-    &.bg-overlay--light {
-      a {
-        color: $main;
-      }
-      a:hover {
-        color: $main-shade;
-        &.nav-link {
-          border-bottom: 2px solid;
-        }
-      }
+    *:not(.active) > a.nav-link:not(:hover), .nav-link:not(:hover):not(.active) {
+      border-bottom: 2px solid transparent;
+    }
+    a {
+      color: $light-tint;
+    }
+    a:hover {
+      color: $light;
+    }
+    .active > a.nav-link, .nav-link:hover {
+      border-bottom: 2px solid white;
+    }
+    &.has-color {
+      border-bottom: 2px solid white;
+      background-color: $main !important;
       .navbar-toggler-icon, .responsive-menu-toggle-icon::before, .responsive-menu-toggle-icon::after {
         background-color: $main !important;
       }

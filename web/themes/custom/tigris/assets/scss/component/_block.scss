@@ -3,21 +3,33 @@
     img {
       filter: grayscale(100%);
     }
-
-  }
-  &.block-block-content {
-    padding: $spacing;
+    @media(max-width: $breakpoint-max-sm) {
+      .col-bp-image-wrapper {
+        display: none;
+      }
+    }
   }
   &.block--type-introduction-cta {
-    width: 100%;
+    width: 550px;
+    max-width: 100%;
+    margin: 0 auto;
     display: flex;
     flex-flow: row wrap;
     text-align: center;
+    .txt-rotate-text, .txt-rotate {
+      color: $accent-two;
+    }
     @media(max-width: 330px) {
       flex-flow: column;
     }
     .field {
       flex: 1 1 100%;
+    }
+    .field--name-field-skills {
+      margin-bottom: 5px;
+      p:first-child {
+        border-bottom: 1px solid;
+      }
     }
     .field--name-field-cta-button {
       .field__items {

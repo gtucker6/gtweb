@@ -53,16 +53,21 @@ nav {
     margin: 0;
   }
 }
+.navbar-nav:not(.mm-listview) .nav-link {
+  padding: 0;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
 
 .mm-menu.mm-menu_offcanvas {
-  background-color: $main-shade;
+  background-color: $black;
   a.nav-link {
     padding-left: 15px;
     font-size: 25px;
     color: white;
   }
   a.nav-link:hover {
-    background-color: $main-tint;
+    background-color: $main;
     font-weight: bold;
   }
   a.mm-navbar__title {

@@ -1,4 +1,4 @@
-.view:not(.view-my-work), .block-views {
+.view:not(.view-my-work):not(.view-taxonomy-term), .block-views {
   h2 {
     text-align: center;
   }
@@ -39,7 +39,7 @@
   }
   .view-content > div:not(:last-child) {
     padding: 35px 0;
-    border-bottom: 2px solid $beige-tint;
+    border-bottom: 2px solid lightgrey;
   }
   .field--name-field-project-source {
     .field__label {

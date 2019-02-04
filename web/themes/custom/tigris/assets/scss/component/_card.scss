@@ -5,15 +5,15 @@
 .card-col .card-body {
   padding: $spacing;
 }
-.card--default {
+.card-default {
   margin: $spacing;
-}
-.card {
-  &.card-default {
+  .svg-inline--fa {
+    font-size: 100px;
   }
 }
 .clickable-card:hover {
   text-decoration: none;
+  color: white !important;
   .card {
     background-color: $main-shade;
   }
@@ -28,11 +28,11 @@
       justify-content: space-between;
       align-items: center;
       align-content: center;
-      a:not(.btn) {
-        color: $light-tint;
+      a:not(.btn):not(:hover) {
+        color: white;
       }
       a:not(.btn):hover {
-        color: $light-shade;
+        color: darken(white, 10%);
       }
     }
     .card-block {
