@@ -5,7 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.featured
     - field.field.taxonomy_term.web_services.field_service_image
-    - image.style.card
     - taxonomy.vocabulary.web_services
   module:
     - ds
@@ -41,9 +40,9 @@ content:
     type: image
     weight: 0
     region: content
-    label: above
+    label: visually_hidden
     settings:
-      image_style: card
+      image_style: ''
       image_link: ''
     third_party_settings: {  }
 hidden:
