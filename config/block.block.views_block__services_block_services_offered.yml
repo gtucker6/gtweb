@@ -12,7 +12,7 @@ dependencies:
 id: views_block__services_block_services_offered
 theme: tigris
 region: content
-weight: -5
+weight: -4
 provider: null
 plugin: 'views_block:services-block_services_offered'
 settings:

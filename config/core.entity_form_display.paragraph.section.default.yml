@@ -8,7 +8,6 @@ dependencies:
     - field.field.paragraph.section.field_horizontal_alignment
     - field.field.paragraph.section.field_section
     - field.field.paragraph.section.field_section_heading
-    - field.field.paragraph.section.field_section_heading_type
     - field.field.paragraph.section.field_vertical_alignment
     - paragraphs.paragraphs_type.section
   module:
@@ -16,20 +15,6 @@ dependencies:
     - paragraphs
 third_party_settings:
   field_group:
-    group_section_heading_settings:
-      children:
-        - field_section_heading_type
-        - field_section_heading
-      parent_name: ''
-      weight: 3
-      format_type: fieldset
-      format_settings:
-        label: 'Section Heading Settings'
-        description: ''
-        required_fields: true
-        id: ''
-        classes: 'form-section-heading-settings d-flex'
-      label: 'Section Heading Settings'
     group_d:
       children:
         - bp_width
@@ -70,7 +55,7 @@ content:
     region: content
   field_section:
     type: entity_reference_paragraphs
-    weight: 4
+    weight: 2
     settings:
       title: Content
       title_plural: Contents
@@ -81,18 +66,12 @@ content:
     third_party_settings: {  }
     region: content
   field_section_heading:
-    weight: 5
+    weight: 1
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-    region: content
-  field_section_heading_type:
-    weight: 3
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
     region: content
   field_vertical_alignment:
     weight: 4
@@ -100,6 +79,12 @@ content:
     third_party_settings: {  }
     type: options_select
     region: content
+  vmode_selector:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
   status: true

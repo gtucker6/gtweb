@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.paragraph.image_left
     - field.field.paragraph.text_images.field_description
     - field.field.paragraph.text_images.field_images
-    - field.field.paragraph.text_images.field_view_mode_selector
     - paragraphs.paragraphs_type.text_images
   module:
     - ds
@@ -46,5 +45,4 @@ content:
     third_party_settings: {  }
     type: image
     region: first
-hidden:
-  field_view_mode_selector: true
+hidden: {  }

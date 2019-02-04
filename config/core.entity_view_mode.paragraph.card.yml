@@ -1,10 +1,10 @@
-uuid: f86fd6cd-2cb3-4ce2-b766-2a6e039e7625
+uuid: 880ae51b-ea6e-409f-988e-958b2358cb9e
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
-id: paragraph.tabs
-label: Tabs
+id: paragraph.card
+label: Card
 targetEntityType: paragraph
 cache: true

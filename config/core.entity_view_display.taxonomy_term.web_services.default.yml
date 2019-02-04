@@ -1,0 +1,51 @@
+uuid: 7a2c01dd-dceb-47d7-8cff-67272d390e51
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.web_services.field_service_image
+    - taxonomy.vocabulary.web_services
+  module:
+    - ds
+    - image
+    - text
+third_party_settings:
+  ds:
+    layout:
+      id: layout__onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes: {  }
+        wrappers:
+          content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+    regions:
+      content:
+        - description
+id: taxonomy_term.web_services.default
+targetEntityType: taxonomy_term
+bundle: web_services
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_service_image:
+    weight: 1
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden: {  }

@@ -5,8 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.full
     - field.field.taxonomy_term.web_skills.field_font_awesome_icon
-    - field.field.taxonomy_term.web_skills.field_logo_image
-    - field.field.taxonomy_term.web_skills.field_provided_service
     - field.field.taxonomy_term.web_skills.field_years_experience
     - taxonomy.vocabulary.web_skills
   module:
@@ -95,6 +93,4 @@ content:
     type: fontawesome_icon_formatter
     region: content
 hidden:
-  field_logo_image: true
-  field_provided_service: true
   field_years_experience: true

@@ -1,4 +1,4 @@
-uuid: 07e4254c-f336-4167-8b09-a410bb038a0f
+uuid: 9bb12912-fad9-4c91-9010-cacec5472bc3
 langcode: en
 status: true
 dependencies:
@@ -6,8 +6,8 @@ dependencies:
     - file
     - image
     - taxonomy
-id: taxonomy_term.field_logo_image
-field_name: field_logo_image
+id: taxonomy_term.field_service_image
+field_name: field_service_image
 entity_type: taxonomy_term
 type: image
 settings:

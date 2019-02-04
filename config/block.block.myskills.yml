@@ -12,14 +12,14 @@ dependencies:
 id: myskills
 theme: tigris
 region: content
-weight: 0
+weight: -6
 provider: null
 plugin: 'block_content:8ddc3992-4502-4dc1-9b30-36fcca7ead16'
 settings:
   id: 'block_content:8ddc3992-4502-4dc1-9b30-36fcca7ead16'
   label: 'My Skills'
   provider: block_content
-  label_display: visible
+  label_display: '0'
   status: true
   info: ''
   view_mode: full

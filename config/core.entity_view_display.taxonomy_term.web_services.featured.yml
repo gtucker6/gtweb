@@ -1,15 +1,15 @@
-uuid: a22ff5a1-c015-4ebb-a86a-dd4e60362556
+uuid: d5a059f3-2cd3-487f-9513-a30abbfa9bfe
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.featured
-    - field.field.taxonomy_term.web_skills.field_font_awesome_icon
-    - field.field.taxonomy_term.web_skills.field_years_experience
-    - taxonomy.vocabulary.web_skills
+    - field.field.taxonomy_term.web_services.field_service_image
+    - image.style.card
+    - taxonomy.vocabulary.web_services
   module:
     - ds
-    - fontawesome
+    - image
 third_party_settings:
   ds:
     layout:
@@ -20,32 +20,31 @@ third_party_settings:
       settings: {  }
     regions:
       content:
-        - field_font_awesome_icon
-        - field_logo_image
+        - field_service_image
         - taxonomy_term_title
     fields:
       taxonomy_term_title:
         plugin_id: taxonomy_term_title
-        weight: 23
+        weight: 1
         label: hidden
         formatter: default
         settings:
           link: true
           wrapper: h3
           class: ''
-id: taxonomy_term.web_skills.featured
+id: taxonomy_term.web_services.featured
 targetEntityType: taxonomy_term
-bundle: web_skills
+bundle: web_services
 mode: featured
 content:
-  field_font_awesome_icon:
-    weight: 21
-    label: visually_hidden
-    settings:
-      layers: false
-    third_party_settings: {  }
-    type: fontawesome_icon_formatter
+  field_service_image:
+    type: image
+    weight: 0
     region: content
+    label: above
+    settings:
+      image_style: card
+      image_link: ''
+    third_party_settings: {  }
 hidden:
   description: true
-  field_years_experience: true

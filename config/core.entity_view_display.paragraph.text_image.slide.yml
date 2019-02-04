@@ -4,9 +4,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.slide
+    - field.field.paragraph.text_image.bp_width
     - field.field.paragraph.text_image.field_description
     - field.field.paragraph.text_image.field_image
-    - field.field.paragraph.text_image.field_view_mode_selector
     - image.style.slideshow
     - paragraphs.paragraphs_type.text_image
   module:
@@ -58,4 +58,4 @@ content:
     type: image
     region: ds_content
 hidden:
-  field_view_mode_selector: true
+  bp_width: true

@@ -5,13 +5,11 @@ dependencies:
   config:
     - field.field.paragraph.text_images.field_description
     - field.field.paragraph.text_images.field_images
-    - field.field.paragraph.text_images.field_view_mode_selector
     - image.style.thumbnail
     - paragraphs.paragraphs_type.text_images
   module:
     - image
     - text
-    - vmode_selector
 id: paragraph.text_images.default
 targetEntityType: paragraph
 bundle: text_images
@@ -33,9 +31,9 @@ content:
     third_party_settings: {  }
     type: image_image
     region: content
-  field_view_mode_selector:
-    type: vmode_selector_widget
-    weight: 2
+  vmode_selector:
+    type: options_select
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }

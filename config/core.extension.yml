@@ -45,6 +45,7 @@ module:
   node: 0
   options: 0
   page_cache: 0
+  paragraphs_view_mode: 0
   path: 0
   quickedit: 0
   rdf: 0
@@ -62,7 +63,6 @@ module:
   user: 0
   views_ui: 0
   viewsreference: 0
-  vmode_selector: 0
   webform: 0
   webform_ui: 0
   ds: 1

@@ -4,13 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.web_skills.field_font_awesome_icon
-    - field.field.taxonomy_term.web_skills.field_logo_image
-    - field.field.taxonomy_term.web_skills.field_provided_service
     - field.field.taxonomy_term.web_skills.field_years_experience
     - taxonomy.vocabulary.web_skills
   module:
     - fontawesome
-    - image
     - text
 id: taxonomy_term.web_skills.default
 targetEntityType: taxonomy_term
@@ -31,25 +28,6 @@ content:
       layers: false
     third_party_settings: {  }
     type: fontawesome_icon_formatter
-    region: content
-  field_logo_image:
-    weight: 2
-    label: visually_hidden
-    settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
-    type: image
-    region: content
-  field_provided_service:
-    weight: 4
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
     region: content
   field_years_experience:
     weight: 3

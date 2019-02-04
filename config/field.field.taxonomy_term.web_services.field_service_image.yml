@@ -1,17 +1,17 @@
-uuid: b2f747b2-2a37-463c-930a-9b9d79cb140e
+uuid: 74221127-9c3c-44a7-a904-0035f38d60fd
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.taxonomy_term.field_logo_image
-    - taxonomy.vocabulary.web_skills
+    - field.storage.taxonomy_term.field_service_image
+    - taxonomy.vocabulary.web_services
   module:
     - image
-id: taxonomy_term.web_skills.field_logo_image
-field_name: field_logo_image
+id: taxonomy_term.web_services.field_service_image
+field_name: field_service_image
 entity_type: taxonomy_term
-bundle: web_skills
-label: 'Logo Image'
+bundle: web_services
+label: 'Service Image'
 description: ''
 required: false
 translatable: false

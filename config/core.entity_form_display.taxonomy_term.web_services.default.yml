@@ -1,18 +1,18 @@
-uuid: 25947278-048b-4e30-946f-056eb5e7b2c4
+uuid: cb8e5416-92c3-4f96-acdd-db04207f3924
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.web_skills.field_font_awesome_icon
-    - field.field.taxonomy_term.web_skills.field_years_experience
-    - taxonomy.vocabulary.web_skills
+    - field.field.taxonomy_term.web_services.field_service_image
+    - image.style.thumbnail
+    - taxonomy.vocabulary.web_services
   module:
-    - fontawesome
+    - image
     - path
     - text
-id: taxonomy_term.web_skills.default
+id: taxonomy_term.web_services.default
 targetEntityType: taxonomy_term
-bundle: web_skills
+bundle: web_services
 mode: default
 content:
   description:
@@ -23,18 +23,13 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_font_awesome_icon:
+  field_service_image:
     weight: 31
-    settings: {  }
-    third_party_settings: {  }
-    type: fontawesome_icon_widget
-    region: content
-  field_years_experience:
-    weight: 33
     settings:
-      placeholder: ''
+      progress_indicator: throbber
+      preview_image_style: thumbnail
     third_party_settings: {  }
-    type: number
+    type: image_image
     region: content
   name:
     type: string_textfield

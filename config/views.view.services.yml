@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.featured
-    - taxonomy.vocabulary.web_skills
+    - taxonomy.vocabulary.web_services
   module:
     - ds
     - taxonomy
@@ -149,20 +149,12 @@ display:
           id: vid
           table: taxonomy_term_field_data
           field: vid
-          value:
-            web_skills: web_skills
-          entity_type: taxonomy_term
-          entity_field: vid
-          plugin_id: bundle
-        field_provided_service_value:
-          id: field_provided_service_value
-          table: taxonomy_term__field_provided_service
-          field: field_provided_service_value
           relationship: none
           group_type: group
           admin_label: ''
-          operator: '='
-          value: '1'
+          operator: in
+          value:
+            web_services: web_services
           group: 1
           exposed: false
           expose:
@@ -177,6 +169,7 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+            reduce: false
           is_grouped: false
           group_info:
             label: ''
@@ -189,7 +182,9 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          plugin_id: boolean
+          entity_type: taxonomy_term
+          entity_field: vid
+          plugin_id: bundle
         status:
           id: status
           table: taxonomy_term_field_data

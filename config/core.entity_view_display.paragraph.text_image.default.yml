@@ -6,7 +6,6 @@ dependencies:
     - field.field.paragraph.text_image.bp_width
     - field.field.paragraph.text_image.field_description
     - field.field.paragraph.text_image.field_image
-    - field.field.paragraph.text_image.field_view_mode_selector
     - paragraphs.paragraphs_type.text_image
   module:
     - image
@@ -40,5 +39,4 @@ content:
     third_party_settings: {  }
     type: image
     region: content
-hidden:
-  field_view_mode_selector: true
+hidden: {  }

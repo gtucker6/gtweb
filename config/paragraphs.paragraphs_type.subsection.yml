@@ -1,9 +1,0 @@
-uuid: 68f16d9d-b70a-47f2-8828-a393e908ad29
-langcode: en
-status: true
-dependencies: {  }
-id: subsection
-label: Subsection
-icon_uuid: null
-description: ''
-behavior_plugins: {  }

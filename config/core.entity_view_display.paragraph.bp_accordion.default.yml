@@ -21,7 +21,10 @@ content:
   bp_accordion_expand:
     weight: 3
     label: hidden
-    settings: {  }
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
     third_party_settings: {  }
     type: boolean
     region: content
@@ -37,7 +40,10 @@ content:
   bp_show_indicators:
     weight: 4
     label: hidden
-    settings: {  }
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
     third_party_settings: {  }
     type: boolean
     region: content

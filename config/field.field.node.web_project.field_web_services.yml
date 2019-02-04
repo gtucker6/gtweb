@@ -1,0 +1,29 @@
+uuid: beb407eb-e898-4901-8e71-4428d8f383de
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_web_services
+    - node.type.web_project
+    - taxonomy.vocabulary.web_services
+id: node.web_project.field_web_services
+field_name: field_web_services
+entity_type: node
+bundle: web_project
+label: 'Web Services'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      web_services: web_services
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

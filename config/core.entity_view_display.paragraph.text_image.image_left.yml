@@ -4,9 +4,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.image_left
+    - field.field.paragraph.text_image.bp_width
     - field.field.paragraph.text_image.field_description
     - field.field.paragraph.text_image.field_image
-    - field.field.paragraph.text_image.field_view_mode_selector
     - paragraphs.paragraphs_type.text_image
   module:
     - ds
@@ -47,4 +47,4 @@ content:
     type: image
     region: first
 hidden:
-  field_view_mode_selector: true
+  bp_width: true

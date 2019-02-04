@@ -6,13 +6,11 @@ dependencies:
     - field.field.paragraph.text_image.bp_width
     - field.field.paragraph.text_image.field_description
     - field.field.paragraph.text_image.field_image
-    - field.field.paragraph.text_image.field_view_mode_selector
     - image.style.thumbnail
     - paragraphs.paragraphs_type.text_image
   module:
     - image
     - text
-    - vmode_selector
 id: paragraph.text_image.default
 targetEntityType: paragraph
 bundle: text_image
@@ -40,12 +38,12 @@ content:
     third_party_settings: {  }
     type: image_image
     region: content
-  field_view_mode_selector:
-    weight: 3
+  vmode_selector:
+    type: options_select
+    weight: 15
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: vmode_selector_widget
-    region: content
 hidden:
   created: true
   status: true

@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.featured
+    - core.entity_view_mode.node.left_images_preview
   module:
     - node
     - taxonomy
@@ -224,7 +224,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: featured
+          view_mode: left_images_preview
       header: {  }
       footer: {  }
       empty: {  }
