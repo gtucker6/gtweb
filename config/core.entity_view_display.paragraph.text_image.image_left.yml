@@ -11,6 +11,7 @@ dependencies:
   module:
     - ds
     - image
+    - options
     - text
 third_party_settings:
   ds:
@@ -23,6 +24,7 @@ third_party_settings:
     regions:
       first:
         - field_image
+        - bp_width
       second:
         - field_description
 id: paragraph.text_image.image_left
@@ -30,8 +32,15 @@ targetEntityType: paragraph
 bundle: text_image
 mode: image_left
 content:
-  field_description:
+  bp_width:
+    type: list_key
     weight: 1
+    region: first
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_description:
+    weight: 2
     label: visually_hidden
     settings: {  }
     third_party_settings: {  }
@@ -46,5 +55,4 @@ content:
     third_party_settings: {  }
     type: image
     region: first
-hidden:
-  bp_width: true
+hidden: {  }
