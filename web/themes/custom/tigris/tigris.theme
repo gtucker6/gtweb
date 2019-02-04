@@ -6,6 +6,7 @@
  */
 
 use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\paragraphs\ParagraphInterface;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\Core\Url;
 use Drupal\views\ViewExecutable;
@@ -208,4 +209,53 @@ function tigris_preprocess_layout__onecol__taxonomy_term($variables) {
 
 function tigris_preprocess_views_view__web_skills__block_web_skills_level_chart(&$vars){
   $vars['more']['#options']['attributes']['class'][] = 'btn btn-main';
+}
+
+function recursively_get_paragraphs_section_heading_level(ParagraphInterface $paragraph, $heading_level = 2, $index = 0) {
+  // Loop and max heading (h6).
+  $max = 6;
+  // Current Bundle Info.
+  $bundle = $paragraph->bundle();
+  $paragraph_is_section = ($bundle === 'section');
+  // Parent Bundle Info.
+  $parent = $paragraph->getParentEntity();
+  $parent_bundle = $parent->bundle();
+  $parent_is_paragraph = $parent instanceof ParagraphInterface;
+  $parent_is_section = $parent_is_paragraph && ($parent_bundle === 'section');
+
+  if ($heading_level > $max) {
+    return FALSE;
+  }
+  // Check the first index,
+  // and make sure it's a section and has a paragraph parent.
+  if ($index === 0) {
+    if ($paragraph_is_section) {
+      if ($parent_is_paragraph) {
+        /** @var \Drupal\paragraphs\ParagraphInterface $parent */
+        if ($parent_is_section) {
+          $heading_level++;
+        }
+        $index++;
+        // Recursively call the parent and
+        // set the level while the parent is a paragraph.
+        $heading_level = recursively_get_paragraphs_section_heading_level($parent, $heading_level, $index);
+      }
+    }
+    else {
+      return FALSE;
+    }
+  }
+  else {
+    if ($parent_is_paragraph) {
+      /** @var \Drupal\paragraphs\ParagraphInterface $parent */
+      if ($parent_is_section) {
+        $heading_level++;
+      }
+      $index++;
+      // Recursively call the parent and
+      // set the level while the parent is a paragraph.
+      $heading_level = recursively_get_paragraphs_section_heading_level($parent, $heading_level, $index);
+    }
+  }
+  return $heading_level;
 }
