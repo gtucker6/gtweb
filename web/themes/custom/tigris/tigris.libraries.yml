@@ -1,10 +1,10 @@
 bootstrap4:
   css:
     theme:
-      https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css: { type: external, minified: true }
+      https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css: { type: external, minified: true }
   js:
-    https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js: { type: external, minified: true }
-    https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js: { type: external, minified: true }
+    https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js: { type: external, minified: true }
+    https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js: { type: external, minified: true }
   dependencies:
     - core/jquery
 
