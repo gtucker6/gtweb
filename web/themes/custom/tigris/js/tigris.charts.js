@@ -12,7 +12,7 @@
           let chart = new TigrisChart(provider, id, type);
           chart.load();
           if ($(chart.id).attr('id') === 'web_skills__block_web_skills_level_chart') {
-            let dataStructure = ['Skill', 'Confidence Level ', { role: "style" }, {type: 'string', role: 'tooltip'}];
+            let dataStructure = ['Skill', 'Confidence Level ', { role: "style" }, { role: "style"}];
             let options = chart.getOptions();
             options['hAxes']['0'].format = '#\'%\'';
             chart.setOptions(options);

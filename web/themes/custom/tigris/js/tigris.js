@@ -18,7 +18,8 @@
   Drupal.behaviors.tigrisNavbar = {
       attach: function (context, settings) {
         let position = $(window).scrollTop();
-        let navbar = new Menu('nav.navbar-custom.fixed-top');
+        let navbar = new FixedMainMenu('nav.navbar-custom.fixed-top');
+        navbar.changeColor(context, 'dark');
         $(context).find(navbar.element).once('tigrisNavbar').each(function () {
           navbar.position(context);
         }).trigger('scroll');
@@ -26,7 +27,7 @@
           navbar.position(context);
         });
         $(window).on('scroll', function () {
-          navbar.changeColor(context, 'overlay--light');
+          navbar.changeColor(context, 'dark');
           let scroll = $(window).scrollTop();
           if (scroll > position) {
             $(navbar.element).addClass('js-invisible').removeClass('js-visible');
@@ -38,22 +39,22 @@
         });
       }
   };
-  Drupal.behaviors.transitionImages = {
+  Drupal.behaviors.transitionLoad = {
     attach: function (context, settings) {
       $(window).on('load', function() {
         $(context).find('.hero').addClass('loaded');
       });
     }
   };
-  function Menu(nav) {
+  function FixedMainMenu(nav) {
     this.element = $(nav);
     this.changeColor = function(context, color = 'shade') {
       if($(context).find('header.hero').length) {
         if ($(window).scrollTop() >= ($(context).find('header.hero').outerHeight() - this.getHeight())) {
-          $(nav).addClass('bg-'+ color);
+          $(nav).addClass('bg-'+ color).addClass('has-color');
         }
         if($(window).scrollTop() < ($(context).find('header.hero').outerHeight() - this.getHeight())) {
-          $(nav).removeClass('bg-'+ color);
+          $(nav).removeClass('bg-'+ color).removeClass('has-color');
         }
       }
     }.bind(this);
