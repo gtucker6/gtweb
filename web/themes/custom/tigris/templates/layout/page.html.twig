@@ -56,12 +56,14 @@
         {% set header_classes = [] %}
         {% set overlay_classes = [] %}
         {% set header_classes = header_classes|merge(['hero', 'hero--title']) %}
-        {% set overlay_classes = overlay_classes|merge(['overlay', 'bg-main']) %}
+        {% set overlay_classes = overlay_classes|merge(['overlay', 'bg-dark']) %}
         <header class="text-color--light {{ header_classes|join(' ') }}">
             <div class="{{ overlay_classes|join(' ') }}">
                 <div class="container-fluid">
                     <div class="row justify-content-center">
-                        {{ page.header }}
+                        <div class="col-12">
+                            {{ page.header }}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -90,7 +92,7 @@
 {% endblock %}
 
 
-<main role="main" class="bg-light">
+<main role="main" class="bg-light link-color--main">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
     {% block main %}
         <div class="container">
@@ -115,8 +117,8 @@
 
 {% block footer %}
     {% if page.footer %}
-        <footer role="contentinfo" class="hero link-color--main text-color--dark">
-            <div class="overlay bg-beige--light">
+        <footer role="contentinfo" class="hero link-color--main">
+            <div class="overlay bg-dark">
                 <div class="container">
                     {{ page.footer }}
                 </div>

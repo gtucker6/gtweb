@@ -48,12 +48,14 @@
         {% set header_classes = [] %}
         {% set overlay_classes = [] %}
         {% set header_classes = header_classes|merge(['hero', 'hero--title']) %}
-        {% set overlay_classes = overlay_classes|merge(['overlay', 'overlay--mix']) %}
+        {% set overlay_classes = overlay_classes|merge(['overlay', 'bg-main']) %}
         <header class="text-color--light {{ header_classes|join(' ') }}">
             <div class="{{ overlay_classes|join(' ') }}">
                 <div class="container">
                     <div class="row justify-content-center align-items-center">
-                        {{ page.header }}
+                        <div class="col-12">
+                            {{ page.header }}
+                        </div>
                     </div>
                 </div>
             </div>
