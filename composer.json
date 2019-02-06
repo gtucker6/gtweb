@@ -144,7 +144,8 @@
         "patches": {
             "drupal/core": {
                 "Layout Discovery layouts deprecation": "https://www.drupal.org/files/issues/2018-07-04/drupal_layout_discovery-2911996-15.patch",
-                "Views relationship node view mode fix": "https://www.drupal.org/files/issues/2018-08-22/2457999-183.patch"
+                "Views relationship node view mode fix": "https://www.drupal.org/files/issues/2018-08-22/2457999-183.patch",
+                "Add a FieldDefinition class for defining bundle fields in code": "https://www.drupal.org/files/issues/2018-11-14/2935932-123_0.patch"
             },
             "drupal/ds": {
                 "Views relationship method langcode update": "https://www.drupal.org/files/issues/declaration_parent_compatibility_2.patch"

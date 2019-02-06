@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f88f1426c34489d43e7d178c4c9b15c0",
+    "content-hash": "e70f8dc62476c074199ef45f30b282a7",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2211,7 +2211,8 @@
                 },
                 "patches_applied": {
                     "Layout Discovery layouts deprecation": "https://www.drupal.org/files/issues/2018-07-04/drupal_layout_discovery-2911996-15.patch",
-                    "Views relationship node view mode fix": "https://www.drupal.org/files/issues/2018-08-22/2457999-183.patch"
+                    "Views relationship node view mode fix": "https://www.drupal.org/files/issues/2018-08-22/2457999-183.patch",
+                    "Add a FieldDefinition class for defining bundle fields in code": "https://www.drupal.org/files/issues/2018-11-14/2935932-123_0.patch"
                 }
             },
             "autoload": {
