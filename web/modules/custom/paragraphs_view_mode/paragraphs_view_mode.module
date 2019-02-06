@@ -27,26 +27,42 @@ function paragraphs_view_mode_help($route_name, RouteMatchInterface $route_match
   }
 }
 
+/**
+ * Implements hook_entity_base_field_info().
+ */
+function paragraphs_view_mode_entity_base_field_info(\Drupal\Core\Entity\EntityTypeInterface $entity_type) {
+  if ($entity_type->id() === 'paragraph') {
+    $fields = [];
+    $fields['vmode_selector'] = BaseFieldDefinition::create('configured_view_mode')
+      ->setLabel('View Mode Selection')
+      ->setDisplayOptions('form', [
+        'type' => 'configured_view_mode_widget',
+        'weight' => 15,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', FALSE);
+    return $fields;
+  }
+}
 
 /**
  * Implements hook_entity_bundle_field_info().
  */
-function paragraphs_view_mode_entity_bundle_field_info(EntityTypeInterface $entity_type, $bundle, array $base_field_definitions) {
-  $fields = $base_field_definitions;
+function paragraphs_view_mode_entity_bundle_field_info(\Drupal\Core\Entity\EntityTypeInterface $entity_type, $bundle, array $base_field_definitions) {
   if ($entity_type->id() === 'paragraph') {
-    $fields['vmode_selector'] = BaseFieldDefinition::create('list_string')
+    $fields = [];
+    $fields['vmode_selector'] = $base_field_definitions['vmode_selector'];
+    $fields['vmode_selector']
       ->setLabel('View Mode Selection')
-      ->setName('View Mode Selection')
       ->setDisplayOptions('form', [
-        'type' => 'options_select',
+        'type' => 'configured_view_mode_widget',
         'weight' => 15,
       ])
-      ->setDefaultValue('default')
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', FALSE)
-      ->setSetting('allowed_values', get_configured_paragraph_view_modes($bundle) ?: []);
+      ->setTargetBundle($bundle);
+    return $fields;
   }
-  return $fields;
 }
 
 /**
@@ -57,11 +73,12 @@ function paragraphs_view_mode_entity_view_mode_alter(&$view_mode, EntityInterfac
     $entity_fields = $entity->getFields();
     foreach ($entity_fields as $item) {
       $field_name = $item->getFieldDefinition()->getName();
-      if ($field_name === "vmode_selector") {
-        $new_view_mode = $item->getString();
-        if (!empty($new_view_mode)) {
-          $view_mode = $new_view_mode;
-        }
+      if ($field_name !== "vmode_selector") {
+        continue;
+      }
+      $new_view_mode = $item->getString();
+      if (!empty($new_view_mode)) {
+        $view_mode = $new_view_mode;
       }
     }
   }
@@ -80,7 +97,7 @@ function get_configured_paragraph_view_modes($bundle) {
     $view_mode = $parts[0] . '.' . $parts[2];
     $view_modes[$view_mode] = $view_mode;
   }
-  $labeled_view_modes = ['default' => 'Default'];
+  $labeled_view_modes = [];
   if (!empty($view_modes)) {
     /** @var \Drupal\Core\Entity\EntityViewModeInterface[] $entity_view_modes */
     $entity_view_modes = EntityViewMode::loadMultiple($view_modes);
