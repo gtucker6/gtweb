@@ -13,6 +13,7 @@ dependencies:
     - paragraphs.paragraphs_type.section
   module:
     - paragraphs
+    - paragraphs_view_mode
 id: paragraph.section.sections
 targetEntityType: paragraph
 bundle: section
@@ -37,7 +38,7 @@ content:
       title_plural: Paragraphs
       edit_mode: closed
       add_mode: dropdown
-      form_display_mode: default
+      form_display_mode: sections
       default_paragraph_type: _none
     third_party_settings: {  }
     type: entity_reference_paragraphs
@@ -51,10 +52,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
   vmode_selector:
-    type: options_select
+    type: configured_view_mode_widget
     weight: 5
     region: content
-    settings: {  }
+    settings:
+      limit_view_modes: false
+      available_view_modes: {  }
     third_party_settings: {  }
 hidden:
   created: true

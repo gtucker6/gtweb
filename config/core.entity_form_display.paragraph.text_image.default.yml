@@ -10,6 +10,7 @@ dependencies:
     - paragraphs.paragraphs_type.text_image
   module:
     - image
+    - paragraphs_view_mode
     - text
 id: paragraph.text_image.default
 targetEntityType: paragraph
@@ -39,10 +40,17 @@ content:
     type: image_image
     region: content
   vmode_selector:
-    type: options_select
+    type: configured_view_mode_widget
     weight: 15
     region: content
-    settings: {  }
+    settings:
+      limit_view_modes: '1'
+      available_view_modes:
+        hero_top: hero_top
+        image_left: image_left
+        image_right: image_right
+        default: 0
+        slide: 0
     third_party_settings: {  }
 hidden:
   created: true
