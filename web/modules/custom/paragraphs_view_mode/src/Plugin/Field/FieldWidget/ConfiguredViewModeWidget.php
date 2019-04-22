@@ -115,13 +115,13 @@ class ConfiguredViewModeWidget extends WidgetBase {
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
     if (empty($this->viewModes)) {
-      return $values = ['value' => []];
+      return $values = ['value' => $element];
     }
     else {
       $limit_view_mode_selection = $this->getSetting('limit_view_modes');
       if ($limit_view_mode_selection == TRUE) {
         if (empty($this->getSetting('available_view_modes'))) {
-          return $values = ['value' => []];
+          return $values = ['value' => $element];
         }
         else {
           $available_view_modes = $this->getSetting('available_view_modes');
@@ -169,6 +169,32 @@ class ConfiguredViewModeWidget extends WidgetBase {
         return $values;
       }
     }
+  }
+  public function getAvailableViewModeOptions() {
+    if ($this->isLimited()) {
+      if (empty($this->getSetting('available_view_modes'))) {
+        return [];
+      }
+      else {
+        $available_view_modes = $this->getSetting('available_view_modes');
+        $filtered_options = $this->getFilteredCheckBoxOptions($available_view_modes);
+        if (isset($filtered_options['default'])) {
+          $options = array_intersect_key($this->viewModes, $filtered_options);
+          $options['default'] = 'Default';
+        }
+        else {
+          $options = array_intersect_key($this->viewModes, $filtered_options);
+        }
+      }
+    }
+    else {
+      $options = $this->viewModes;
+    }
+    return $options;
+  }
+
+  public function isLimited() {
+    return $this->getSetting('limit_view_modes') == 1;
   }
 
   /**

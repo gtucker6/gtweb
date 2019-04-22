@@ -20,7 +20,6 @@ use Drupal\Core\TypedData\DataDefinition;
  *   default_widget = "configured_view_mode_widget",
  *   default_formatter = "configured_view_mode_formatter",
  *   no_ui = "TRUE",
- *   weight = 15
  * )
  */
 class ConfiguredViewMode extends FieldItemBase {
