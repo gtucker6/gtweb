@@ -36,6 +36,7 @@
         "drupal/admin_toolbar": "^1.24",
         "drupal/backup_migrate": "^4.0",
         "drupal/better_exposed_filters": "^3.0@alpha",
+        "drupal/bootstrap_paragraphs": "^2.0@beta",
         "drupal/charts": "^3.0@beta",
         "drupal/coder": "^8.3",
         "drupal/codesnippet": "^1.6",

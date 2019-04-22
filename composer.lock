@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "13ba220bf068230e141303b5c73c706f",
+    "content-hash": "9780821b06f8ba6bc7f43bd49ae42ff3",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1462,6 +1462,64 @@
             }
         },
         {
+            "name": "drupal/bootstrap_paragraphs",
+            "version": "2.0.0-beta6",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/bootstrap_paragraphs.git",
+                "reference": "8.x-2.0-beta6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/bootstrap_paragraphs-8.x-2.0-beta6.zip",
+                "reference": "8.x-2.0-beta6",
+                "shasum": "ae24c14a87186f2b9e9ef12822ac40cb7ad68b15"
+            },
+            "require": {
+                "drupal/core": "*",
+                "drupal/entity_reference_revisions": "*",
+                "drupal/paragraphs": "*",
+                "drupal/viewsreference": "*"
+            },
+            "require-dev": {
+                "drupal/contact_formatter": "*",
+                "drupal/paragraphs": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.0-beta6",
+                    "datestamp": "1541261280",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "albertski",
+                    "homepage": "https://www.drupal.org/user/1327432"
+                },
+                {
+                    "name": "thejimbirch",
+                    "homepage": "https://www.drupal.org/user/2507260"
+                }
+            ],
+            "description": "A suite of Paragraph bundles made with the Boostrap framework.",
+            "homepage": "https://www.drupal.org/project/bootstrap_paragraphs",
+            "support": {
+                "source": "https://git.drupalcode.org/project/bootstrap_paragraphs"
+            }
+        },
+        {
             "name": "drupal/charts",
             "version": "3.0.0-beta1",
             "source": {
@@ -2651,17 +2709,17 @@
         },
         {
             "name": "drupal/fontawesome",
-            "version": "2.6.0",
+            "version": "2.12.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/fontawesome.git",
-                "reference": "8.x-2.6"
+                "reference": "8.x-2.12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/fontawesome-8.x-2.6.zip",
-                "reference": "8.x-2.6",
-                "shasum": "9b5a60eb1c51d596836652fbee68876104d0a96c"
+                "url": "https://ftp.drupal.org/files/projects/fontawesome-8.x-2.12.zip",
+                "reference": "8.x-2.12",
+                "shasum": "ed8ea9c5354201db2f0eac2bf8f3a4c46403f307"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -2672,8 +2730,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.6",
-                    "datestamp": "1535484781",
+                    "version": "8.x-2.12",
+                    "datestamp": "1550692543",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2699,14 +2757,6 @@
                     "homepage": "https://www.drupal.org/user/61114"
                 },
                 {
-                    "name": "cosmicdreams",
-                    "homepage": "https://www.drupal.org/user/42579"
-                },
-                {
-                    "name": "geerlingguy",
-                    "homepage": "https://www.drupal.org/user/389011"
-                },
-                {
                     "name": "inders",
                     "homepage": "https://www.drupal.org/user/127640"
                 },
@@ -2718,7 +2768,7 @@
             "description": "The web's most popular icon set and toolkit.",
             "homepage": "https://www.drupal.org/project/fontawesome",
             "support": {
-                "source": "http://cgit.drupalcode.org/fontawesome"
+                "source": "https://git.drupalcode.org/project/fontawesome"
             }
         },
         {
@@ -8617,6 +8667,7 @@
     "minimum-stability": "alpha",
     "stability-flags": {
         "drupal/better_exposed_filters": 15,
+        "drupal/bootstrap_paragraphs": 10,
         "drupal/charts": 10,
         "drupal/contact_storage": 10,
         "drupal/simple_block": 10,
