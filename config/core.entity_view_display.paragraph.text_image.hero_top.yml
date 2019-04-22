@@ -17,15 +17,15 @@ bundle: text_image
 mode: hero_top
 content:
   field_description:
-    weight: 0
-    label: above
+    weight: 1
+    label: visually_hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_image:
-    weight: 1
-    label: above
+    weight: 0
+    label: visually_hidden
     settings:
       image_style: ''
       image_link: ''

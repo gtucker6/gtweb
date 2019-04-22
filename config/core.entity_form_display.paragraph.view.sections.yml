@@ -1,0 +1,46 @@
+uuid: ac93026d-be08-426f-a9d1-b53e8fcfc885
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.paragraph.sections
+    - field.field.paragraph.view.bp_width
+    - field.field.paragraph.view.field_horizontal_alignment
+    - field.field.paragraph.view.field_vertical_alignment
+    - field.field.paragraph.view.field_view
+    - paragraphs.paragraphs_type.view
+  module:
+    - viewsreference
+id: paragraph.view.sections
+targetEntityType: paragraph
+bundle: view
+mode: sections
+content:
+  bp_width:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_horizontal_alignment:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_vertical_alignment:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_view:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: viewsreference_select
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true
