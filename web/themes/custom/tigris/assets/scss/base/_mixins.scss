@@ -1,5 +1,7 @@
 $spacing_properties: ('margin') ('padding');
 $directions: ('left', 'right', 'top', 'bottom');
+// Adds default margin and padding spacing classes.
+// Ex. .pt-spacing (Padding Top)
 @mixin direction-x-spacing {
 	@each $i in $spacing_properties {
 		.#{$i}{ #{$i}: $spacing; }
