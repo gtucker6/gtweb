@@ -47,7 +47,7 @@
         "drupal/core": "^8",
         "drupal/devel": "^2.0",
         "drupal/ds": "^3.1",
-        "drupal/field_group": "^1.0",
+        "drupal/field_group": "^3.0@rc",
         "drupal/fontawesome": "^2.4",
         "drupal/fontawesome_menu_icons": "^1.3",
         "drupal/link_class": "^1.3",
@@ -145,8 +145,7 @@
         "patches": {
             "drupal/core": {
                 "Layout Discovery layouts deprecation": "https://www.drupal.org/files/issues/2018-07-04/drupal_layout_discovery-2911996-15.patch",
-                "Views relationship node view mode fix": "https://www.drupal.org/files/issues/2018-08-22/2457999-183.patch",
-                "Add a FieldDefinition class for defining bundle fields in code": "https://www.drupal.org/files/issues/2018-11-14/2935932-123_0.patch"
+                "Views relationship node view mode fix": "https://www.drupal.org/files/issues/2019-05-04/2457999-194.patch"
             },
             "drupal/ds": {
                 "Views relationship method langcode update": "https://www.drupal.org/files/issues/declaration_parent_compatibility_2.patch"
