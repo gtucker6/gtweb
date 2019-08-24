@@ -24,11 +24,11 @@
   <div class="field-group-wrapper">
   {% endif %}
   {% if element.field_start_date is not empty and element.field_finish_date is not empty %}
-      <div class="dates d-flex">
+      <div class="date-range d-flex">
         <div class="label"><strong>Dates: </strong></div>
-        <div class="date start-date"> {{ element.field_start_date }}</div>
-        <div class="hyphen"> &ndash; </div>
-        <div class="date finish-date"> {{ element.field_finish_date }} </div>
+        <div class="date-range__start"> {{ element.field_start_date }}</div>
+        <div class="hyphen date-range__separator"> &ndash; </div>
+        <div class="date-range__finish"> {{ element.field_finish_date }} </div>
       </div>
   {% else %}
       {{children}}
