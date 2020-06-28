@@ -1,0 +1,8 @@
+uuid: 5bd7d443-dd17-4a81-9175-ec9f70f2478d
+langcode: en
+status: true
+dependencies: {  }
+id: html_long_month_and_year
+label: 'HTML Long Month and Year'
+locked: false
+pattern: 'F, Y'
