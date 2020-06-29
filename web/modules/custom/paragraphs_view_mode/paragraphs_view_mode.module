@@ -11,6 +11,7 @@ use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\paragraphs\ParagraphInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Entity\EntityInterface;
+
 /**
  * Implements hook_help().
  */
@@ -30,7 +31,7 @@ function paragraphs_view_mode_help($route_name, RouteMatchInterface $route_match
 /**
  * Implements hook_entity_base_field_info().
  */
-function paragraphs_view_mode_entity_base_field_info(\Drupal\Core\Entity\EntityTypeInterface $entity_type) {
+function paragraphs_view_mode_entity_base_field_info(EntityTypeInterface $entity_type) {
   if ($entity_type->id() === 'paragraph') {
     $fields = [];
     $fields['vmode_selector'] = BaseFieldDefinition::create('configured_view_mode')
@@ -48,7 +49,7 @@ function paragraphs_view_mode_entity_base_field_info(\Drupal\Core\Entity\EntityT
 /**
  * Implements hook_entity_bundle_field_info().
  */
-function paragraphs_view_mode_entity_bundle_field_info(\Drupal\Core\Entity\EntityTypeInterface $entity_type, $bundle, array $base_field_definitions) {
+function paragraphs_view_mode_entity_bundle_field_info(EntityTypeInterface $entity_type, $bundle, array $base_field_definitions) {
   if ($entity_type->id() === 'paragraph') {
     $fields = [];
     $fields['vmode_selector'] = $base_field_definitions['vmode_selector'];
@@ -85,6 +86,18 @@ function paragraphs_view_mode_entity_view_mode_alter(&$view_mode, EntityInterfac
 
 }
 
+/**
+ * Gets the content chunck view modes.
+ *
+ * @param string $bundle
+ *   Bundle of entity.
+ *
+ * @return array
+ *   Returns the content chunk view modes.
+ *
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+ */
 function get_configured_paragraph_view_modes($bundle) {
   $manager = \Drupal::entityTypeManager();
   $query = $manager->getStorage('entity_view_display')->getQuery();
