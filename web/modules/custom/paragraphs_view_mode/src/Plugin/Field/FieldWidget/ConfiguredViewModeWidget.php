@@ -90,17 +90,13 @@ class ConfiguredViewModeWidget extends WidgetBase {
   /**
    * Returns filtered checkbox options.
    *
-   * @param mixed $checkbox_options
-   *   The checkbox options unfiltered.
-   *
    * @return array
    *   Returns the filtered checkbox options.
    */
-  public function getFilteredCheckBoxOptions($checkbox_options) {
-    $filtered_options = array_filter($checkbox_options, function ($var) {
+  public function getFilteredCheckBoxOptions() {
+    return array_filter($this->getSetting('available_view_modes'), function ($var) {
       return $var !== 0;
     });
-    return $filtered_options;
   }
 
   /**
@@ -109,8 +105,7 @@ class ConfiguredViewModeWidget extends WidgetBase {
   public function settingsSummary() {
     $limit_view_mode_selection = $this->getSetting('limit_view_modes');
     if ($limit_view_mode_selection == TRUE) {
-      $available_view_modes = $this->getSetting('available_view_modes');
-      $filtered_options = $this->getFilteredCheckBoxOptions($available_view_modes);
+      $filtered_options = $this->getFilteredCheckBoxOptions();
       $options = array_intersect_key($this->viewModes, $filtered_options);
       if (isset($filtered_options['default'])) {
         $options['default'] = 'Default';
@@ -142,8 +137,7 @@ class ConfiguredViewModeWidget extends WidgetBase {
           return $values = ['value' => $element];
         }
         else {
-          $available_view_modes = $this->getSetting('available_view_modes');
-          $filtered_options = $this->getFilteredCheckBoxOptions($available_view_modes);
+          $filtered_options = $this->getFilteredCheckBoxOptions();
           if (isset($filtered_options['default'])) {
             $options = array_intersect_key($this->viewModes, $filtered_options);
             $options['default'] = 'Default';
@@ -201,8 +195,7 @@ class ConfiguredViewModeWidget extends WidgetBase {
         return [];
       }
       else {
-        $available_view_modes = $this->getSetting('available_view_modes');
-        $filtered_options = $this->getFilteredCheckBoxOptions($available_view_modes);
+        $filtered_options = $this->getFilteredCheckBoxOptions();
         if (isset($filtered_options['default'])) {
           $options = array_intersect_key($this->viewModes, $filtered_options);
           $options['default'] = 'Default';
