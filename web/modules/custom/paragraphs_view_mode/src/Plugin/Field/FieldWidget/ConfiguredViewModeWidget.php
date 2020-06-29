@@ -21,8 +21,13 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 class ConfiguredViewModeWidget extends WidgetBase {
 
-
+  /**
+   * Configured view modes.
+   *
+   * @var array
+   */
   protected $viewModes = [];
+
   /**
    * {@inheritdoc}
    */
@@ -57,14 +62,15 @@ class ConfiguredViewModeWidget extends WidgetBase {
    * {@inheritdoc}
    */
   public function settingsForm(array $form, FormStateInterface $form_state) {
-    $elements = array();
 
-    $elements['limit_view_modes'] = array(
+    $elements = [];
+
+    $elements['limit_view_modes'] = [
       '#type' => 'checkbox',
       '#title' => $this
         ->t('Limit View Modes'),
       '#default_value' => $this->getSetting('limit_view_modes'),
-    );
+    ];
     $elements['available_view_modes'] = [
       '#type' => 'checkboxes',
       '#options' => ['default' => 'Default'] + $this->viewModes,
@@ -81,12 +87,25 @@ class ConfiguredViewModeWidget extends WidgetBase {
     return $elements;
   }
 
+  /**
+   * Returns filtered checkbox options.
+   *
+   * @param mixed $checkbox_options
+   *   The checkbox options unfiltered.
+   *
+   * @return array
+   *   Returns the filtered checkbox options.
+   */
   public function getFilteredCheckBoxOptions($checkbox_options) {
-    $filtered_options = array_filter($checkbox_options, function($var) {
+    $filtered_options = array_filter($checkbox_options, function ($var) {
       return $var !== 0;
     });
     return $filtered_options;
   }
+
+  /**
+   * {@inheritDoc}
+   */
   public function settingsSummary() {
     $limit_view_mode_selection = $this->getSetting('limit_view_modes');
     if ($limit_view_mode_selection == TRUE) {
@@ -109,9 +128,8 @@ class ConfiguredViewModeWidget extends WidgetBase {
 
   }
 
-
   /**
-   * {@inheritdoc}
+   * {@inheritDoc}
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
     if (empty($this->viewModes)) {
@@ -170,6 +188,13 @@ class ConfiguredViewModeWidget extends WidgetBase {
       }
     }
   }
+
+  /**
+   * Gets the available view mode options.
+   *
+   * @return array
+   *   Returns the available view mode options.
+   */
   public function getAvailableViewModeOptions() {
     if ($this->isLimited()) {
       if (empty($this->getSetting('available_view_modes'))) {
@@ -193,12 +218,23 @@ class ConfiguredViewModeWidget extends WidgetBase {
     return $options;
   }
 
+  /**
+   * Gets if the view modes are limited.
+   *
+   * @return bool
+   *   Returns true if the view modes are limited, false otherwise
+   */
   public function isLimited() {
     return $this->getSetting('limit_view_modes') == 1;
   }
 
   /**
-   * {@inheritdoc}
+   * Validates an element.
+   *
+   * @param mixed $element
+   *   The renderable element.
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   The form state object.
    */
   public function validate($element, FormStateInterface $form_state) {
     $value = $element['#value'];

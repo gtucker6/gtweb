@@ -2,11 +2,8 @@
 
 namespace Drupal\paragraphs_view_mode\Plugin\Field\FieldFormatter;
 
-use Drupal\Component\Utility\Html;
-use Drupal\Core\Field\FieldItemInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\FormatterBase;
-use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Plugin implementation of the 'configured_view_mode_formatter' formatter.
