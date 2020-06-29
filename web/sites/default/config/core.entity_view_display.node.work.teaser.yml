@@ -64,6 +64,7 @@ third_party_settings:
         effect: none
         speed: fast
       label: 'Work Header'
+      region: content
 id: node.work.teaser
 targetEntityType: node
 bundle: work

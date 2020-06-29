@@ -5,5 +5,4 @@ dependencies: {  }
 name: 'Web Skills'
 vid: web_skills
 description: ''
-hierarchy: 0
 weight: 0

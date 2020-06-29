@@ -4,12 +4,14 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.left_images_preview
+    - field.field.node.web_project.field_company
     - field.field.node.web_project.field_preview_desktop
     - field.field.node.web_project.field_preview_mobile
     - field.field.node.web_project.field_preview_tablet
     - field.field.node.web_project.field_project_description
     - field.field.node.web_project.field_project_source
     - field.field.node.web_project.field_project_summary
+    - field.field.node.web_project.field_web_services
     - field.field.node.web_project.field_web_skills
     - image.style.desktop_preview
     - node.type.web_project
@@ -73,6 +75,7 @@ third_party_settings:
         effect: none
         speed: fast
       label: Preview
+      region: first
 id: node.web_project.left_images_preview
 targetEntityType: node
 bundle: web_project
@@ -104,8 +107,10 @@ content:
       link: true
     third_party_settings: {  }
 hidden:
+  field_company: true
   field_preview_mobile: true
   field_preview_tablet: true
   field_project_description: true
   field_project_source: true
+  field_web_services: true
   links: true

@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.web_project.field_project_description
     - field.field.node.web_project.field_project_source
     - field.field.node.web_project.field_project_summary
+    - field.field.node.web_project.field_web_services
     - field.field.node.web_project.field_web_skills
     - node.type.web_project
   module:
@@ -73,6 +74,7 @@ third_party_settings:
         effect: none
         speed: fast
       label: Preview
+      region: first
 id: node.web_project.featured
 targetEntityType: node
 bundle: web_project
@@ -111,4 +113,5 @@ hidden:
   field_preview_tablet: true
   field_project_description: true
   field_project_source: true
+  field_web_services: true
   links: true

@@ -40,6 +40,7 @@ third_party_settings:
         id: ''
         classes: 'd-flex flex-wrap'
       label: Dates
+      region: content
     group_contact_information:
       children:
         - field_company_number_s
@@ -59,6 +60,7 @@ third_party_settings:
         id: ''
         classes: ''
       label: 'Contact Information'
+      region: content
     group_job_description:
       children:
         - field_work_description
@@ -79,6 +81,7 @@ third_party_settings:
         id: ''
         classes: ''
       label: 'About the Job'
+      region: content
   ds:
     layout:
       id: layout__onecol

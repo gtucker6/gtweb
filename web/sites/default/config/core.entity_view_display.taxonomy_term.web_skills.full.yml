@@ -56,6 +56,7 @@ third_party_settings:
         id: ''
         classes: 'd-flex justify-content-center align-items-center align-content-center page-header'
       label: Flex
+      region: content
     group_description:
       children:
         - description
@@ -72,6 +73,7 @@ third_party_settings:
         effect: none
         speed: fast
       label: Description
+      region: content
 id: taxonomy_term.web_skills.full
 targetEntityType: taxonomy_term
 bundle: web_skills

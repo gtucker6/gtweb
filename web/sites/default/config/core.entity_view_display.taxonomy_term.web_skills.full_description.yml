@@ -66,6 +66,7 @@ third_party_settings:
         id: ''
         classes: d-flex
       label: Top
+      region: content
 id: taxonomy_term.web_skills.full_description
 targetEntityType: taxonomy_term
 bundle: web_skills

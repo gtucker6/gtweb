@@ -33,6 +33,7 @@ third_party_settings:
         description: ''
         required_fields: true
       label: 'Display Settings'
+      region: content
 _core:
   default_config_hash: HdN79DCCkrP_BBFmnXk4bHUxNg16EtuZC7olW5xr2wE
 id: paragraph.bp_image.default

@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.web_project.field_project_description
     - field.field.node.web_project.field_project_source
     - field.field.node.web_project.field_project_summary
+    - field.field.node.web_project.field_web_services
     - field.field.node.web_project.field_web_skills
     - image.style.tablet_preview
     - node.type.web_project
@@ -57,6 +58,7 @@ third_party_settings:
         id: ''
         classes: 'previews row'
       label: Preview
+      region: content
     group_main_top:
       children:
         - group_preview
@@ -74,6 +76,7 @@ third_party_settings:
         id: ''
         classes: 'content-main--top content-main container'
       label: 'Main Top'
+      region: content
     group_main_bottom:
       children:
         - field_project_description
@@ -90,6 +93,7 @@ third_party_settings:
         effect: none
         speed: fast
       label: 'Main Bottom'
+      region: content
 id: node.web_project.full
 targetEntityType: node
 bundle: web_project
@@ -137,5 +141,6 @@ hidden:
   field_company: true
   field_project_source: true
   field_project_summary: true
+  field_web_services: true
   field_web_skills: true
   links: true

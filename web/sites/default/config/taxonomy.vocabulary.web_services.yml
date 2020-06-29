@@ -5,5 +5,4 @@ dependencies: {  }
 name: 'Web Services'
 vid: web_services
 description: ''
-hierarchy: 0
 weight: 0
