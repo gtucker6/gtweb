@@ -208,9 +208,9 @@ function tigris_preprocess_layout__onecol__taxonomy_term($variables) {
 }
 
 /**
- * Implements hook_preprocess_HOOK() for layout__onecol__taxonomy_term.html.twig.
+ * Implements hook_preprocess_HOOK().
  */
-function tigris_preprocess_views_view__web_skills__block_web_skills_level_chart(&$vars){
+function tigris_preprocess_views_view__web_skills__block_web_skills_level_chart(&$vars) {
   $vars['more']['#options']['attributes']['class'][] = 'btn btn-main';
 }
 
