@@ -42,9 +42,9 @@
         "drupal/config_installer": "^1.0",
         "drupal/console": "^1",
         "drupal/contact_storage": "^1.0@beta",
-        "drupal/core": "^8.9",
+        "drupal/core": "^8.9.11",
         "drupal/core-composer-scaffold": "^8.8.1",
-        "drupal/core-recommended": "^8.8",
+        "drupal/core-recommended": "^8.9.11",
         "drupal/devel": "^2.0",
         "drupal/ds": "^3.1",
         "drupal/field_group": "^3.0@rc",
@@ -62,7 +62,9 @@
         "google/charts": "45",
         "pantheon-systems/drupal-integrations": "^8",
         "pantheon-systems/quicksilver-pushback": "^2",
+        "pear/archive_tar": "^1.4.11",
         "rvtraveller/qs-composer-installer": "^1.1",
+        "symfony/http-kernel": "^3.4.44",
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
