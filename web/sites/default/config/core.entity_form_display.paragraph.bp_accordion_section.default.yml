@@ -43,12 +43,6 @@ content:
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
-  vmode_selector:
-    type: options_select
-    weight: 3
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   created: true
   status: true

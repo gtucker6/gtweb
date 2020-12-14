@@ -1,7 +1,0 @@
-name: 'Paragraphs View Mode'
-type: module
-description: 'Paragraphs confiurable view mode field selector'
-core: 8.x
-package: 'Custom'
-dependencies:
-  - paragraphs
