@@ -1,5 +1,5 @@
-name: 'GT Web Mods'
+name: 'GTWeb Core'
 type: module
-description: 'GTWeb customizations'
+description: 'GTWeb core customizations'
 core: 8.x
-package: 'Custom'
+package: 'GTWeb'
