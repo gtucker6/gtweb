@@ -1,0 +1,51 @@
+<?php
+
+/**
+ * @file
+ * Contains gtweb_core.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_install().
+ */
+function gtweb_core_install($is_syncing) {
+  $needs_delete = [
+    'active_theme_behaviors',
+    'bootstrap_paragraphs',
+    'vmode_selector',
+  ];
+  $key_value_schema = \Drupal::keyValue('system.schema');
+  foreach ($needs_delete as $item) {
+    $key_value_schema->delete($item);
+  }
+}
+
+/**
+ * Implements hook_help().
+ */
+function gtweb_core_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the gtweb_core module.
+    case 'help.page.gtweb_core':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('GTWeb customizations') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_link_alter().
+ */
+function gtweb_core_link_alter(&$variables) {
+  /** @var \Drupal\Core\Url $url */
+  $url = $variables['url'];
+  if ($url->isExternal()) {
+    $variables['options']['attributes']['rel'] = 'nofollow';
+    $variables['options']['attributes']['target'] = '_blank';
+  }
+}
