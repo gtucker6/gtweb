@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Contains gtweb_core.install.
+ */
+
+/**
  * Implements hook_install().
  */
 function gtweb_core_install($is_syncing) {
