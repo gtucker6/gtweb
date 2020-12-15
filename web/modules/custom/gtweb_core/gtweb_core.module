@@ -8,21 +8,6 @@
 use Drupal\Core\Routing\RouteMatchInterface;
 
 /**
- * Implements hook_install().
- */
-function gtweb_core_install($is_syncing) {
-  $needs_delete = [
-    'active_theme_behaviors',
-    'bootstrap_paragraphs',
-    'vmode_selector',
-  ];
-  $key_value_schema = \Drupal::keyValue('system.schema');
-  foreach ($needs_delete as $item) {
-    $key_value_schema->delete($item);
-  }
-}
-
-/**
  * Implements hook_help().
  */
 function gtweb_core_help($route_name, RouteMatchInterface $route_match) {
