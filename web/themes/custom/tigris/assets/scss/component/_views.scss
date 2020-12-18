@@ -1,39 +1,4 @@
-.view:not(.view-my-work):not(.view-taxonomy-term), .block-views {
-  h2 {
-    text-align: center;
-  }
-  .views-row {
-    width: 100%;
-  }
-}
-.view-display-id-block_services_offered {
-  padding: 25px;
-  .fontawesome-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-  }
-  .svg-inline--fa {
-    width: 50%;
-    height: 50%;
-    border-radius: 50%;
-    margin: 0 auto;
-  }
-}
-.view-web-skills:not(.view-display-id-block_web_skills_used) {
-  .view-content.row {
-    justify-content: center;
-    .views-field-nothing, .field-content {
-        height: 100%;
-        width: 100%;
-    }
-    .image-style-card {
-      margin: 0 auto;
-    }
-  }
-}
-.view-my-work {
+.view-my-work.view-display-id-page_my_work {
   .view-content {
     margin: 0;
   }

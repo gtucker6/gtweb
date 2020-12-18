@@ -1,8 +1,5 @@
 .container, .container-fluid {
   .d-flex {
-    > * {
-      max-width: 100%;
-    }
     > h1, > h2, > h3, > h4, > h5, > h6 {
       width: 100%;
       flex: 0 1 100%;
