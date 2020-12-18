@@ -12,6 +12,8 @@ use Drupal\Core\Layout\LayoutDefinition;
 use Drupal\Core\Template\Attribute;
 use Drupal\Core\Template\AttributeValueBase;
 use Drupal\Core\Template\AttributeArray;
+use Drupal\Core\Field\FormatterInterface;
+use Drupal\Core\Field\FieldDefinitionInterface;
 
 /**
  * Implements hook_help().
@@ -32,7 +34,7 @@ function gtweb_core_help($route_name, RouteMatchInterface $route_match) {
 /**
  * Implements hook_field_formatter_third_party_settings_form().
  */
-function gtweb_core_field_formatter_third_party_settings_form(\Drupal\Core\Field\FormatterInterface $plugin, \Drupal\Core\Field\FieldDefinitionInterface $field_definition, $view_mode, array $form, \Drupal\Core\Form\FormStateInterface $form_state) {
+function gtweb_core_field_formatter_third_party_settings_form(FormatterInterface $plugin, FieldDefinitionInterface $field_definition, $view_mode, array $form, FormStateInterface $form_state) {
   $element = [];
   if ($plugin->getPluginId() === 'string') {
     $element['use_heading'] = [
@@ -166,7 +168,7 @@ function _layout_builder_styles_regions_add_style_selection_form_element(array &
         $existing_selected_style = array_shift($filtered);
       }
       else {
-        $existing_selected_style = null;
+        $existing_selected_style = NULL;
       }
       $form[$form_element_name]['#default_value'] = $existing_selected_style;
     }
