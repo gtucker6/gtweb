@@ -10,26 +10,7 @@ dependencies:
     - field.field.paragraph.text.field_vertical_alignment
     - paragraphs.paragraphs_type.text
   module:
-    - field_group
     - text
-third_party_settings:
-  field_group:
-    group_display_settings:
-      children:
-        - bp_width
-        - field_background_color
-        - field_horizontal_alignment
-        - field_vertical_alignment
-      parent_name: ''
-      weight: 0
-      format_type: fieldset
-      format_settings:
-        id: ''
-        classes: ''
-        description: ''
-        required_fields: true
-      label: 'Display Settings'
-      region: content
 id: paragraph.text.default
 targetEntityType: paragraph
 bundle: text

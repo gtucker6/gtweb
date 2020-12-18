@@ -1,8 +1,0 @@
-uuid: 5c967a79-76f1-4c00-924a-a37900225302
-langcode: en
-status: true
-dependencies: {  }
-id: web_service
-label: 'Web Service'
-revision: 0
-description: 'Web Service that I offer.'

@@ -1,4 +1,4 @@
-uuid: 1c3a4ddf-1fa9-4087-b8d2-562e1ccc634b
+uuid: 037e4cf1-172d-4fc3-874b-9d962b0e0358
 langcode: en
 status: true
 dependencies:
@@ -9,8 +9,8 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-name: Work
-type: work
+name: 'Landing Page'
+type: landing_page
 description: ''
 help: ''
 new_revision: true

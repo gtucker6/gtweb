@@ -5,6 +5,7 @@ dependencies:
   config:
     - block_content.type.basic
     - field.field.block_content.basic.body
+    - field.field.block_content.basic.field_media
   module:
     - text
 _core:
@@ -21,4 +22,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_media:
+    type: entity_reference_entity_view
+    weight: 1
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
 hidden: {  }

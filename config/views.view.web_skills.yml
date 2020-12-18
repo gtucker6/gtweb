@@ -12,7 +12,6 @@ dependencies:
   module:
     - charts
     - charts_google
-    - ds
     - entity_reference_revisions
     - fontawesome
     - node
@@ -69,7 +68,7 @@ display:
           default_row_class: false
           uses_fields: false
       row:
-        type: 'ds_entity:taxonomy_term'
+        type: 'entity:taxonomy_term'
         options:
           relationship: none
           view_mode: full_description
@@ -246,17 +245,10 @@ display:
           default_row_class: true
           uses_fields: false
       row:
-        type: 'ds_entity:taxonomy_term'
+        type: 'entity:taxonomy_term'
         options:
           relationship: none
           view_mode: full
-          alternating_fieldset:
-            alternating: false
-            allpages: false
-          grouping_fieldset:
-            group: false
-          advanced_fieldset:
-            advanced: false
       fields:
         field_font_awesome_icon:
           id: field_font_awesome_icon

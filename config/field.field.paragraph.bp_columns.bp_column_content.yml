@@ -13,7 +13,6 @@ dependencies:
     - paragraphs.paragraphs_type.media
     - paragraphs.paragraphs_type.section
     - paragraphs.paragraphs_type.text
-    - paragraphs.paragraphs_type.view
   module:
     - entity_reference_revisions
 _core:
@@ -36,53 +35,48 @@ settings:
       bp_image: bp_image
       bp_accordion: bp_accordion
       bp_carousel: bp_carousel
-      bp_columns: bp_columns
       bp_tabs: bp_tabs
       font_awesome_item: font_awesome_item
       media: media
       section: section
       text: text
-      view: view
     target_bundles_drag_drop:
-      bp_image:
-        enabled: true
-        weight: -30
       bp_accordion:
         enabled: true
         weight: -28
+      bp_accordion_section:
+        weight: -18
+        enabled: false
       bp_carousel:
         enabled: true
         weight: -27
       bp_columns:
-        enabled: true
         weight: -25
+        enabled: false
+      bp_image:
+        enabled: true
+        weight: -30
       bp_modal:
         weight: -21
-        enabled: false
-      bp_tabs:
-        enabled: true
-        weight: -20
-      bp_accordion_section:
-        weight: -18
         enabled: false
       bp_tab_section:
         weight: -17
         enabled: false
-      hero:
-        weight: 25
-        enabled: false
+      bp_tabs:
+        enabled: true
+        weight: -20
       font_awesome_item:
         enabled: true
         weight: 26
+      hero:
+        weight: 25
+        enabled: false
       media:
         enabled: true
         weight: 27
       section:
         enabled: true
         weight: 28
-      subsection:
-        weight: 29
-        enabled: false
       text:
         enabled: true
         weight: 30
@@ -92,7 +86,4 @@ settings:
       text_images:
         weight: 32
         enabled: false
-      view:
-        enabled: true
-        weight: 32
 field_type: entity_reference_revisions

@@ -8,94 +8,17 @@ dependencies:
     - field.field.node.web_project.field_preview_desktop
     - field.field.node.web_project.field_preview_mobile
     - field.field.node.web_project.field_preview_tablet
-    - field.field.node.web_project.field_project_description
     - field.field.node.web_project.field_project_source
     - field.field.node.web_project.field_project_summary
     - field.field.node.web_project.field_web_services
     - field.field.node.web_project.field_web_skills
+    - field.field.node.web_project.layout_builder__layout
     - node.type.web_project
   module:
-    - ds
-    - field_group
     - image
     - link
     - text
     - user
-third_party_settings:
-  ds:
-    layout:
-      id: layout__twocol
-      library: layout_discovery/twocol
-      disable_css: false
-      entity_classes: all_classes
-      settings: {  }
-    regions:
-      first:
-        - group_preview
-        - field_preview_desktop
-      second:
-        - node_link
-        - node_title
-        - field_project_source
-        - field_project_summary
-        - field_web_skills
-        - group_custom_flex
-    fields:
-      node_link:
-        plugin_id: node_link
-        weight: 1
-        label: hidden
-        formatter: default
-        settings:
-          'link text': 'View Case Study'
-          'link class': 'btn btn-main'
-          wrapper: ''
-          class: ''
-      node_title:
-        plugin_id: node_title
-        weight: 1
-        label: hidden
-        formatter: default
-        settings:
-          link: true
-          wrapper: h3
-          class: ''
-  field_group:
-    group_preview:
-      children:
-        - field_preview_desktop
-      parent_name: ''
-      weight: 0
-      format_type: html_element
-      format_settings:
-        id: ''
-        classes: 'previews previews--stacked'
-        element: div
-        show_label: false
-        label_element: h3
-        attributes: ''
-        effect: none
-        speed: fast
-      label: Preview
-      region: first
-    group_custom_flex:
-      children:
-        - node_link
-        - field_project_source
-      parent_name: ''
-      weight: 4
-      format_type: html_element
-      format_settings:
-        id: ''
-        classes: d-flex
-        element: div
-        show_label: false
-        label_element: h3
-        attributes: ''
-        effect: none
-        speed: fast
-      label: 'Custom Flex'
-      region: second
 id: node.web_project.teaser
 targetEntityType: node
 bundle: web_project
@@ -141,6 +64,6 @@ hidden:
   field_company: true
   field_preview_mobile: true
   field_preview_tablet: true
-  field_project_description: true
   field_web_services: true
+  layout_builder__layout: true
   links: true

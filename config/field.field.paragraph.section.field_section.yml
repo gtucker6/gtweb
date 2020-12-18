@@ -21,48 +21,52 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     negate: 1
-    target_bundles: null
+    target_bundles:
+      section: section
     target_bundles_drag_drop:
+      bp_accordion:
+        weight: 16
+        enabled: false
+      bp_accordion_section:
+        weight: 17
+        enabled: false
+      bp_carousel:
+        weight: 13
+        enabled: false
+      bp_columns:
+        weight: 19
+        enabled: false
+      bp_image:
+        weight: 14
+        enabled: false
+      bp_modal:
+        weight: 22
+        enabled: false
+      bp_tab_section:
+        weight: 16
+        enabled: false
+      bp_tabs:
+        weight: 15
+        enabled: false
+      font_awesome_item:
+        weight: 24
+        enabled: false
+      hero:
+        weight: 25
+        enabled: false
+      media:
+        weight: 18
+        enabled: false
       section:
+        enabled: true
         weight: 5
-        enabled: false
-      text_images:
-        weight: 6
-        enabled: false
-      subsection:
-        weight: 7
-        enabled: false
       text:
         weight: 10
         enabled: false
       text_image:
         weight: 11
         enabled: false
-      bp_carousel:
-        weight: 13
-        enabled: false
-      bp_image:
-        weight: 14
-        enabled: false
-      bp_tabs:
-        weight: 15
-        enabled: false
-      bp_accordion:
-        weight: 16
-        enabled: false
-      bp_tab_section:
-        weight: 16
-        enabled: false
-      bp_accordion_section:
-        weight: 17
-        enabled: false
-      media:
-        weight: 18
-        enabled: false
-      bp_columns:
-        weight: 19
-        enabled: false
-      bp_modal:
-        weight: 22
+      text_images:
+        weight: 6
         enabled: false
 field_type: entity_reference_revisions

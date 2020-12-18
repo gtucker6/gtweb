@@ -10,32 +10,8 @@ dependencies:
     - image.style.slideshow
     - paragraphs.paragraphs_type.text_image
   module:
-    - ds
     - image
     - text
-third_party_settings:
-  ds:
-    layout:
-      id: ds_1col_wrapper
-      library: null
-      disable_css: false
-      entity_classes: all_classes
-      settings:
-        wrappers:
-          ds_content: div
-        outer_wrapper: div
-        attributes: ''
-        link_attribute: ''
-        link_custom: ''
-        classes:
-          layout_class:
-            layout: layout
-            layout--slide: layout--slide
-          ds_content: {  }
-    regions:
-      ds_content:
-        - field_image
-        - field_description
 id: paragraph.text_image.slide
 targetEntityType: paragraph
 bundle: text_image

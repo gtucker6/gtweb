@@ -1,0 +1,12 @@
+uuid: c862efd4-282f-4402-9f6e-63ca83d78965
+langcode: en
+status: true
+dependencies: {  }
+id: previews
+label: Previews
+classes: previews
+type: section
+weight: 0
+block_restrictions: {  }
+layout_restrictions:
+  - layout_onecol

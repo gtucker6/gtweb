@@ -7,30 +7,7 @@ dependencies:
     - field.field.taxonomy_term.web_services.field_service_image
     - taxonomy.vocabulary.web_services
   module:
-    - ds
     - image
-third_party_settings:
-  ds:
-    layout:
-      id: layout__onecol
-      library: layout_discovery/onecol
-      disable_css: false
-      entity_classes: all_classes
-      settings: {  }
-    regions:
-      content:
-        - field_service_image
-        - taxonomy_term_title
-    fields:
-      taxonomy_term_title:
-        plugin_id: taxonomy_term_title
-        weight: 1
-        label: hidden
-        formatter: default
-        settings:
-          link: true
-          wrapper: h3
-          class: ''
 id: taxonomy_term.web_services.featured
 targetEntityType: taxonomy_term
 bundle: web_services

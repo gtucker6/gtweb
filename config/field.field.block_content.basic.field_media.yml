@@ -1,0 +1,32 @@
+uuid: 68a47f83-7a16-4603-b0a6-e9f6933ba021
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.basic
+    - field.storage.block_content.field_media
+    - media.type.file
+    - media.type.image
+    - media.type.video
+id: block_content.basic.field_media
+field_name: field_media
+entity_type: block_content
+bundle: basic
+label: Media
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      file: file
+      image: image
+      video: video
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: file
+field_type: entity_reference

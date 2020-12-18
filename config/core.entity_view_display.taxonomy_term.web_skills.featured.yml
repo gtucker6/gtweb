@@ -8,31 +8,7 @@ dependencies:
     - field.field.taxonomy_term.web_skills.field_years_experience
     - taxonomy.vocabulary.web_skills
   module:
-    - ds
     - fontawesome
-third_party_settings:
-  ds:
-    layout:
-      id: layout__onecol
-      library: layout_discovery/onecol
-      disable_css: false
-      entity_classes: all_classes
-      settings: {  }
-    regions:
-      content:
-        - field_font_awesome_icon
-        - field_logo_image
-        - taxonomy_term_title
-    fields:
-      taxonomy_term_title:
-        plugin_id: taxonomy_term_title
-        weight: 23
-        label: hidden
-        formatter: default
-        settings:
-          link: true
-          wrapper: h3
-          class: ''
 id: taxonomy_term.web_skills.featured
 targetEntityType: taxonomy_term
 bundle: web_skills

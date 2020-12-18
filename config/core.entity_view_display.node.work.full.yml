@@ -15,27 +15,9 @@ dependencies:
   module:
     - address
     - datetime
-    - ds
     - telephone
     - text
     - user
-third_party_settings:
-  ds:
-    layout:
-      id: layout__onecol
-      library: layout_discovery/onecol
-      disable_css: false
-      entity_classes: all_classes
-      settings: {  }
-    regions:
-      content:
-        - field_work_title
-        - field_company_number_s
-        - field_company_email
-        - field_company_address
-        - field_work_description
-        - field_start_date
-        - field_finish_date
 id: node.work.full
 targetEntityType: node
 bundle: work
@@ -63,15 +45,6 @@ content:
     third_party_settings: {  }
     type: telephone_link
     region: content
-  field_finish_date:
-    weight: 6
-    label: above
-    settings:
-      timezone_override: ''
-      date_format: 'F Y'
-    third_party_settings: {  }
-    type: datetime_custom
-    region: content
   field_start_date:
     weight: 5
     label: above
@@ -96,4 +69,5 @@ content:
     type: text_default
     region: content
 hidden:
+  field_finish_date: true
   links: true

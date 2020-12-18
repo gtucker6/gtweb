@@ -8,110 +8,128 @@ dependencies:
     - field.field.node.web_project.field_preview_desktop
     - field.field.node.web_project.field_preview_mobile
     - field.field.node.web_project.field_preview_tablet
-    - field.field.node.web_project.field_project_description
     - field.field.node.web_project.field_project_source
     - field.field.node.web_project.field_project_summary
     - field.field.node.web_project.field_web_services
     - field.field.node.web_project.field_web_skills
+    - field.field.node.web_project.layout_builder__layout
     - node.type.web_project
   module:
-    - ds
-    - field_group
-    - image
+    - layout_builder
     - text
     - user
 third_party_settings:
-  ds:
-    layout:
-      id: layout__twocol
-      library: layout_discovery/twocol
-      disable_css: false
-      entity_classes: all_classes
-      settings: {  }
-    regions:
-      first:
-        - group_preview
-        - field_preview_desktop
-      second:
-        - node_title
-        - field_project_summary
-        - field_web_skills
-        - node_link
-    fields:
-      node_link:
-        plugin_id: node_link
-        weight: 4
-        label: hidden
-        formatter: default
-        settings:
-          'link text': 'View Case Study'
-          'link class': 'btn btn-main'
-          wrapper: ''
-          class: ''
-      node_title:
-        plugin_id: node_title
-        weight: 1
-        label: hidden
-        formatter: default
-        settings:
-          link: true
-          wrapper: h2
-          class: ''
-  field_group:
-    group_preview:
-      children:
-        - field_preview_desktop
-      parent_name: ''
-      weight: 0
-      format_type: html_element
-      format_settings:
-        id: ''
-        classes: 'previews previews--stacked'
-        element: div
-        show_label: false
-        label_element: h3
-        attributes: ''
-        effect: none
-        speed: fast
-      label: Preview
-      region: first
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          column_widths: 50-50
+        components:
+          4bc2f9a3-586e-41bf-b1a6-ee6719711d15:
+            uuid: 4bc2f9a3-586e-41bf-b1a6-ee6719711d15
+            region: first
+            configuration:
+              id: 'field_block:node:web_project:field_preview_desktop'
+              label: 'Preview Desktop'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: image
+                settings:
+                  image_style: large
+                  image_link: ''
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+          b704d080-dc15-4b21-9c2c-b7442db40d63:
+            uuid: b704d080-dc15-4b21-9c2c-b7442db40d63
+            region: second
+            configuration:
+              id: 'field_block:node:web_project:field_project_summary'
+              label: 'Project Summary'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: text_trimmed
+                settings:
+                  trim_length: 300
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+          01d1b029-e250-4fb6-8456-b3d8a2dc80a8:
+            uuid: 01d1b029-e250-4fb6-8456-b3d8a2dc80a8
+            region: second
+            configuration:
+              id: 'field_block:node:web_project:field_web_skills'
+              label: 'Web Skills'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: entity_reference_label
+                settings:
+                  link: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 1
+          34fa2a38-1b8b-42af-b36c-fc4da2a62104:
+            uuid: 34fa2a38-1b8b-42af-b36c-fc4da2a62104
+            region: second
+            configuration:
+              id: 'field_block:node:web_project:field_project_source'
+              label: 'Project Source'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: visually_hidden
+                type: link
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: nofollow
+                  target: _blank
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 2
+        third_party_settings: {  }
 id: node.web_project.featured
 targetEntityType: node
 bundle: web_project
 mode: featured
 content:
-  field_preview_desktop:
-    type: image
-    weight: 0
-    region: first
-    label: visually_hidden
-    settings:
-      image_style: ''
-      image_link: content
-    third_party_settings: {  }
   field_project_summary:
-    type: text_trimmed
-    weight: 2
-    region: second
-    label: visually_hidden
-    settings:
-      trim_length: 400
+    type: text_default
+    weight: 0
+    region: content
+    label: hidden
+    settings: {  }
     third_party_settings: {  }
-  field_web_skills:
-    type: entity_reference_label
-    weight: 3
-    region: second
-    label: visually_hidden
-    settings:
-      link: false
-    third_party_settings:
-      ds:
-        ds_limit: ''
 hidden:
   field_company: true
+  field_preview_desktop: true
   field_preview_mobile: true
   field_preview_tablet: true
-  field_project_description: true
   field_project_source: true
   field_web_services: true
+  field_web_skills: true
+  layout_builder__layout: true
   links: true

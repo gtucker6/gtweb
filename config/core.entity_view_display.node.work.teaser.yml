@@ -15,56 +15,9 @@ dependencies:
   module:
     - address
     - datetime
-    - ds
-    - field_group
     - telephone
     - text
     - user
-third_party_settings:
-  ds:
-    layout:
-      id: layout__onecol
-      library: layout_discovery/onecol
-      disable_css: false
-      entity_classes: all_classes
-      settings: {  }
-    regions:
-      content:
-        - group_work_header
-        - node_title
-        - field_work_title
-        - field_company_address
-        - field_company_number_s
-        - field_company_email
-        - field_finish_date
-        - field_start_date
-        - field_work_description
-        - links
-    fields:
-      node_title:
-        plugin_id: node_title
-        weight: 0
-        label: hidden
-        formatter: default
-  field_group:
-    group_work_header:
-      children:
-        - node_title
-        - field_work_title
-      parent_name: ''
-      weight: 0
-      format_type: html_element
-      format_settings:
-        id: ''
-        classes: 'work-header header'
-        element: div
-        show_label: false
-        label_element: h3
-        attributes: ''
-        effect: none
-        speed: fast
-      label: 'Work Header'
-      region: content
 id: node.work.teaser
 targetEntityType: node
 bundle: work
@@ -91,14 +44,6 @@ content:
     label: above
     settings:
       title: ''
-    third_party_settings: {  }
-  field_finish_date:
-    type: datetime_plain
-    weight: 4
-    region: content
-    label: above
-    settings:
-      timezone_override: ''
     third_party_settings: {  }
   field_start_date:
     type: datetime_plain
@@ -127,4 +72,5 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_finish_date: true

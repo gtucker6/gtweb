@@ -44,15 +44,6 @@ content:
     third_party_settings: {  }
     type: telephone_link
     region: content
-  field_finish_date:
-    weight: 5
-    label: above
-    settings:
-      format_type: medium
-      timezone_override: ''
-    third_party_settings: {  }
-    type: datetime_default
-    region: content
   field_start_date:
     weight: 4
     label: above
@@ -77,4 +68,5 @@ content:
     type: text_default
     region: content
 hidden:
+  field_finish_date: true
   links: true

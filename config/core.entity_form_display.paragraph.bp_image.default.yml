@@ -13,27 +13,8 @@ dependencies:
     - image.style.thumbnail
     - paragraphs.paragraphs_type.bp_image
   module:
-    - field_group
     - image
     - link
-third_party_settings:
-  field_group:
-    group_display_settings:
-      children:
-        - bp_background
-        - bp_width
-        - field_vertical_alignment
-        - field_horizontal_alignment
-      parent_name: ''
-      weight: 0
-      format_type: fieldset
-      format_settings:
-        id: ''
-        classes: ''
-        description: ''
-        required_fields: true
-      label: 'Display Settings'
-      region: content
 _core:
   default_config_hash: HdN79DCCkrP_BBFmnXk4bHUxNg16EtuZC7olW5xr2wE
 id: paragraph.bp_image.default

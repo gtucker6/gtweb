@@ -1,0 +1,143 @@
+uuid: a275d5bf-5cc5-40f0-afd2-55c5d6df99d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.work.title
+    - core.entity_view_mode.node.card
+    - field.field.node.work.field_company_address
+    - field.field.node.work.field_company_email
+    - field.field.node.work.field_company_number_s
+    - field.field.node.work.field_finish_date
+    - field.field.node.work.field_start_date
+    - field.field.node.work.field_work_description
+    - field.field.node.work.field_work_title
+    - node.type.work
+  module:
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          6904bef2-8583-4e87-a68a-8f3900f4f71b:
+            uuid: 6904bef2-8583-4e87-a68a-8f3900f4f71b
+            region: content
+            configuration:
+              id: 'field_block:node:work:title'
+              label: 'Company Name'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: inline
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings:
+                  gtweb_core:
+                    use_heading: 0
+                    heading: h2
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -10
+          501b10e3-afde-4f72-8f63-57b0f6f43a7b:
+            uuid: 501b10e3-afde-4f72-8f63-57b0f6f43a7b
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:work:field_work_description'
+              formatter:
+                type: text_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
+            weight: -6
+          4a4607ec-23a0-4b4a-9480-192b0a6ee2ec:
+            uuid: 4a4607ec-23a0-4b4a-9480-192b0a6ee2ec
+            region: content
+            configuration:
+              id: 'field_block:node:work:field_company_email'
+              label: 'Company Email'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: basic_string
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -8
+          95e8ce7d-50cd-4f44-9d9a-149031c43921:
+            uuid: 95e8ce7d-50cd-4f44-9d9a-149031c43921
+            region: content
+            configuration:
+              id: 'field_block:node:work:field_company_number_s'
+              label: 'Company Number'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: telephone_link
+                settings:
+                  title: ''
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -9
+          7ff6f878-6e39-45ae-a7f5-e0a78bcec99e:
+            uuid: 7ff6f878-6e39-45ae-a7f5-e0a78bcec99e
+            region: content
+            configuration:
+              id: 'field_block:node:work:field_company_address'
+              label: 'Company Address'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: above
+                type: address_default
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -7
+        third_party_settings: {  }
+id: node.work.card
+targetEntityType: node
+bundle: work
+mode: card
+content:
+  field_work_description:
+    type: text_default
+    weight: 0
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_company_address: true
+  field_company_email: true
+  field_company_number_s: true
+  field_finish_date: true
+  field_start_date: true
+  field_work_title: true
+  links: true

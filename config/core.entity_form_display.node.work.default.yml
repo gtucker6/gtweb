@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.work.field_company_address
     - field.field.node.work.field_company_email
     - field.field.node.work.field_company_number_s
-    - field.field.node.work.field_finish_date
     - field.field.node.work.field_start_date
     - field.field.node.work.field_work_description
     - field.field.node.work.field_work_title
@@ -49,15 +48,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: telephone_default
-    region: content
-  field_finish_date:
-    weight: 6
-    settings:
-      increment: 15
-      date_order: YMD
-      time_type: '24'
-    third_party_settings: {  }
-    type: datetime_datelist
     region: content
   field_start_date:
     weight: 5

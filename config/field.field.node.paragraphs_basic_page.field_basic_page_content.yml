@@ -16,7 +16,6 @@ dependencies:
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.text_image
     - paragraphs.paragraphs_type.text_images
-    - paragraphs.paragraphs_type.view
   module:
     - entity_reference_revisions
 id: node.paragraphs_basic_page.field_basic_page_content
@@ -45,12 +44,38 @@ settings:
       hero: hero
       bp_image: bp_image
       bp_tabs: bp_tabs
-      view: view
     target_bundles_drag_drop:
-      section:
+      bp_accordion:
+        enabled: true
+        weight: 17
+      bp_accordion_section:
+        weight: 18
+        enabled: false
+      bp_carousel:
+        enabled: true
+        weight: 22
+      bp_columns:
+        enabled: true
+        weight: 20
+      bp_image:
+        enabled: true
+        weight: 27
+      bp_modal:
+        weight: 22
+        enabled: false
+      bp_tab_section:
+        weight: 30
+        enabled: false
+      bp_tabs:
+        enabled: true
+        weight: 29
+      hero:
+        enabled: true
+        weight: 25
+      media:
         enabled: true
         weight: 8
-      media:
+      section:
         enabled: true
         weight: 8
       subsection:
@@ -65,33 +90,6 @@ settings:
       text_images:
         enabled: true
         weight: 12
-      bp_accordion:
-        enabled: true
-        weight: 17
-      bp_accordion_section:
-        weight: 18
-        enabled: false
-      bp_columns:
-        enabled: true
-        weight: 20
-      bp_carousel:
-        enabled: true
-        weight: 22
-      bp_modal:
-        weight: 22
-        enabled: false
-      hero:
-        enabled: true
-        weight: 25
-      bp_image:
-        enabled: true
-        weight: 27
-      bp_tabs:
-        enabled: true
-        weight: 29
-      bp_tab_section:
-        weight: 30
-        enabled: false
       view:
         enabled: true
         weight: 32

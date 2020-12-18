@@ -3,15 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.card
     - core.entity_view_mode.node.featured
-    - field.storage.node.field_project_source
-    - field.storage.node.field_project_summary
     - node.type.web_project
   module:
-    - ds
-    - link
     - node
-    - text
     - user
 id: my_work
 label: 'My Work'
@@ -55,7 +51,7 @@ display:
       pager:
         type: some
         options:
-          items_per_page: 10
+          items_per_page: 3
           offset: 0
       style:
         type: default
@@ -64,7 +60,7 @@ display:
           default_row_class: false
           uses_fields: false
       row:
-        type: 'ds_entity:node'
+        type: 'entity:node'
         options:
           relationship: none
           view_mode: default
@@ -186,180 +182,46 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  block_work_summary:
-    display_plugin: block
-    id: block_work_summary
-    display_title: 'Web Work Summary '
-    position: 2
+  page_home:
+    display_plugin: page
+    id: page_home
+    display_title: 'Front Page'
+    position: 3
     display_options:
       display_extenders: {  }
       display_description: ''
-      block_description: 'Work Summary'
+      title: 'Hi I''m Gloria Tucker'
+      defaults:
+        title: false
+        style: false
+        row: false
+        arguments: false
+        use_more: false
+        use_more_always: false
+        use_more_text: false
       style:
         type: default
         options:
-          grouping: {  }
           row_class: ''
-          default_row_class: true
-      defaults:
-        style: false
-        row: false
-        fields: false
-        pager: false
+          default_row_class: false
+          uses_fields: false
       row:
-        type: fields
+        type: 'entity:node'
         options:
-          default_field_elements: true
-          inline: {  }
-          separator: ''
-          hide_empty: false
-      fields:
-        field_project_summary:
-          id: field_project_summary
-          table: node__field_project_summary
-          field: field_project_summary
           relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: text_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field_project_source:
-          id: field_project_source
-          table: node__field_project_source
-          field: field_project_source
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: uri
-          type: link
-          settings:
-            trim_length: 80
-            url_only: false
-            url_plain: false
-            rel: '0'
-            target: '0'
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: true
-          plugin_id: field
-      pager:
-        type: some
-        options:
-          items_per_page: 1
-          offset: 0
-      block_hide_empty: true
+          view_mode: card
+      path: home
+      arguments: {  }
+      use_more: true
+      use_more_always: false
+      use_more_text: 'View more projects'
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
-        - url
         - 'user.node_grants:view'
         - user.permissions
-      tags:
-        - 'config:field.storage.node.field_project_source'
-        - 'config:field.storage.node.field_project_summary'
+      tags: {  }
   page_my_work:
     display_plugin: page
     id: page_my_work
@@ -377,10 +239,26 @@ display:
         row: false
       title: 'My Work'
       pager:
-        type: some
+        type: full
         options:
           items_per_page: 10
           offset: 0
+          id: 0
+          total_pages: null
+          tags:
+            previous: '‹ Previous'
+            next: 'Next ›'
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
       style:
         type: default
         options:
@@ -388,33 +266,15 @@ display:
           default_row_class: false
           uses_fields: false
       row:
-        type: 'ds_entity:node'
+        type: 'entity:node'
         options:
           relationship: none
           view_mode: featured
-          alternating_fieldset:
-            alternating: true
-            allpages: false
-            item_0: left_images_preview
-            item_1: right_images_preview
-            item_2: left_images_preview
-            item_3: right_images_preview
-            item_4: left_images_preview
-            item_5: right_images_preview
-            item_6: left_images_preview
-            item_7: right_images_preview
-            item_8: left_images_preview
-            item_9: right_images_preview
-          grouping_fieldset:
-            group: false
-            group_field: node_field_data|created
-            group_field_function: ''
-          advanced_fieldset:
-            advanced: false
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_interface'
+        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }

@@ -1,16 +1,16 @@
-uuid: 33c716ae-b03e-4c3c-8900-b1b41beab1bc
+uuid: f9524e73-2f43-4b05-9428-120e0d7ee915
 langcode: en
 status: true
 dependencies:
   config:
-    - block_content.type.web_service
-    - field.storage.block_content.body
+    - field.storage.node.body
+    - node.type.landing_page
   module:
     - text
-id: block_content.web_service.body
+id: node.landing_page.body
 field_name: body
-entity_type: block_content
-bundle: web_service
+entity_type: node
+bundle: landing_page
 label: Body
 description: ''
 required: false
@@ -18,6 +18,6 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  display_summary: false
+  display_summary: true
   required_summary: false
 field_type: text_with_summary
