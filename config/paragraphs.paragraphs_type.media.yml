@@ -1,9 +1,0 @@
-uuid: 51aedae6-7e2c-4502-9fda-aeada2f3b9db
-langcode: en
-status: true
-dependencies: {  }
-id: media
-label: Media
-icon_uuid: null
-description: ''
-behavior_plugins: {  }

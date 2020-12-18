@@ -4,26 +4,11 @@ status: true
 dependencies:
   config:
     - block_content.type.multipurpose_block
-    - field.field.block_content.multipurpose_block.field_block_content
-  module:
-    - paragraphs
 id: block_content.multipurpose_block.default
 targetEntityType: block_content
 bundle: multipurpose_block
 mode: default
 content:
-  field_block_content:
-    type: entity_reference_paragraphs
-    weight: 27
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-    third_party_settings: {  }
-    region: content
   info:
     type: string_textfield
     weight: -5

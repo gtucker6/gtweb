@@ -3,12 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.paragraphs_basic_page.field_basic_page_content
     - node.type.paragraphs_basic_page
   module:
-    - entity_reference_revisions
     - layout_builder
-    - layout_discovery
     - user
 third_party_settings:
   layout_builder:
@@ -19,15 +16,6 @@ targetEntityType: node
 bundle: paragraphs_basic_page
 mode: default
 content:
-  field_basic_page_content:
-    type: entity_reference_revisions_entity_view
-    weight: 101
-    label: visually_hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    region: content
   links:
     weight: 100
     region: content

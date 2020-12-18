@@ -4,11 +4,10 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.featured
-    - field.field.node.paragraphs_basic_page.field_basic_page_content
     - node.type.paragraphs_basic_page
   module:
-    - entity_reference_revisions
     - layout_builder
+    - layout_discovery
     - user
 third_party_settings:
   layout_builder:
@@ -30,38 +29,12 @@ third_party_settings:
               id: 'extra_field_block:node:paragraphs_basic_page:links'
             additional: {  }
             weight: 0
-          73bdce14-7f2a-41f1-a2f8-e7fbe1343f6e:
-            uuid: 73bdce14-7f2a-41f1-a2f8-e7fbe1343f6e
-            region: content
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'field_block:node:paragraphs_basic_page:field_basic_page_content'
-              formatter:
-                type: entity_reference_revisions_entity_view
-                label: visually_hidden
-                settings:
-                  view_mode: default
-                  link: ''
-                third_party_settings: {  }
-            additional: {  }
-            weight: 1
         third_party_settings: {  }
 id: node.paragraphs_basic_page.featured
 targetEntityType: node
 bundle: paragraphs_basic_page
 mode: featured
 content:
-  field_basic_page_content:
-    type: entity_reference_revisions_entity_view
-    weight: 101
-    label: visually_hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    region: content
   links:
     weight: 100
     region: content

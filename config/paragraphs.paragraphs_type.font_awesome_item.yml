@@ -1,9 +1,0 @@
-uuid: 13df9a5e-714b-4836-a8eb-c539e877e75a
-langcode: en
-status: true
-dependencies: {  }
-id: font_awesome_item
-label: 'Font Awesome Item'
-icon_uuid: null
-description: ''
-behavior_plugins: {  }
