@@ -32,6 +32,9 @@
     'block-' ~ plugin_id|clean_class,
   ]
 %}
+{% if configuration.label is not empty and configuration.label_display != '0' %}
+  {% set label = configuration.label %}
+{% endif %}
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if label %}

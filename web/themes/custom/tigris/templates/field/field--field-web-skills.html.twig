@@ -37,29 +37,14 @@
  * @see template_preprocess_field()
  */
 #}
+{% extends 'field.html.twig' %}
 {%
-  set classes = [
-    'field',
-    'field--name-' ~ field_name|clean_class,
-    'field--type-' ~ field_type|clean_class,
-    'field--label-' ~ label_display,
+  set item_classes = [
+    'badge badge-accent',
   ]
 %}
-{%
-  set title_classes = [
-    'field__label',
-    'sr-only',
-  ]
-%}
-
-{% if label_hidden %}
-{% else %}
-  <div{{ attributes.addClass(classes) }}>
-    <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
-      <div class="field__items">
-    {% for item in items %}
-      <span{{ item.attributes.addClass('badge badge-accent') }}>{{ item.content }}</span>
-    {% endfor %}
-      </div>
-  </div>
-{% endif %}
+{% block items %}
+  {% for item in items %}
+    <span{{ item.attributes.addClass(item_classes) }}>{{ item.content }}</span>
+  {% endfor %}
+{% endblock %}

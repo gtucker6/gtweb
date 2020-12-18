@@ -1,64 +1,46 @@
 .previews {
-  padding: $spacing;
-  .preview {
+  display: grid;
+  justify-content: center;
+  grid-template-areas:
+  "desktop desktop desktop"
+  "tablet tablet mobile";
+  column-gap: 15px;
+  row-gap: 15px;
+  .previews__desktop {
+    grid-area: desktop;
     img {
       width: 100%;
     }
-    .preview--bar {
-      height: 40px;
-      display: flex;
-      align-items: center;
-      padding: 10px;
-      border-radius: 5px 5px 0 0;
-      background: #ebebeb;
-      span {
-        height: 12px;
-        width: 12px;
-        border-radius: 50%;
-        border: 1px solid;
-        &:first-child {
-          background-color: #ff564f;
-          border-color: #ff564f;
-        }
-        &:nth-child(2) {
-          background-color: #ffb429;
-          border-color: #ffb429;
-        }
-        &:nth-child(3) {
-          background-color: #24c339;
-          border-color: #24c339;
-        }
-        &:not(:last-child) {
-          margin-right: 4px;
-        }
-      }
-    }
-    .preview--window {
-      border: 5px solid #ebebeb;
-      border-top: none;
-    }
-    &:not(:first-child) {
-      margin-top: $spacing;
-    }
-    &.preview--mobile {
-      max-width: 250px;
+    &:before {
+      content: 'Desktop';
+      text-align: center;
+      background-color: $black;
+      color: $main;
+      display: block;
     }
   }
-  &.previews--stacked {
-    position: relative;
-    &.preview--desktop {
-      max-width: 740px;
-      margin-right: 40px;
+  .previews__desktop, .previews__tablet, .previews__mobile {
+    &:before {
+      text-align: center;
+      background-color: $black;
+      color: white;
+      border-top: 2px solid $main;
+      border-bottom: 2px solid $main;
+      display: block;
+      padding-top: 2px;
+      padding-bottom: 2px;
     }
   }
-  &:not(.previews--stacked) {
-    .preview--tablet {
-      width: 65%;
+  .previews__tablet {
+    grid-area: tablet;
+    &:before {
+      content: 'Tablet';
     }
-    .preview--mobile {
-      width: 28.33%;
-      margin-left: auto;
-      text-align: right;
+  }
+  .previews__mobile {
+    grid-area: mobile;
+    &:before {
+      content: 'Mobile';
     }
   }
 }

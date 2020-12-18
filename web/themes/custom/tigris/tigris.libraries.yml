@@ -20,20 +20,6 @@ global:
     - core/jquery.once
     - tigris/bootstrap4
 
-charts:
-  css:
-    theme:
-      css/tigris.charts.css: {}
-  js:
-    js/tigris.charts.js: {}
-  dependencies:
-    - core/drupal
-    - core/drupalSettings
-    - core/jquery
-    - core/jquery.once
-    - tigris/global
-    - charts_google/google
-
 textType:
   js:
     js/tigris.textType.js: {}
@@ -50,4 +36,3 @@ modal:
     - core/drupalSettings
     - core/jquery
     - core/jquery.once
-    

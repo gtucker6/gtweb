@@ -57,48 +57,23 @@
 			height: 100%;
 		}
 	}
-	&.layout--twocol {
-		padding: $spacing 0;
-		.d-flex {
-			> .field:first-child {
-				margin-right: 10px;
-			}
-		}
-		&.right-images-preview, &.left-images-preview {
-			@media screen and (max-width: $breakpoint-max-md) {
-				.col-details {
-					order: 2;
-				}
-				.col-image {
-					order: 1;
-				}
-			}
-			.col-details {
-				padding: $spacing;
-				.field:not(.field--name-node-title) {
-					margin-top: 10px;
-					margin-bottom: 10px;
-				}
-			}
-			.layout__region {
-				&.layout__region--first {
-					padding: $spacing;
-
-				}
-			}
-		}
-		&.featured, &.teaser {
-			.layout__region {
-				&.layout__region--second {
-					padding: $spacing;
-				}
-			}
-		}
+	&.layout--twocol, &.layout--twocol-section {
+		display: grid;
+    row-gap: 15px;
 	}
 }
 
-@media screen and (min-width: 40em) {
-    .layout--twocol > .layout__region--first, .layout--twocol > .layout__region--second {
-        flex: 0 1 100%;
+@media screen and (min-width: $breakpoint-min-md) {
+  &.layout--twocol, &.layout--twocol-section {
+    grid-template-areas: "left right"
+    "left right";
+    column-gap: 15px;
+    row-gap: 0;
+    > .layout__region:first-child {
+      grid-area: left
     }
+    > .layout__region:nth-child(2) {
+      grid-area: right;
+    }
+  }
 }

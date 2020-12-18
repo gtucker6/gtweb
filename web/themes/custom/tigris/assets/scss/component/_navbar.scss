@@ -37,9 +37,6 @@
     &.has-color {
       border-bottom: 2px solid white;
       background-color: $main !important;
-      .navbar-toggler-icon, .responsive-menu-toggle-icon::before, .responsive-menu-toggle-icon::after {
-        background-color: $main !important;
-      }
     }
     a {
       font-weight: bolder;

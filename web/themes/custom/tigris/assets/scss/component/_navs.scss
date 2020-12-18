@@ -62,14 +62,17 @@ nav {
 
 .mm-menu.mm-menu_offcanvas {
   background-color: $black;
-  a.nav-link {
-    padding-left: 15px;
-    font-size: 25px;
-    color: white;
-  }
-  a.nav-link:hover {
-    background-color: $main;
-    font-weight: bold;
+  .mm-listitem {
+    a {
+      padding-left: 15px;
+      font-size: 25px;
+      color: white;
+
+      &:hover {
+        background-color: $main;
+        font-weight: bold;
+      }
+    }
   }
   a.mm-navbar__title {
     display: none;
