@@ -29,7 +29,7 @@ function gtweb_charts_help($route_name, RouteMatchInterface $route_match) {
 /**
  * Implements hook_views_pre_render().
  */
-function gtweb_views_pre_render(ViewExecutable $view) {
+function gtweb_charts_views_pre_render(ViewExecutable $view) {
   $style_plugin = $view->style_plugin;
   if ($style_plugin instanceof ChartsPluginStyleChart) {
     foreach ($view->result as $index => $resultRow) {
@@ -55,7 +55,7 @@ function gtweb_views_pre_render(ViewExecutable $view) {
     }
 
     $settings = [];
-    $settings['gtwebChart']['id'] = $view->storage->id() . '__' . $view->current_display;
+    $settings['gtwebChart']['chartId'] = 'web_skills';
     $settings['gtwebChart']['provider'] = $view->style_plugin->options['library'];
     $settings['gtwebChart']['type'] = $style_plugin->options['type'];
     $view->element['#attached']['drupalSettings'] = $settings;

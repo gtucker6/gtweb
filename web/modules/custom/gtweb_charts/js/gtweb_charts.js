@@ -5,15 +5,15 @@
   Drupal.behaviors.gtwebChart = {
     attach: function (context, settings) {
       let provider = settings.gtwebChart.provider;
-      let id = settings.gtwebChart.id;
       let type = settings.gtwebChart.type;
       if (typeof settings.gtwebChart !== 'undefined') {
         $(context).find('.charts-' + provider).once('gtwebChart').each(function () {
-          let chart = new GTWebChart(provider, id, type);
+          let chart = new GTWebChart(provider, this.id, type);
           chart.load();
-          if ($(chart.id).attr('id') === 'web_skills__block_web_skills_level_chart') {
+          if (settings.gtwebChart.chartId === 'web_skills') {
             let dataStructure = ['Skill', 'Confidence Level ', { role: "style" }, { role: "style"}];
             let options = chart.getOptions();
+            console.log(options);
             options['hAxes']['0'].format = '#\'%\'';
             chart.setOptions(options);
             chart.addChartData(0, dataStructure);
@@ -34,8 +34,8 @@
     this.provider = provider;
     this.id = $('#' + id);
     this.type = type;
-    this.options = JSON.parse($(this.id).attr(provider + '-options'));
-    this.data = $(this.id).data('chart');
+    this.options = JSON.parse($('#' + id).attr(provider + '-options'));
+    this.data = $('#' + id).data('chart');
     this.load = function () {
       if (this.provider === 'google') {
         google.charts.load('current', {packages: ['corechart']});
