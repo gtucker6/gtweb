@@ -13,10 +13,9 @@
           if (settings.gtwebChart.chartId === 'web_skills') {
             let dataStructure = ['Skill', 'Confidence Level ', { role: "style" }, { role: "style"}];
             let options = chart.getOptions();
-            console.log(options);
             options['hAxes']['0'].format = '#\'%\'';
             chart.setOptions(options);
-            chart.addChartData(0, dataStructure);
+            chart.setData(0, dataStructure);
             chart.alterChartData(dataStructure, chart.getOptions()['colors']);
           }
           $(this).bind("DOMNodeInserted", function () {
@@ -41,7 +40,7 @@
         google.charts.load('current', {packages: ['corechart']});
         google.charts.setOnLoadCallback(this.drawChart);
       }
-    }.bind(this);
+    };
     this.setOptions = function (options) {
       this.options = options;
       $(this.id).attr(provider + '-options', JSON.stringify(this.options));
@@ -53,11 +52,11 @@
     this.getOptions = function () {
       return this.options;
     };
-    this.addChartData = function (key, value) {
+    this.setData = function (key, value) {
       this.data[key] = value;
       $(this.id).attr('data-chart', JSON.stringify(this.data));
     };
-    this.alterChartData = function (dataStructure, additionalOptions) {
+    this.alterChartData = function (dataStructure, additionalData) {
       let columnCount = dataStructure.length;
       let alteredData = [];
       for (let datum in this.data) {
@@ -72,16 +71,16 @@
             let yLabel = this.data[0][1];
             let x = this.data[datum][0];
             let y = this.data[datum][1];
-            let alteredDataPart = newData.concat(additionalOptions).concat([yLabel + ' ' + y + '%']);
+            let alteredDataPart = newData.concat(additionalData).concat([yLabel + ' ' + y + '%']);
             alteredData.push(alteredDataPart);
-            this.addChartData(datum, alteredDataPart);
+            this.setData(datum, alteredDataPart);
           }
         }
         if (alteredData.length > 0) {
           $(this.id).attr('data-chart', JSON.stringify(alteredData));
         }
       }
-    }.bind(this);
+    };
     this.drawChart = function () {
       // Define the chart to be drawn.
       var data = google.visualization.arrayToDataTable(this.data);
