@@ -3,3 +3,5 @@ type: module
 description: 'GTWeb core customizations'
 core: 8.x
 package: 'GTWeb'
+dependencies:
+  - layout_builder_styles:layout_builder_styles

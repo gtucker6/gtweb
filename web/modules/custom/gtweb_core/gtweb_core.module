@@ -6,6 +6,12 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\layout_builder_styles\LayoutBuilderStyleInterface;
+use Drupal\Core\Layout\LayoutDefinition;
+use Drupal\Core\Template\Attribute;
+use Drupal\Core\Template\AttributeValueBase;
+use Drupal\Core\Template\AttributeArray;
 
 /**
  * Implements hook_help().
@@ -24,13 +30,249 @@ function gtweb_core_help($route_name, RouteMatchInterface $route_match) {
 }
 
 /**
- * Implements hook_link_alter().
+ * Implements hook_field_formatter_third_party_settings_form().
  */
-function gtweb_core_link_alter(&$variables) {
-  /** @var \Drupal\Core\Url $url */
-  $url = $variables['url'];
-  if ($url->isExternal()) {
-    $variables['options']['attributes']['rel'] = 'nofollow';
-    $variables['options']['attributes']['target'] = '_blank';
+function gtweb_core_field_formatter_third_party_settings_form(\Drupal\Core\Field\FormatterInterface $plugin, \Drupal\Core\Field\FieldDefinitionInterface $field_definition, $view_mode, array $form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  $element = [];
+  if ($plugin->getPluginId() === 'string') {
+    $element['use_heading'] = [
+      '#type' => 'checkbox',
+      '#title' => 'Use heading',
+      '#default_value' => (bool) ($plugin->getThirdPartySetting('gtweb_core', 'use_heading') ?? TRUE),
+    ];
+    $element['heading'] = [
+      '#type' => 'select',
+      '#title' => 'Heading',
+      '#options' => [
+        'h2' => 'h2',
+        'h3' => 'h3',
+        'h4' => 'h4',
+        'h5' => 'h5',
+        'h6' => 'h6',
+      ],
+      '#default_value' => $plugin->getThirdPartySetting('gtweb_core', 'heading') ?? 'h2',
+      '#states' => [
+        'visible' => [
+          'input[name="settings[formatter][third_party_settings][gtweb_core][use_heading]"]' => ['checked' => TRUE],
+        ],
+      ],
+    ];
+    return $element;
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function gtweb_core_preprocess_layout(&$variables) {
+  // Apply a configured style to a layout by adding the style's CSS classes.
+  $layout = $variables["layout"] ?? NULL;
+  $layout_region_styles = $variables['settings']['layout_builder_styles_region_styles'] ?? NULL;
+  if (!$layout_region_styles || !$layout instanceof LayoutDefinition) {
+    return;
+  }
+  // Convert single selection to an array for consistent processing.
+  if (!is_array($layout_region_styles)) {
+    $layout_region_styles = [];
+  }
+  foreach ($layout->getRegionNames() as $region_name) {
+    if (!isset($layout_region_styles[$region_name])) {
+      $layout_region_styles[$region_name] = [];
+    }
+    elseif (!is_array($layout_region_styles[$region_name])) {
+      $layout_region_styles[$region_name] = [$layout_region_styles[$region_name]];
+    }
+  }
+
+  // Retrieve all styles from selection(s).
+  $grouped_classes = [];
+
+  foreach ($layout_region_styles as $region_name => $styles) {
+    if (empty($styles)) {
+      continue;
+    }
+    foreach ($styles as $stylename) {
+      // Account for incorrectly configured section configuration which may
+      // have a NULL style ID. We cannot pass NULL to the storage handler or
+      // it will throw an exception.
+      if (empty($stylename)) {
+        continue;
+      }
+      if ($layout_style = \Drupal::entityTypeManager()->getStorage('layout_builder_style')->load($stylename)) {
+        $classes = \preg_split('(\r\n|\r|\n)', $layout_style->getClasses());
+        $grouped_classes = array_merge($grouped_classes, $classes);
+        $variables['#cache']['tags'][] = 'config:layout_builder_styles.region_styles.' . $layout_style->id();
+      }
+    }
+    if (empty($grouped_classes)) {
+      return;
+    }
+    if (!isset($variables['region_attributes'][$region_name]) || empty($variables['region_attributes'][$region_name])) {
+      $variables['region_attributes'][$region_name] = new Attribute();
+    }
+    /** @var \Drupal\Core\Template\Attribute $region_attributes */
+    $region_attributes = &$variables['region_attributes'][$region_name];
+    if (!$region_attributes->getClass() instanceof AttributeValueBase) {
+      $region_attributes->setAttribute('class', new AttributeArray('class', []));
+    }
+    $region_classes = $region_attributes->getClass()->value();
+    if (!is_array($region_classes)) {
+      $region_classes = explode(' ', $region_classes);
+    }
+    if (empty($region_classes) || !is_array($region_classes)) {
+      $region_attributes->setAttribute('class', $region_classes);
+    }
+    $region_classes = array_merge($region_attributes->getClass()->value(), $grouped_classes);
+    $region_attributes->setAttribute('class', $region_classes);
+  }
+}
+
+/**
+ * Add a style selection form element to an existing form.
+ *
+ * @param array $form
+ *   The form array to add to.
+ * @param array $style_options
+ *   The style options to make available.
+ * @param mixed $selected_region_style
+ *   The existing selected style(s), either a string or array.
+ */
+function _layout_builder_styles_regions_add_style_selection_form_element(array &$form, array $style_options, $selected_region_style, string $region_name) {
+  // Set form actions to a high weight, just so that we can make our form
+  // style element appear right before them.
+  $form_element_name = 'layout_builder_style_region_' . $region_name;
+  $form['actions']['#weight'] = 100;
+  $form[$form_element_name] = [
+    '#type' => 'select',
+    '#options' => $style_options,
+    '#title' => t('Style (region: @region_name)', ['@region_name' => $region_name]),
+    '#default_value' => $selected_region_style,
+    '#required' => FALSE,
+    '#empty_option' => t('- None -'),
+    '#weight' => 91,
+  ];
+
+  $config = \Drupal::config('layout_builder_styles.settings');
+  // If we're configured to allow a single selection, then we need to check
+  // if the previously saved selected style is actually an array of styles
+  // that were saved from previously allowing multiple. In this case, if there's
+  // just one style that was saved, then choose that as the current value.
+  // If there were multiple saved, we just clear them both out. There's not
+  // a good way to recover from that situation.
+  if ($config && $config->get('multiselect' === 'single')) {
+    if (is_array($selected_region_style)) {
+      $filtered = array_filter($selected_region_style);
+      if (count($filtered) === 1) {
+        $existing_selected_style = array_shift($filtered);
+      }
+      else {
+        $existing_selected_style = null;
+      }
+      $form[$form_element_name]['#default_value'] = $existing_selected_style;
+    }
+  }
+
+  // If we're configured to allow multiple selections, then we need to change
+  // the form widget to one that supports multiple selections.
+  if ($config && $config->get('multiselect') === 'multiple') {
+    // The existing value may not be stored as an array if the site admin
+    // switched from allowing one selection to allowing multiple.
+    if (!is_array($selected_region_style)) {
+      $selected_region_style = [$selected_region_style];
+    }
+    $form[$form_element_name]['#default_value'] = array_filter($selected_region_style);
+    if ($config->get('form_type') === 'checkboxes') {
+      $form[$form_element_name]['#type'] = 'checkboxes';
+    }
+    else {
+      $form[$form_element_name]['#multiple'] = TRUE;
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Modify the configuration form for layout builder sections (layouts).
+ */
+function gtweb_core_form_layout_builder_configure_section_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $formObject = $form_state->getFormObject();
+  $layout_id = $formObject->getLayout()->getPluginId();
+  $all_styles = _layout_builder_styles_retrieve_by_type(LayoutBuilderStyleInterface::TYPE_SECTION);
+
+  $style_options = [];
+  foreach ($all_styles as $style) {
+    $restrictions = $style->getLayoutRestrictions();
+    if (empty($restrictions) || in_array($layout_id, $restrictions)) {
+      /** @var \Drupal\layout_builder_styles\LayoutBuilderStyleInterface $style */
+      $style_options[$style->id()] = $style->label();
+    }
+  }
+
+  if (!empty($style_options)) {
+    /** @var \Drupal\Core\Layout\LayoutInterface $layout */
+    $layout = $formObject->getLayout();
+    $config = $layout->getConfiguration();
+    $config_style_regions = $config['layout_builder_styles_region_styles'] ?? [];
+    foreach ($layout->getPluginDefinition()->getRegionNames() as $region_name) {
+      $selected_region_style = $config_style_regions[$region_name] ?? [];
+      _layout_builder_styles_regions_add_style_selection_form_element($form, $style_options, $selected_region_style, $region_name);
+    }
+
+    // Our submit handler must execute before the default one, because the
+    // default handler stores the section & component data in the tempstore
+    // and we need to update those objects before that happens.
+    array_unshift($form['#submit'], '_layout_builder_styles_region_styles_submit_section_form');
+  }
+}
+
+/**
+ * Custom submit handler for submitting LB section forms.
+ *
+ * This is used to persist the selected style to the layout configuration
+ * array, which layout builder's ConfigureSectionForm will persist to section
+ * storage.
+ */
+function _layout_builder_styles_region_styles_submit_section_form(array $form, FormStateInterface $formState) {
+  $formObject = $formState->getFormObject();
+  $layout = $formObject->getLayout();
+  $config = $layout->getConfiguration();
+  if (!$config) {
+    $config = [];
+  }
+  $styles = [];
+  foreach ($layout->getPluginDefinition()->getRegionNames() as $region_name) {
+    $form_element_name = 'layout_builder_style_region_' . $region_name;
+    $styles[$region_name] = _layout_builder_styles_prepare_styles_for_saving($formState->getValue($form_element_name));
+  }
+
+  $config = array_merge($config, ['layout_builder_styles_region_styles' => $styles]);
+
+  $layout->setConfiguration($config);
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function gtweb_core_preprocess_node(&$variables) {
+  if (isset($variables['content']['_layout_builder'])) {
+    foreach ($variables['content']['_layout_builder'] as $section) {
+      /** @var \Drupal\Core\Layout\LayoutDefinition $layout */
+      $layout = $section['#layout'] ?? NULL;
+      if (!$layout instanceof LayoutDefinition) {
+        continue;
+      }
+      $regions = array_filter($section, function ($key) use ($layout) {
+        return in_array($key, $layout->getRegionNames());
+      }, ARRAY_FILTER_USE_KEY);
+      foreach ($regions as $region) {
+        foreach ($region as $block) {
+          if (isset($block["content"]["#field_name"]) && $block["content"]["#field_name"] === 'title') {
+            unset($variables['label']);
+            break;
+          }
+        }
+      }
+    }
   }
 }
