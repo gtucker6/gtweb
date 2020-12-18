@@ -51,7 +51,7 @@ display:
       pager:
         type: some
         options:
-          items_per_page: 3
+          items_per_page: 4
           offset: 0
       style:
         type: default
@@ -182,6 +182,49 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
+  block_web_projects:
+    display_plugin: block
+    id: block_web_projects
+    display_title: Block
+    position: 3
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      title: 'Web Projects'
+      defaults:
+        title: false
+        style: false
+        row: false
+        arguments: false
+        use_more: false
+        use_more_always: false
+        use_more_text: false
+        css_class: false
+      style:
+        type: default
+        options:
+          row_class: col
+          default_row_class: false
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: card
+      arguments: {  }
+      use_more: false
+      use_more_always: false
+      use_more_text: 'View more projects'
+      enabled: true
+      css_class: row
+      block_description: 'Web Projects (cards)'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
   page_home:
     display_plugin: page
     id: page_home
@@ -199,10 +242,11 @@ display:
         use_more: false
         use_more_always: false
         use_more_text: false
+        css_class: false
       style:
         type: default
         options:
-          row_class: ''
+          row_class: col
           default_row_class: false
           uses_fields: false
       row:
@@ -215,6 +259,8 @@ display:
       use_more: true
       use_more_always: false
       use_more_text: 'View more projects'
+      enabled: true
+      css_class: row
     cache_metadata:
       max-age: -1
       contexts:
