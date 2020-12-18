@@ -1,0 +1,64 @@
+<?php
+
+/**
+ * @file
+ * Contains gtweb_charts.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\views\ViewExecutable;
+use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\charts\Plugin\views\style\ChartsPluginStyleChart;
+
+/**
+ * Implements hook_help().
+ */
+function gtweb_charts_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the gtweb_charts module.
+    case 'help.page.gtweb_charts':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('A module for additional chart functionality') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function gtweb_views_pre_render(ViewExecutable $view) {
+  $style_plugin = $view->style_plugin;
+  if ($style_plugin instanceof ChartsPluginStyleChart) {
+    foreach ($view->result as $index => $resultRow) {
+      if (!$resultRow->_entity instanceof ContentEntityInterface) {
+        continue;
+      }
+      $data = $style_plugin->options['data_fields'];
+      foreach ($data as $key => $value) {
+        if (isset($resultRow->_entity->toArray()[$key])) {
+          if ($value !== 0) {
+            $experience = (int) $resultRow->_entity->get($key)->getString();
+            $confidence_percentage = floor(($experience / 4) * 100);
+            $resultRow->_entity->set($key, $confidence_percentage);
+          }
+          else {
+            $data_key = str_replace(' ', '_', strtolower($resultRow->_entity->get($key)->getString()));
+          }
+        }
+      }
+      if (isset($experience) && isset($data_key) && isset($confidence_percentage)) {
+        $view->element['#view']->result[$index] = $resultRow;
+      }
+    }
+
+    $settings = [];
+    $settings['gtwebChart']['id'] = $view->storage->id() . '__' . $view->current_display;
+    $settings['gtwebChart']['provider'] = $view->style_plugin->options['library'];
+    $settings['gtwebChart']['type'] = $style_plugin->options['type'];
+    $view->element['#attached']['drupalSettings'] = $settings;
+    $view->element['#attached']['library'][] = 'gtweb_charts/charts';
+  }
+}

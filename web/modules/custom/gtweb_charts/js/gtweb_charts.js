@@ -1,15 +1,15 @@
 (function($, Drupal, window, document, undefined) {
   'use strict';
 
-  Drupal.tigrisCharts = Drupal.tigrisCharts || {charts: []};
-  Drupal.behaviors.tigrisChart = {
+  Drupal.gtwebCharts = Drupal.gtwebCharts || {charts: []};
+  Drupal.behaviors.gtwebChart = {
     attach: function (context, settings) {
-      let provider = settings.tigrisChart.provider;
-      let id = settings.tigrisChart.id;
-      let type = settings.tigrisChart.type;
-      if (typeof settings.tigrisChart !== 'undefined') {
-        $(context).find('.charts-' + provider).once('tigrisChart').each(function () {
-          let chart = new TigrisChart(provider, id, type);
+      let provider = settings.gtwebChart.provider;
+      let id = settings.gtwebChart.id;
+      let type = settings.gtwebChart.type;
+      if (typeof settings.gtwebChart !== 'undefined') {
+        $(context).find('.charts-' + provider).once('gtwebChart').each(function () {
+          let chart = new GTWebChart(provider, id, type);
           chart.load();
           if ($(chart.id).attr('id') === 'web_skills__block_web_skills_level_chart') {
             let dataStructure = ['Skill', 'Confidence Level ', { role: "style" }, { role: "style"}];
@@ -30,7 +30,7 @@
         }
       }
   };
-  let TigrisChart = function (provider, id, type) {
+  let GTWebChart = function (provider, id, type) {
     this.provider = provider;
     this.id = $('#' + id);
     this.type = type;

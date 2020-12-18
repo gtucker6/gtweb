@@ -1,0 +1,12 @@
+charts:
+  css:
+    theme:
+      css/gtweb_charts.css: {}
+  js:
+    js/gtweb_charts.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery
+    - core/jquery.once
+    - charts_google/google
